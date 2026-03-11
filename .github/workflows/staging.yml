@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'site/**'
+      - '.github/workflows/staging.yml'
 
 permissions:
   contents: read
@@ -23,6 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Rewrite absolute paths for GitHub Pages
+        run: |
+          find site -name '*.html' -print0 | xargs -0 sed -i \
+            -e 's|href="/\([^"]\)|href="/bdx-website/\1|g' \
+            -e 's|src="/\([^"]\)|src="/bdx-website/\1|g' \
+            -e 's|content="/\([^"]\)|content="/bdx-website/\1|g' \
+            -e 's|href="/"|href="/bdx-website/"|g'
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
