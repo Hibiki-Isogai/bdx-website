@@ -6,8 +6,8 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Scripts output
-scripts/
+# Scripts output (root level only, not site/scripts/)
+/scripts/
 
 # Node (if added later)
 node_modules/

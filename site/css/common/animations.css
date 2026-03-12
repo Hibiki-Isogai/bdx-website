@@ -1,0 +1,349 @@
+/* ==========================================================================
+   BDX Recruit - Common Animations & Component Styles
+   - IntersectionObserver scroll-reveal
+   - Hero, Cards, Stats, Timeline, Quote, CTA, Section utilities
+   - Brand color: #003894 (Navy Blue)
+   - Fonts: EB Garamond (display) + Noto Sans JP (body)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal (controlled by IntersectionObserver in scroll-reveal.js)
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal--delay-1 { transition-delay: 0.1s; }
+.reveal--delay-2 { transition-delay: 0.2s; }
+.reveal--delay-3 { transition-delay: 0.3s; }
+
+/* fade-in only (no translate) */
+.reveal--fade { transform: none; }
+
+/* slide from left */
+.reveal--left { transform: translateX(-30px); }
+.reveal--left.is-visible { transform: translateX(0); }
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.bdx-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.bdx-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.bdx-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,56,148,0.85) 0%, rgba(0,56,148,0.6) 100%);
+}
+.bdx-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  max-width: 800px;
+}
+.bdx-hero__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+.bdx-hero__subtitle {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Content Cards
+   -------------------------------------------------------------------------- */
+.bdx-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.bdx-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bdx-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,56,148,0.15);
+}
+.bdx-card__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.bdx-card__body {
+  padding: 1.5rem;
+}
+.bdx-card__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.bdx-card__text {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #666;
+}
+.bdx-card__link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #003894;
+  font-weight: 500;
+  text-decoration: none;
+}
+.bdx-card__link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Stats Cards
+   -------------------------------------------------------------------------- */
+.bdx-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+.bdx-stat {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.bdx-stat__number {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  color: #003894;
+  line-height: 1;
+}
+.bdx-stat__unit {
+  font-size: 1rem;
+  color: #003894;
+  margin-left: 0.2em;
+}
+.bdx-stat__label {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Timeline (Career Path / Selection Flow)
+   -------------------------------------------------------------------------- */
+.bdx-timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+.bdx-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e0e0e0;
+  transform: translateX(-50%);
+}
+.bdx-timeline__item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.bdx-timeline__marker {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #003894;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+.bdx-timeline__content {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .bdx-timeline::before {
+    left: 20px;
+  }
+  .bdx-timeline__item {
+    flex-direction: row;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Quote Block (Student Voices)
+   -------------------------------------------------------------------------- */
+.bdx-quote {
+  position: relative;
+  padding: 2rem 2rem 2rem 3rem;
+  background: #f8f9fc;
+  border-left: 4px solid #003894;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+.bdx-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.2em;
+  left: 0.3rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 4rem;
+  color: rgba(0,56,148,0.15);
+  line-height: 1;
+}
+.bdx-quote__text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+}
+.bdx-quote__author {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* --------------------------------------------------------------------------
+   CTA Banner
+   -------------------------------------------------------------------------- */
+.bdx-cta-banner {
+  background: linear-gradient(135deg, #003894 0%, #0052cc 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+.bdx-cta-banner__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+.bdx-cta-banner__text {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bdx-cta-banner__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.bdx-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.bdx-btn--primary {
+  background: #fff;
+  color: #003894;
+}
+.bdx-btn--primary:hover {
+  background: #f0f4ff;
+  transform: translateY(-2px);
+}
+.bdx-btn--outline {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+.bdx-btn--outline:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Section Utilities
+   -------------------------------------------------------------------------- */
+.bdx-section {
+  padding: 5rem 0;
+}
+.bdx-section--white {
+  background: #fff;
+}
+.bdx-section--light {
+  background: #f8f9fc;
+}
+.bdx-section--navy {
+  background: #003894;
+  color: #fff;
+}
+.bdx-section__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.bdx-section__heading {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.bdx-section__heading-en {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #003894;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.bdx-section--navy .bdx-section__heading-en {
+  color: rgba(255,255,255,0.6);
+}
+.bdx-section__lead {
+  text-align: center;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+.bdx-section--navy .bdx-section__lead {
+  color: rgba(255,255,255,0.8);
+}

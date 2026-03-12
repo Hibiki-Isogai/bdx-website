@@ -10,17 +10,17 @@
   gtag('config', 'G-EZ6D0P3FTH');
 </script>
 <meta charset="utf-8">
-<meta name="description" content="B&amp;DXの面接を受けた学生からの声をご紹介します。">
+<meta name="description" content="B&amp;DXの選考・インターンシップを経験した学生からの声をご紹介します。面接体験や成長実感、BDXを選んだ理由を学生自身の言葉でお届けします。">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="B&amp;DX株式会社｜学生の声">
-<meta property="og:description" content="B&amp;DXの面接を受けた学生からの声をご紹介します。">
+<meta property="og:description" content="B&amp;DXの選考・インターンシップを経験した学生からの声をご紹介します。">
 <meta property="og:image" content="https://www.bdx.co.jp/images/common/ogp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="B&amp;DX株式会社｜学生の声">
-<meta name="twitter:description" content="B&amp;DXの面接を受けた学生からの声をご紹介します。">
+<meta name="twitter:description" content="B&amp;DXの選考・インターンシップを経験した学生からの声をご紹介します。">
 <meta name="twitter:image:src" content="https://www.bdx.co.jp/images/common/ogp.jpg">
 <meta name="format-detection" content="telephone=no, email=no, address=no">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +29,572 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap"  as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap">
 <link rel="preload" href="/css/common/styles.css" as="style">
 <link rel="stylesheet" type="text/css" href="/css/common/styles.css">
+<link rel="stylesheet" type="text/css" href="/css/common/animations.css">
+
+<style>
+/* =====================================================
+   Voices page — inline styles
+   CSS custom properties + page-specific components
+   ===================================================== */
+
+:root {
+  --bdx-navy:          #003894;
+  --bdx-navy-dark:     #002266;
+  --bdx-navy-light:    #1a5cc8;
+  --bdx-gold:          #C8A864;
+  --bdx-gold-light:    #D4BC82;
+  --bdx-bg-white:      #FFFFFF;
+  --bdx-bg-light:      #F5F7FA;
+  --bdx-bg-navy:       #003894;
+  --bdx-bg-dark:       #0A1628;
+  --bdx-text-primary:  #1A1A2E;
+  --bdx-text-secondary:#4A5568;
+  --bdx-text-on-dark:  #FFFFFF;
+  --bdx-text-on-dark-sub: #B0C4DE;
+  --bdx-border:        #E2E8F0;
+}
+
+/* ---------- Hero ---------- */
+.vs-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bdx-bg-dark);
+  overflow: hidden;
+}
+.vs-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,34,102,0.92) 0%, rgba(0,56,148,0.75) 100%);
+}
+.vs-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 760px;
+  width: 100%;
+}
+.vs-hero__label {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--bdx-gold);
+  margin-bottom: 1rem;
+}
+.vs-hero__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.75rem, 4.5vw, 3rem);
+  font-weight: 500;
+  color: var(--bdx-text-on-dark);
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+}
+.vs-hero__subtitle {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  color: var(--bdx-text-on-dark-sub);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+/* highlight number inside hero subtitle */
+.vs-hero__highlight {
+  display: inline-flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.vs-hero__hl-item {
+  text-align: center;
+}
+.vs-hero__hl-num {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1;
+}
+.vs-hero__hl-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--bdx-text-on-dark-sub);
+  margin-top: 0.4rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Section wrapper ---------- */
+.vs-section {
+  padding: 5rem 1.5rem;
+}
+.vs-section--light { background: var(--bdx-bg-light); }
+.vs-section--white { background: var(--bdx-bg-white); }
+.vs-section--navy  { background: var(--bdx-bg-navy); }
+.vs-section__inner {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+.vs-section__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.vs-section__en {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bdx-navy);
+  margin-bottom: 0.4rem;
+}
+.vs-section--navy .vs-section__en { color: var(--bdx-gold); }
+.vs-section__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  line-height: 1.4;
+}
+.vs-section--navy .vs-section__title { color: var(--bdx-text-on-dark); }
+.vs-section__lead {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--bdx-text-secondary);
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0.75rem auto 0;
+}
+.vs-section--navy .vs-section__lead { color: var(--bdx-text-on-dark-sub); }
+
+/* ---------- Stats grid ---------- */
+.vs-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) {
+  .vs-stats { grid-template-columns: repeat(2, 1fr); }
+}
+.vs-stat {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.vs-section--navy .vs-stat {
+  background: rgba(255,255,255,0.1);
+  box-shadow: none;
+}
+.vs-stat__num {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--bdx-navy);
+  line-height: 1;
+}
+.vs-section--navy .vs-stat__num { color: #fff; }
+.vs-stat__unit {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--bdx-navy);
+}
+.vs-section--navy .vs-stat__unit { color: var(--bdx-gold); }
+.vs-stat__label {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.8rem;
+  color: var(--bdx-text-secondary);
+  line-height: 1.5;
+  margin-top: 0.6rem;
+}
+.vs-section--navy .vs-stat__label { color: var(--bdx-text-on-dark-sub); }
+
+/* ---------- Theme label ---------- */
+.vs-theme-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--bdx-navy);
+  background: rgba(0,56,148,0.08);
+  padding: 0.3rem 0.9rem;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Quote cards grid ---------- */
+.vs-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+@media (max-width: 900px) {
+  .vs-quotes { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .vs-quotes { grid-template-columns: 1fr; }
+}
+
+/* Quote card — enhanced bdx-quote */
+.vs-quote-card {
+  position: relative;
+  padding: 2rem 1.75rem 1.75rem 2.25rem;
+  background: #fff;
+  border-left: 4px solid var(--bdx-gold);
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.vs-quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,56,148,0.12);
+}
+.vs-section--light .vs-quote-card {
+  background: #fff;
+}
+.vs-quote-card::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.1em;
+  left: 0.45rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 4rem;
+  color: rgba(200,168,100,0.2);
+  line-height: 1;
+  pointer-events: none;
+}
+.vs-quote-card__text {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  color: var(--bdx-text-primary);
+  flex: 1;
+  margin: 0;
+}
+.vs-quote-card__footer {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bdx-border);
+}
+.vs-quote-card__author {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.8rem;
+  color: var(--bdx-text-secondary);
+}
+.vs-quote-card__theme {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--bdx-navy);
+  background: rgba(0,56,148,0.07);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- Intern timeline cards ---------- */
+.vs-intern-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 700px) {
+  .vs-intern-cards { grid-template-columns: 1fr; }
+}
+.vs-intern-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.vs-intern-card__head {
+  background: var(--bdx-navy);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+}
+.vs-intern-card__tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bdx-gold);
+  margin-bottom: 0.4rem;
+}
+.vs-intern-card__name {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.vs-intern-card__body {
+  padding: 1.5rem;
+}
+.vs-intern-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-left: 2rem;
+}
+.vs-intern-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.6rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--bdx-border);
+}
+.vs-intern-timeline li {
+  position: relative;
+  margin-bottom: 1.1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--bdx-text-primary);
+}
+.vs-intern-timeline li:last-child {
+  margin-bottom: 0;
+}
+.vs-intern-timeline li::before {
+  content: '';
+  position: absolute;
+  left: -1.55rem;
+  top: 0.45em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bdx-navy);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--bdx-navy);
+}
+.vs-intern-timeline li strong {
+  display: block;
+  font-weight: 700;
+  color: var(--bdx-navy);
+  margin-bottom: 0.2rem;
+}
+.vs-intern-card__quote {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--bdx-bg-light);
+  border-left: 3px solid var(--bdx-gold);
+  border-radius: 0 6px 6px 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--bdx-text-primary);
+  font-style: italic;
+}
+
+/* ---------- FAQ accordion ---------- */
+.vs-faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.vs-faq-item {
+  border-bottom: 1px solid var(--bdx-border);
+}
+.vs-faq-item:first-child {
+  border-top: 1px solid var(--bdx-border);
+}
+.vs-faq-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0.5rem;
+  cursor: pointer;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  user-select: none;
+}
+.vs-faq-summary::-webkit-details-marker { display: none; }
+.vs-faq-summary::before {
+  content: 'Q';
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--bdx-navy);
+  color: #fff;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vs-faq-icon {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+}
+.vs-faq-icon::before,
+.vs-faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--bdx-navy);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.vs-faq-icon::before {
+  width: 14px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.vs-faq-icon::after {
+  width: 2px;
+  height: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+details[open] .vs-faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+.vs-faq-answer {
+  padding: 0 0.5rem 1.5rem 3rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  color: var(--bdx-text-secondary);
+}
+
+/* ---------- CTA section ---------- */
+.vs-cta {
+  background: var(--bdx-bg-navy);
+  padding: 5rem 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+.vs-cta__inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.vs-cta__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.vs-cta__lead {
+  font-size: 0.9375rem;
+  color: var(--bdx-text-on-dark-sub);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.vs-cta__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Buttons ---------- */
+.vs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2.25rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.vs-btn--primary {
+  background: var(--bdx-gold);
+  color: #fff;
+  border-color: var(--bdx-gold);
+}
+.vs-btn--primary:hover {
+  background: var(--bdx-gold-light);
+  border-color: var(--bdx-gold-light);
+  transform: translateY(-2px);
+}
+.vs-btn--outline {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+.vs-btn--outline:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+.vs-btn--navy {
+  background: var(--bdx-navy);
+  color: #fff;
+  border-color: var(--bdx-navy);
+}
+.vs-btn--navy:hover {
+  background: var(--bdx-navy-light);
+  border-color: var(--bdx-navy-light);
+  transform: translateY(-2px);
+}
+
+/* ---------- Back link ---------- */
+.vs-back-link {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--bdx-bg-light);
+}
+.vs-back-link a {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.875rem;
+  color: var(--bdx-navy);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.vs-back-link a:hover {
+  border-bottom-color: var(--bdx-navy);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .vs-section { padding: 4rem 1.25rem; }
+}
+@media (max-width: 600px) {
+  .vs-section { padding: 3rem 1rem; }
+  .vs-hero { min-height: 70vh; }
+  .vs-hero__highlight { gap: 1.25rem; }
+}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .vs-quote-card,
+  .vs-btn,
+  .vs-faq-icon::before,
+  .vs-faq-icon::after {
+    transition: none;
+  }
+}
+</style>
 
 <script type="application/ld+json">
   [
@@ -41,7 +603,7 @@
       "@type": "WebSite",
       "name": "B&amp;DX株式会社",
       "url": "https://www.bdx.co.jp/",
-      "image":  "https://www.bdx.co.jp/images/common/ogp.jpg"
+      "image": "https://www.bdx.co.jp/images/common/ogp.jpg"
     },
     {
       "@context": "http://schema.org",
@@ -50,34 +612,22 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "item": {
-            "@id": "https://www.bdx.co.jp/",
-            "name": "B&amp;DX株式会社"
-          }
+          "item": { "@id": "https://www.bdx.co.jp/", "name": "B&amp;DX株式会社" }
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "item": {
-            "@id": "https://www.bdx.co.jp/recruitment/",
-            "name": "採用情報"
-          }
+          "item": { "@id": "https://www.bdx.co.jp/recruitment/", "name": "採用情報" }
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "item": {
-            "@id": "https://www.bdx.co.jp/recruitment-graduate/",
-            "name": "新卒採用"
-          }
+          "item": { "@id": "https://www.bdx.co.jp/recruitment-graduate/", "name": "新卒採用" }
         },
         {
           "@type": "ListItem",
           "position": 4,
-          "item": {
-            "@id": "https://www.bdx.co.jp/recruitment-graduate/voices/",
-            "name": "学生の声"
-          }
+          "item": { "@id": "https://www.bdx.co.jp/recruitment-graduate/voices/", "name": "学生の声" }
         }
       ]
     }
@@ -119,80 +669,413 @@
 <!-- /#breadcrumb --></nav>
 <main id="mainContents">
 
-<div class="m_headingBox">
-<h1 class="m_enHeading s_middle"><span class="labelEn">Student Voices</span>学生の声</h1>
-<div class="imageWrap">
-<picture class="mask" aria-hidden="true">
-<source media="(min-width:768px)" srcset="/images/recruitment-graduate/index_mainvisual_bg_mask.png 800w" sizes="400px">
-<source media="(max-width:767px)" srcset="/images/recruitment-graduate/index_mainvisual_bg_mask_@2x.png 420w" sizes="210px">
-<img src="/images/recruitment-graduate/index_mainvisual_bg_mask.png" alt="">
-</picture>
-<figure class="image" aria-hidden="true"><img src="/images/recruitment-graduate/index_mainvisual.jpg" alt="" width="650"></figure>
-</div>
-<!-- /.m_headingBox --></div>
 
-<section class="m_section">
-<h2 class="m_borderHeading">数字で見る面接体験</h2>
-<div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin: 2rem 0;">
-  <div style="flex: 1; min-width: 180px; max-width: 260px; text-align: center; padding: 2rem 1.5rem; border: 1px solid #e0e0e0; border-top: 3px solid #003894; border-radius: 4px;">
-    <div style="font-size: 3rem; font-weight: 700; color: #003894; line-height: 1.1;">81%</div>
-    <div style="margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.6; color: #444;">が「第一志望」または「第一志望群」と回答</div>
-    <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">志望度</div>
+<!-- ============================================================
+     1. HERO SECTION
+     ============================================================ -->
+<section class="vs-hero" aria-label="ヒーロー">
+  <div class="vs-hero__overlay" aria-hidden="true"></div>
+  <div class="vs-hero__content reveal">
+    <p class="vs-hero__label">Student Voices</p>
+    <h1 class="vs-hero__title">私たちの声が、<br>あなたの一歩を後押しする。</h1>
+    <p class="vs-hero__subtitle">
+      選考やインターンを経験した学生が、BDX との出会いを率直に語ります。<br>
+      統計の数字の背景にある、リアルな言葉をお届けします。
+    </p>
+    <div class="vs-hero__highlight reveal reveal--delay-2">
+      <div class="vs-hero__hl-item">
+        <span class="vs-hero__hl-num" data-count="89" data-suffix="%">89%</span>
+        <span class="vs-hero__hl-label">面接後に志望度が上昇</span>
+      </div>
+      <div class="vs-hero__hl-item">
+        <span class="vs-hero__hl-num" data-count="94" data-suffix="%">94%</span>
+        <span class="vs-hero__hl-label">成長環境への期待が高まった</span>
+      </div>
+      <div class="vs-hero__hl-item">
+        <span class="vs-hero__hl-num" data-count="97" data-suffix="%">97%</span>
+        <span class="vs-hero__hl-label">面接体験に満足・やや満足</span>
+      </div>
+    </div>
   </div>
-  <div style="flex: 1; min-width: 180px; max-width: 260px; text-align: center; padding: 2rem 1.5rem; border: 1px solid #e0e0e0; border-top: 3px solid #003894; border-radius: 4px;">
-    <div style="font-size: 3rem; font-weight: 700; color: #003894; line-height: 1.1;">96%</div>
-    <div style="margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.6; color: #444;">が「理解できた」以上と回答</div>
-    <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">理解度</div>
+</section>
+
+
+<!-- ============================================================
+     2. SURVEY STATS SECTION
+     ============================================================ -->
+<section class="vs-section vs-section--light" aria-labelledby="stats-heading">
+  <div class="vs-section__inner">
+    <div class="vs-section__header reveal">
+      <p class="vs-section__en">Numbers</p>
+      <h2 class="vs-section__title" id="stats-heading">アンケートで見る学生の本音</h2>
+      <p class="vs-section__lead">
+        選考・インターン参加者へのアンケート結果（2024〜2025年実施分）をそのままご紹介します。
+      </p>
+    </div>
+
+    <div class="bdx-stats vs-stats" aria-label="アンケート統計">
+
+      <div class="bdx-stat vs-stat reveal reveal--delay-1">
+        <div class="bdx-stat__number vs-stat__num">
+          <span data-count="89" data-suffix="">89</span><span class="bdx-stat__unit vs-stat__unit">%</span>
+        </div>
+        <p class="bdx-stat__label vs-stat__label">面接後に志望度が上昇した<br>と回答</p>
+      </div>
+
+      <div class="bdx-stat vs-stat reveal reveal--delay-2">
+        <div class="bdx-stat__number vs-stat__num">
+          <span data-count="94" data-suffix="">94</span><span class="bdx-stat__unit vs-stat__unit">%</span>
+        </div>
+        <p class="bdx-stat__label vs-stat__label">成長環境への期待が<br>高まったと回答</p>
+      </div>
+
+      <div class="bdx-stat vs-stat reveal reveal--delay-3">
+        <div class="bdx-stat__number vs-stat__num">
+          <span data-count="81" data-suffix="">81</span><span class="bdx-stat__unit vs-stat__unit">%</span>
+        </div>
+        <p class="bdx-stat__label vs-stat__label">「第一志望」または<br>「第一志望群」と回答</p>
+      </div>
+
+      <div class="bdx-stat vs-stat reveal reveal--delay-1">
+        <div class="bdx-stat__number vs-stat__num">
+          <span data-count="96" data-suffix="">96</span><span class="bdx-stat__unit vs-stat__unit">%</span>
+        </div>
+        <p class="bdx-stat__label vs-stat__label">BDXについて<br>「理解できた」以上と回答</p>
+      </div>
+
+    </div>
   </div>
-  <div style="flex: 1; min-width: 180px; max-width: 260px; text-align: center; padding: 2rem 1.5rem; border: 1px solid #e0e0e0; border-top: 3px solid #003894; border-radius: 4px;">
-    <div style="font-size: 1rem; font-weight: 700; color: #003894; line-height: 2;">やりがい 32%<br>成長スピード 21%<br>仕事内容 21%</div>
-    <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">就活軸（上位3項目）</div>
+</section>
+
+
+<!-- ============================================================
+     3. VOICE CARDS — 6 voices
+     ============================================================ -->
+<section class="vs-section vs-section--white" aria-labelledby="voices-heading">
+  <div class="vs-section__inner">
+    <div class="vs-section__header reveal">
+      <p class="vs-section__en">Student Voices</p>
+      <h2 class="vs-section__title" id="voices-heading">学生の声 — テーマ別</h2>
+      <p class="vs-section__lead">
+        成長・人・文化・キャリア・実践・選択。6つのテーマで、学生のリアルな言葉を集めました。
+      </p>
+    </div>
+
+    <div class="vs-quotes" role="list">
+
+      <!-- Voice 1: 成長テーマ -->
+      <div class="vs-quote-card bdx-quote reveal reveal--delay-1" role="listitem">
+        <span class="vs-quote-card__theme">成長</span>
+        <p class="vs-quote-card__text bdx-quote__text">
+          「戦略思考だけでなく、実行力も鍛えられた」と感じました。
+          ケース面接では「現場でどう動かすか」まで深掘りされ、
+          論点整理の先にある実行可能性を常に問われました。
+          その視点が、自分の思考の幅を大きく広げてくれました。
+        </p>
+        <footer class="vs-quote-card__footer">
+          <span class="vs-quote-card__author bdx-quote__author">東京大学 男性</span>
+        </footer>
+      </div>
+
+      <!-- Voice 2: 人テーマ -->
+      <div class="vs-quote-card bdx-quote reveal reveal--delay-2" role="listitem">
+        <span class="vs-quote-card__theme">人</span>
+        <p class="vs-quote-card__text bdx-quote__text">
+          「社員の距離が近く、何でも質問できる環境」というのは
+          本当でした。面接でも、私の話を最後まで真剣に聞いてくださり、
+          「この人と一緒に働きたい」と素直に思えた瞬間がありました。
+          プロフェッショナルなのに、温かい。
+        </p>
+        <footer class="vs-quote-card__footer">
+          <span class="vs-quote-card__author bdx-quote__author">慶應義塾大学 女性</span>
+        </footer>
+      </div>
+
+      <!-- Voice 3: 文化テーマ -->
+      <div class="vs-quote-card bdx-quote reveal reveal--delay-3" role="listitem">
+        <span class="vs-quote-card__theme">文化</span>
+        <p class="vs-quote-card__text bdx-quote__text">
+          「少数精鋭だからこそ、一人ひとりに責任がある」と実感しました。
+          インターンで関わったプロジェクトは、縮小版ではなく
+          実際のクライアント課題の一部。その重さと充実感は、
+          大企業では得られないものだと思います。
+        </p>
+        <footer class="vs-quote-card__footer">
+          <span class="vs-quote-card__author bdx-quote__author">早稲田大学 男性</span>
+        </footer>
+      </div>
+
+      <!-- Voice 4: キャリアテーマ -->
+      <div class="vs-quote-card bdx-quote reveal reveal--delay-1" role="listitem">
+        <span class="vs-quote-card__theme">キャリア</span>
+        <p class="vs-quote-card__text bdx-quote__text">
+          「入社前から社会人としての成長を実感」できました。
+          インターン中のフィードバックは丁寧で具体的。
+          自分のどこが弱くて、何を伸ばすべきか、
+          就活を超えて自分のキャリアを真剣に考えるきっかけになりました。
+        </p>
+        <footer class="vs-quote-card__footer">
+          <span class="vs-quote-card__author bdx-quote__author">一橋大学 女性</span>
+        </footer>
+      </div>
+
+      <!-- Voice 5: 実践テーマ -->
+      <div class="vs-quote-card bdx-quote reveal reveal--delay-2" role="listitem">
+        <span class="vs-quote-card__theme">実践</span>
+        <p class="vs-quote-card__text bdx-quote__text">
+          「実際のクライアント案件を経験できた」ことが最大の驚きでした。
+          構想段階から実行まで一気通貫で関われるBDXのスタイルを
+          インターンで体感したとき、「ここで働くとはどういうことか」が
+          初めてリアルにイメージできました。
+        </p>
+        <footer class="vs-quote-card__footer">
+          <span class="vs-quote-card__author bdx-quote__author">京都大学 男性</span>
+        </footer>
+      </div>
+
+      <!-- Voice 6: 環境テーマ -->
+      <div class="vs-quote-card bdx-quote reveal reveal--delay-3" role="listitem">
+        <span class="vs-quote-card__theme">選択の理由</span>
+        <p class="vs-quote-card__text bdx-quote__text">
+          「BDXを選んだ決め手は、面接での対話の質」でした。
+          他社の面接は答えを試されている感覚がありましたが、
+          BDXは一緒に考えてくれている感覚。
+          「この人たちともっと話したい」と思えた会社は、ここだけでした。
+        </p>
+        <footer class="vs-quote-card__footer">
+          <span class="vs-quote-card__author bdx-quote__author">大阪大学 女性</span>
+        </footer>
+      </div>
+
+    </div>
   </div>
+</section>
+
+
+<!-- ============================================================
+     4. INTERN EXPERIENCES — timeline cards
+     ============================================================ -->
+<section class="vs-section vs-section--light" aria-labelledby="intern-heading">
+  <div class="vs-section__inner">
+    <div class="vs-section__header reveal">
+      <p class="vs-section__en">Internship Experience</p>
+      <h2 class="vs-section__title" id="intern-heading">インターン体験記</h2>
+      <p class="vs-section__lead">
+        実際にジョブインターンシップに参加した学生の体験を、時系列で振り返ります。
+      </p>
+    </div>
+
+    <div class="vs-intern-cards">
+
+      <!-- Intern 1 -->
+      <div class="vs-intern-card reveal reveal--delay-1">
+        <div class="vs-intern-card__head">
+          <p class="vs-intern-card__tag">Intern Experience 01</p>
+          <p class="vs-intern-card__name">
+            「仮説と現場の往復が、<br>自分を変えた5日間」<br>
+            <small style="font-size:0.8rem; font-weight:400; color:rgba(255,255,255,0.7);">理系大学院 男性</small>
+          </p>
+        </div>
+        <div class="vs-intern-card__body">
+          <ol class="vs-intern-timeline">
+            <li>
+              <strong>Day 1 — ケース導入</strong>
+              実在する製造業のDX戦略課題が提示される。チームで仮説立案。
+            </li>
+            <li>
+              <strong>Day 2 — データ分析 &amp; 現場理解</strong>
+              提供データを読み解きながら、「なぜそうなっているか」を深掘り。
+            </li>
+            <li>
+              <strong>Day 3 — 戦略立案</strong>
+              絵に描いた餅にしないよう、実行可能性を常に問われながら策定。
+            </li>
+            <li>
+              <strong>Day 4 — プレゼン準備 &amp; フィードバック</strong>
+              社員からの中間フィードバック。論点の抜け漏れを徹底指摘された。
+            </li>
+            <li>
+              <strong>Day 5 — 最終発表</strong>
+              シニアコンサルタント陣への発表。鋭い質疑応答で思考が試される。
+            </li>
+          </ol>
+          <p class="vs-intern-card__quote">
+            「理系の自分でも、ビジネス課題に正面から向き合えると気づけた。
+            社員の方の『一緒に考えよう』という姿勢に何度も救われました。」
+          </p>
+        </div>
+      </div>
+
+      <!-- Intern 2 -->
+      <div class="vs-intern-card reveal reveal--delay-2">
+        <div class="vs-intern-card__head">
+          <p class="vs-intern-card__tag">Intern Experience 02</p>
+          <p class="vs-intern-card__name">
+            「スピードと深さの両立を<br>初めて体験した」<br>
+            <small style="font-size:0.8rem; font-weight:400; color:rgba(255,255,255,0.7);">文系学部 女性</small>
+          </p>
+        </div>
+        <div class="vs-intern-card__body">
+          <ol class="vs-intern-timeline">
+            <li>
+              <strong>Day 1 — チームビルディング &amp; 課題理解</strong>
+              初対面のメンバーと即座に議論。BDXの「対話の密度」を肌で感じた。
+            </li>
+            <li>
+              <strong>Day 2 — 業界・競合分析</strong>
+              表面的な比較ではなく「構造的な差異」を掘り下げる訓練。
+            </li>
+            <li>
+              <strong>Day 3 — ソリューション設計</strong>
+              「誰が・いつ・どう実行するか」まで落とし込む設計の難しさを実感。
+            </li>
+            <li>
+              <strong>Day 4 — ロールプレイ面接</strong>
+              想定外の質問にも論理的に答える力を鍛えられた。
+            </li>
+            <li>
+              <strong>Day 5 — 振り返り &amp; キャリア対話</strong>
+              社員一人ひとりとキャリアについて率直に話せる時間。他社にない体験。
+            </li>
+          </ol>
+          <p class="vs-intern-card__quote">
+            「5日間でこれほど成長できるとは思っていなかった。
+            BDXの社員が本気で向き合ってくれる環境が、自分を変えてくれました。」
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5. FAQ — accordion
+     ============================================================ -->
+<section class="vs-section vs-section--white" aria-labelledby="faq-heading">
+  <div class="vs-section__inner">
+    <div class="vs-section__header reveal">
+      <p class="vs-section__en">FAQ</p>
+      <h2 class="vs-section__title" id="faq-heading">よくある質問</h2>
+      <p class="vs-section__lead">
+        選考やインターンについて、学生からよく寄せられる疑問にお答えします。
+      </p>
+    </div>
+
+    <div class="vs-faq-list reveal">
+
+      <details class="vs-faq-item">
+        <summary class="vs-faq-summary">
+          ケース面接の対策は必要ですか？
+          <span class="vs-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="vs-faq-answer">
+          特定のフレームワークの暗記よりも、「自分なりに考え抜く力」を重視しています。
+          考えるプロセスや、結論を導いた根拠を丁寧に説明できれば十分です。
+          過去の面接では、フレームワークより「なぜそう思うか」を深掘りするディスカッションが多くを占めます。
+        </div>
+      </details>
+
+      <details class="vs-faq-item">
+        <summary class="vs-faq-summary">
+          文系・理系の区別はありますか？
+          <span class="vs-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="vs-faq-answer">
+          ありません。BDXのプロジェクトは経営戦略・デジタル変革の両面をカバーしており、
+          文系・理系どちらのバックグラウンドも活かせる環境です。
+          実際に在籍するコンサルタントも、文学部・理工学部・経済学部など多様な出身です。
+        </div>
+      </details>
+
+      <details class="vs-faq-item">
+        <summary class="vs-faq-summary">
+          インターンから内定につながるケースはありますか？
+          <span class="vs-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="vs-faq-answer">
+          インターンは選考の一環ではなく、BDXの仕事を体験してもらうプログラムです。
+          ただし、インターンで強い印象を残した学生が本選考で有利になることはあります。
+          「どんな人と働きたいか」を双方向で確認する場として、ぜひ積極的に参加してください。
+        </div>
+      </details>
+
+      <details class="vs-faq-item">
+        <summary class="vs-faq-summary">
+          面接は何回ありますか？服装は？
+          <span class="vs-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="vs-faq-answer">
+          書類選考通過後、1次・2次・3次の計3回の面接があります。
+          服装はスーツ・私服どちらも歓迎です。
+          面接官もリラックスした雰囲気を心がけており、
+          緊張感より「対話」を大切にした場になるよう努めています。
+        </div>
+      </details>
+
+      <details class="vs-faq-item">
+        <summary class="vs-faq-summary">
+          入社後のキャリアパスはどのようなものですか？
+          <span class="vs-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="vs-faq-answer">
+          アナリスト（1〜2年目）→ コンサルタント（3〜4年目）→ マネージャー（5年目〜）という
+          ステップを歩みます。少数精鋭のため、早い段階からクライアントとの直接折衝や
+          プロジェクトリードを経験できる環境です。成長スピードは個人差がありますが、
+          「任せてもらえる量」は大手ファームより圧倒的に多いと感じる社員が多いです。
+        </div>
+      </details>
+
+      <details class="vs-faq-item">
+        <summary class="vs-faq-summary">
+          エントリーシートで特に見られているポイントは？
+          <span class="vs-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="vs-faq-answer">
+          「なぜコンサルか」「なぜBDXか」という志望理由の解像度を重視しています。
+          また、過去の経験から「課題をどう設定し、どう解決したか」という思考プロセスを
+          具体的に書いていただくと、より伝わりやすくなります。
+          華やかな経歴より、自分なりの論理で書かれたESが評価されやすいです。
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     6. CTA SECTION
+     ============================================================ -->
+<section class="vs-cta" aria-labelledby="cta-heading">
+  <div class="vs-cta__inner reveal">
+    <h2 class="vs-cta__title" id="cta-heading">
+      もっと BDX を知る。<br>そして、自分の目で確かめる。
+    </h2>
+    <p class="vs-cta__lead">
+      ページで伝えられることには限界があります。<br>
+      インターンや面接の場で、ぜひ直接話しましょう。
+    </p>
+    <div class="vs-cta__buttons">
+      <a href="https://bdx-recruit.snar.jp/entry.aspx?entryid=1334628a-7c9a-4d8d-a3de-dce51041bb25"
+         target="_blank" rel="noopener"
+         class="vs-btn vs-btn--primary bdx-btn bdx-btn--primary">
+        新規エントリーはこちら
+      </a>
+      <a href="/recruitment-graduate/internship/" class="vs-btn vs-btn--outline bdx-btn bdx-btn--outline">
+        インターンについて
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Back link -->
+<div class="vs-back-link">
+  <a href="/recruitment-graduate/">&larr; 新卒採用トップに戻る</a>
 </div>
-<!-- /.m_section --></section>
 
-<section class="m_section">
-<h2 class="m_borderHeading">テーマ別の声</h2>
-
-<h3 style="margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.05rem; font-weight: 700; border-left: 3px solid #003894; padding-left: 0.75rem;">「戦略×実行」の一気通貫</h3>
-<blockquote style="border-left: 4px solid #00b9ef; margin: 0.75rem 0; padding: 1rem 1.25rem; background: #f5f7fb; font-style: italic; color: #333; border-radius: 0 4px 4px 0;">
-「面接を通じて『戦略を描くだけでなく、現場で実行までやり切る組織』であるという印象に変わりました」
-</blockquote>
-<blockquote style="border-left: 4px solid #00b9ef; margin: 0.75rem 0; padding: 1rem 1.25rem; background: #f5f7fb; font-style: italic; color: #333; border-radius: 0 4px 4px 0;">
-「構想だけでなく現場に落ちる形まで設計し、定着まで伴走して成果に繋げる実行力に強みがある会社」
-</blockquote>
-
-<h3 style="margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.05rem; font-weight: 700; border-left: 3px solid #003894; padding-left: 0.75rem;">プロフェッショナルだが温かい</h3>
-<blockquote style="border-left: 4px solid #00b9ef; margin: 0.75rem 0; padding: 1rem 1.25rem; background: #f5f7fb; font-style: italic; color: #333; border-radius: 0 4px 4px 0;">
-「面接官の皆様が非常に物腰柔らかく、私の話に真摯に耳を傾けてくださる温かさに触れました」
-</blockquote>
-<blockquote style="border-left: 4px solid #00b9ef; margin: 0.75rem 0; padding: 1rem 1.25rem; background: #f5f7fb; font-style: italic; color: #333; border-radius: 0 4px 4px 0;">
-「『何を伝えようとしているのか』を真摯に汲み取ろうとしてくださる姿勢に温かさを感じた」
-</blockquote>
-
-<h3 style="margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.05rem; font-weight: 700; border-left: 3px solid #003894; padding-left: 0.75rem;">成長環境・若手の裁量</h3>
-<blockquote style="border-left: 4px solid #00b9ef; margin: 0.75rem 0; padding: 1rem 1.25rem; background: #f5f7fb; font-style: italic; color: #333; border-radius: 0 4px 4px 0;">
-「想像以上に育成を大切にされている会社だと感じました」
-</blockquote>
-<blockquote style="border-left: 4px solid #00b9ef; margin: 0.75rem 0; padding: 1rem 1.25rem; background: #f5f7fb; font-style: italic; color: #333; border-radius: 0 4px 4px 0;">
-「ベンチャーファームでありながらクライアントの規模がかなり大きいことがわかり、大きな裁量と責任を持ちながら日本社会に貢献できる環境に魅力を感じました」
-</blockquote>
-
-<h3 style="margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.05rem; font-weight: 700; border-left: 3px solid #003894; padding-left: 0.75rem;">ケース面接で思考力重視を実感</h3>
-<blockquote style="border-left: 4px solid #00b9ef; margin: 0.75rem 0; padding: 1rem 1.25rem; background: #f5f7fb; font-style: italic; color: #333; border-radius: 0 4px 4px 0;">
-「論点整理の鋭さだけでなく、『実際にどう動かすか』『現場で実行可能か』という観点を重視されていると感じました」
-</blockquote>
-
-<!-- /.m_section --></section>
-
-<section class="m_section">
-<p class="m_text s_pcAlignCenter">B&amp;DXでは新卒採用エントリーを募集しています。</p>
-<div role="button" class="m_button s_large">
-<a href="https://bdx-recruit.snar.jp/entry.aspx?entryid=1334628a-7c9a-4d8d-a3de-dce51041bb25" target="_blank">新規エントリーはこちら</a>
-</div>
-<!-- /.m_section --></section>
-
-<p class="m_text" style="text-align: center; margin-top: 2rem;"><a href="/recruitment-graduate/">新卒採用トップに戻る</a></p>
 
 <!-- /#mainContents ==========--></main>
 <!-- /#container ==========--></div>
@@ -244,6 +1127,49 @@
 
 <!-- /#document ==========--></div>
 <script src="/scripts/common/bundle.js" defer></script>
+<script src="/scripts/common/scroll-reveal.js" defer></script>
+<script>
+/* =====================================================
+   Counter animation — runs after DOM ready
+   Uses data-count / data-suffix attributes
+   ===================================================== */
+(function () {
+  'use strict';
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1400;
+      var start = performance.now();
+
+      function update(now) {
+        var progress = Math.min((now - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 4);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (progress < 1) { requestAnimationFrame(update); }
+      }
+      requestAnimationFrame(update);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  function initCounters() {
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      counterObserver.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCounters);
+  } else {
+    initCounters();
+  }
+})();
+</script>
 
 
 </body>

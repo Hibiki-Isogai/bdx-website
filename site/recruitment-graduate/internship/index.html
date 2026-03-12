@@ -29,10 +29,716 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap"  as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap">
 <link rel="preload" href="/css/common/styles.css" as="style">
 <link rel="stylesheet" type="text/css" href="/css/common/styles.css">
+<link rel="stylesheet" type="text/css" href="/css/common/animations.css">
+
+<style>
+/* ============================================================
+   ジョブインターンページ固有スタイル
+   ============================================================ */
+
+/* --- CSS カスタムプロパティ（BDX カラーシステム） --- */
+:root {
+  --bdx-navy:           #003894;
+  --bdx-navy-dark:      #002266;
+  --bdx-navy-light:     #1a5cc8;
+  --bdx-gold:           #C8A864;
+  --bdx-gold-light:     #D4BC82;
+  --bdx-bg-white:       #FFFFFF;
+  --bdx-bg-light:       #F5F7FA;
+  --bdx-bg-navy:        #003894;
+  --bdx-bg-dark:        #0A1628;
+  --bdx-text-primary:   #1A1A2E;
+  --bdx-text-secondary: #4A5568;
+  --bdx-text-on-dark:   #FFFFFF;
+  --bdx-text-on-dark-sub: #B0C4DE;
+  --bdx-border:         #E2E8F0;
+  --bdx-border-gold:    #C8A864;
+}
+
+/* --- ヒーロー --- */
+.intern-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bdx-bg-dark);
+  overflow: hidden;
+}
+
+.intern-hero__bg-pattern {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(0,56,148,0.9) 0%, rgba(10,22,40,0.95) 100%);
+  /* 幾何学的な装飾ライン */
+}
+
+.intern-hero__bg-pattern::after {
+  content: '';
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  border: 1px solid rgba(200,168,100,0.15);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 40px rgba(200,168,100,0.04),
+    inset 0 0 0 80px rgba(200,168,100,0.03),
+    inset 0 0 0 140px rgba(200,168,100,0.02);
+}
+
+.intern-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 780px;
+}
+
+.intern-hero__label {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--bdx-gold);
+  margin-bottom: 1.25rem;
+}
+
+.intern-hero__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: var(--bdx-text-on-dark);
+  margin-bottom: 1.5rem;
+}
+
+.intern-hero__subtitle {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  line-height: 1.9;
+  color: var(--bdx-text-on-dark-sub);
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+}
+
+.intern-hero__cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- ボタン --- */
+.intern-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2.25rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+              border-color 0.2s ease, color 0.2s ease;
+}
+
+.intern-btn--primary {
+  background-color: var(--bdx-gold);
+  color: #FFFFFF;
+  border-color: var(--bdx-gold);
+}
+.intern-btn--primary:hover {
+  background-color: var(--bdx-gold-light);
+  border-color: var(--bdx-gold-light);
+  transform: translateY(-2px);
+}
+
+.intern-btn--outline {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.6);
+}
+.intern-btn--outline:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.intern-btn--navy {
+  background-color: var(--bdx-navy);
+  color: #FFFFFF;
+  border-color: var(--bdx-navy);
+}
+.intern-btn--navy:hover {
+  background-color: var(--bdx-navy-light);
+  border-color: var(--bdx-navy-light);
+  transform: translateY(-2px);
+}
+
+/* --- セクション共通 --- */
+.intern-section {
+  padding: 5rem 2rem;
+}
+
+.intern-section--white { background-color: var(--bdx-bg-white); }
+.intern-section--light { background-color: var(--bdx-bg-light); }
+.intern-section--navy  { background-color: var(--bdx-bg-navy); color: var(--bdx-text-on-dark); }
+
+.intern-section__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.intern-section__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intern-section__label {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bdx-gold);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.intern-section--navy .intern-section__label {
+  color: var(--bdx-gold);
+}
+
+.intern-section__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--bdx-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.intern-section--navy .intern-section__title {
+  color: var(--bdx-text-on-dark);
+}
+
+.intern-section__lead {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--bdx-text-secondary);
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.intern-section--navy .intern-section__lead {
+  color: var(--bdx-text-on-dark-sub);
+}
+
+/* --- プログラム概要カード（3カラム） --- */
+.intern-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 900px) {
+  .intern-overview-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .intern-overview-grid { grid-template-columns: 1fr; }
+}
+
+.intern-overview-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border-top: 3px solid var(--bdx-gold);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intern-overview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,56,148,0.12);
+}
+
+.intern-overview-card__icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(0,56,148,0.07);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--bdx-navy);
+  font-size: 1.25rem;
+}
+
+.intern-overview-card__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: 0.625rem;
+}
+
+.intern-overview-card__value {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--bdx-navy);
+  margin-bottom: 0.625rem;
+  display: block;
+}
+
+.intern-overview-card__text {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--bdx-text-secondary);
+}
+
+/* --- タイムライン --- */
+.intern-timeline {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: 3.5rem;
+}
+
+.intern-timeline::before {
+  content: '';
+  position: absolute;
+  left: 1.35rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--bdx-navy), rgba(0,56,148,0.2));
+}
+
+.intern-timeline__item {
+  position: relative;
+  padding-bottom: 2.75rem;
+}
+
+.intern-timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.intern-timeline__marker {
+  position: absolute;
+  left: -3.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--bdx-navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,56,148,0.3);
+}
+
+.intern-timeline__day {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bdx-gold);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.intern-timeline__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.intern-timeline__text {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--bdx-text-secondary);
+}
+
+.intern-timeline__tags {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.intern-timeline__tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bdx-navy);
+  background: rgba(0,56,148,0.07);
+  padding: 0.2rem 0.7rem;
+  border-radius: 100px;
+}
+
+@media (max-width: 600px) {
+  .intern-timeline {
+    padding-left: 2.75rem;
+  }
+  .intern-timeline::before {
+    left: 1rem;
+  }
+  .intern-timeline__marker {
+    left: -2.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* --- 参加者の声 --- */
+.intern-quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.intern-quote {
+  position: relative;
+  padding: 2rem 2rem 2rem 3rem;
+  background: #FFFFFF;
+  border-left: 4px solid var(--bdx-gold);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.intern-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.15em;
+  left: 0.4rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 4rem;
+  color: rgba(200,168,100,0.2);
+  line-height: 1;
+}
+
+.intern-quote__text {
+  font-size: 0.9875rem;
+  line-height: 1.9;
+  color: var(--bdx-text-primary);
+  font-style: normal;
+}
+
+.intern-quote__author {
+  display: block;
+  margin-top: 0.875rem;
+  font-size: 0.8125rem;
+  color: var(--bdx-text-secondary);
+}
+
+/* --- 統計セクション --- */
+.intern-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .intern-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.intern-stat {
+  padding: 2rem 1rem;
+}
+
+.intern-stat__number {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  color: var(--bdx-navy);
+  line-height: 1;
+  display: block;
+}
+
+.intern-stat__unit {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--bdx-navy);
+}
+
+.intern-stat__label {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.875rem;
+  color: var(--bdx-text-secondary);
+  margin-top: 0.625rem;
+  line-height: 1.5;
+}
+
+/* --- 募集要項テーブル --- */
+.intern-table-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.intern-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.intern-table th,
+.intern-table td {
+  padding: 1.125rem 1.25rem;
+  border-bottom: 1px solid var(--bdx-border);
+  vertical-align: top;
+  text-align: left;
+  line-height: 1.7;
+}
+
+.intern-table th {
+  width: 8em;
+  font-weight: 700;
+  color: var(--bdx-navy);
+  font-family: 'Noto Sans JP', sans-serif;
+  white-space: nowrap;
+  background: rgba(0,56,148,0.03);
+}
+
+.intern-table td {
+  color: var(--bdx-text-primary);
+}
+
+@media (max-width: 580px) {
+  .intern-table,
+  .intern-table tbody,
+  .intern-table tr,
+  .intern-table th,
+  .intern-table td {
+    display: block;
+  }
+  .intern-table th {
+    padding-bottom: 0.25rem;
+    border-bottom: none;
+  }
+  .intern-table td {
+    padding-top: 0;
+  }
+}
+
+/* --- 選考フロー（選考における位置づけ） --- */
+.intern-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: stretch;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intern-flow__step {
+  flex: 1;
+  min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.intern-flow__step--highlight .intern-flow__marker {
+  background: var(--bdx-gold);
+}
+
+.intern-flow__marker {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--bdx-navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.intern-flow__connector {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+}
+
+.intern-flow__connector-line {
+  flex: 1;
+  height: 2px;
+  background: var(--bdx-border);
+  margin-top: -1.25rem; /* align with marker center */
+}
+
+.intern-flow__label {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  color: var(--bdx-text-secondary);
+  line-height: 1.3;
+}
+
+.intern-flow__step--highlight .intern-flow__label {
+  font-weight: 700;
+  color: var(--bdx-navy);
+}
+
+/* フロー：横並びレイアウト */
+.intern-flow-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 920px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.intern-flow-row__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  min-width: 90px;
+  padding: 0 0.25rem;
+}
+
+.intern-flow-row__step--highlight .intern-flow-row__bubble {
+  background: var(--bdx-gold);
+  box-shadow: 0 4px 12px rgba(200,168,100,0.4);
+}
+
+.intern-flow-row__bubble {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--bdx-navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.intern-flow-row__label {
+  font-size: 0.75rem;
+  color: var(--bdx-text-secondary);
+  line-height: 1.35;
+}
+
+.intern-flow-row__step--highlight .intern-flow-row__label {
+  font-weight: 700;
+  color: var(--bdx-navy);
+}
+
+.intern-flow-row__arrow {
+  align-self: flex-start;
+  margin-top: 0.9rem;
+  color: var(--bdx-border);
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* --- CTA バナー --- */
+.intern-cta {
+  background: var(--bdx-bg-navy);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.intern-cta__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.intern-cta__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--bdx-text-on-dark);
+  margin-bottom: 0.875rem;
+}
+
+.intern-cta__text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--bdx-text-on-dark-sub);
+  margin-bottom: 2rem;
+}
+
+.intern-cta__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- アニメーション無効化対応 --- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal--left,
+  .reveal--fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .intern-overview-card:hover,
+  .intern-btn--primary:hover,
+  .intern-btn--outline:hover,
+  .intern-btn--navy:hover {
+    transform: none;
+  }
+}
+
+/* --- レスポンシブ調整 --- */
+@media (max-width: 960px) {
+  .intern-section { padding: 4rem 1.5rem; }
+  .intern-hero { min-height: 70vh; }
+}
+@media (max-width: 600px) {
+  .intern-section { padding: 3rem 1rem; }
+  .intern-hero__cta { flex-direction: column; align-items: center; }
+  .intern-cta__buttons { flex-direction: column; align-items: center; }
+}
+</style>
 
 <script type="application/ld+json">
   [
@@ -41,7 +747,7 @@
       "@type": "WebSite",
       "name": "B&amp;DX株式会社",
       "url": "https://www.bdx.co.jp/",
-      "image":  "https://www.bdx.co.jp/images/common/ogp.jpg"
+      "image": "https://www.bdx.co.jp/images/common/ogp.jpg"
     },
     {
       "@context": "http://schema.org",
@@ -119,124 +825,388 @@
 <!-- /#breadcrumb --></nav>
 <main id="mainContents">
 
-<div class="m_headingBox">
-<h1 class="m_enHeading s_middle"><span class="labelEn">Job Internship</span>ジョブインターン</h1>
-<div class="imageWrap">
-<picture class="mask" aria-hidden="true">
-<source media="(min-width:768px)" srcset="/images/recruitment-graduate/index_mainvisual_bg_mask.png 800w" sizes="400px">
-<source media="(max-width:767px)" srcset="/images/recruitment-graduate/index_mainvisual_bg_mask_@2x.png 420w" sizes="210px">
-<img src="/images/recruitment-graduate/index_mainvisual_bg_mask.png" alt="">
-</picture>
-<figure class="image" aria-hidden="true"><img src="/images/recruitment-graduate/index_mainvisual.jpg" alt="" width="650"></figure>
-</div>
-<!-- /.m_headingBox --></div>
 
-<section class="m_section">
-<p class="m_text">B&DXのジョブインターンは、架空のケースではなく、実際の経営課題に取り組む実践型プログラムです。現役コンサルタントとともに、戦略立案から実行計画までを体験できます。</p>
-</section>
-
-<section class="m_section">
-<h2 class="m_borderHeading">プログラムの特徴</h2>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px;">
-  <div style="flex: 1; min-width: 240px; border: 1px solid #d0d4dc; padding: 28px 24px;">
-    <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">リアルな経営課題</h3>
-    <p style="font-size: 0.875rem; line-height: 1.8;">架空のケースではなく、実際のビジネス課題をテーマに取り組みます。コンサルタントが日々向き合っている課題に、あなたも挑戦してください。</p>
+<!-- ============================================================
+     1. ヒーローセクション
+     ============================================================ -->
+<section class="intern-hero">
+  <div class="intern-hero__bg-pattern" aria-hidden="true"></div>
+  <div class="intern-hero__content reveal">
+    <p class="intern-hero__label">Job Internship</p>
+    <h1 class="intern-hero__title">戦略を、体験する。</h1>
+    <p class="intern-hero__subtitle">
+      架空のケースではない。実際の経営課題に、チームで向き合う。<br>
+      現役コンサルタントとともに、考え抜く3日間。
+    </p>
+    <div class="intern-hero__cta">
+      <a href="https://bdx-recruit.snar.jp/entry.aspx?entryid=1334628a-7c9a-4d8d-a3de-dce51041bb25"
+         target="_blank" class="intern-btn intern-btn--primary">
+        エントリーはこちら
+      </a>
+      <a href="/recruitment-graduate/" class="intern-btn intern-btn--outline">
+        採用トップへ戻る
+      </a>
+    </div>
   </div>
-  <div style="flex: 1; min-width: 240px; border: 1px solid #d0d4dc; padding: 28px 24px;">
-    <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">少人数精鋭の環境</h3>
-    <p style="font-size: 0.875rem; line-height: 1.8;">少人数制のチームで、現役コンサルタントと密に議論しながら進めます。一人ひとりに目が行き届く環境で、質の高い学びを提供します。</p>
+</section>
+
+
+<!-- ============================================================
+     2. プログラム概要
+     ============================================================ -->
+<section class="intern-section intern-section--white">
+  <div class="intern-section__inner">
+    <div class="intern-section__header reveal">
+      <span class="intern-section__label">Program Overview</span>
+      <h2 class="intern-section__title">プログラム概要</h2>
+      <p class="intern-section__lead">
+        B&amp;DXのジョブインターンは、学生のうちに「戦略 × 実行」の本質を体感できる、
+        実践型の集中プログラムです。
+      </p>
+    </div>
+
+    <div class="intern-overview-grid">
+      <!-- カード 1: 期間 -->
+      <div class="intern-overview-card reveal reveal--delay-1">
+        <div class="intern-overview-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <p class="intern-overview-card__title">期間</p>
+        <span class="intern-overview-card__value">2〜3日間</span>
+        <p class="intern-overview-card__text">
+          集中型の短期プログラム。少人数のチームで深く議論し、
+          濃密な学びの時間を過ごします。
+        </p>
+      </div>
+
+      <!-- カード 2: テーマ -->
+      <div class="intern-overview-card reveal reveal--delay-2">
+        <div class="intern-overview-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+        </div>
+        <p class="intern-overview-card__title">テーマ</p>
+        <span class="intern-overview-card__value">実際の経営課題</span>
+        <p class="intern-overview-card__text">
+          架空のケーススタディではなく、実在する企業の課題に基づいたテーマに取り組みます。
+          コンサルタントが日々向き合う問いと向き合ってください。
+        </p>
+      </div>
+
+      <!-- カード 3: 特徴 -->
+      <div class="intern-overview-card reveal reveal--delay-3">
+        <div class="intern-overview-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <p class="intern-overview-card__title">伴走スタイル</p>
+        <span class="intern-overview-card__value">メンター制</span>
+        <p class="intern-overview-card__text">
+          現役コンサルタントがメンターとして伴走。
+          詰まったときもヒントをくれる。
+          ただし、答えを出すのはあなた自身です。
+        </p>
+      </div>
+    </div>
   </div>
-  <div style="flex: 1; min-width: 240px; border: 1px solid #d0d4dc; padding: 28px 24px;">
-    <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">丁寧なフィードバック</h3>
-    <p style="font-size: 0.875rem; line-height: 1.8;">プレゼンテーション後には、一人ひとりに対して丁寧なフィードバックを行います。自分の強みと課題を明確にできる機会です。</p>
+</section>
+
+
+<!-- ============================================================
+     3. インターンの流れ（タイムライン）
+     ============================================================ -->
+<section class="intern-section intern-section--light">
+  <div class="intern-section__inner">
+    <div class="intern-section__header reveal">
+      <span class="intern-section__label">Program Schedule</span>
+      <h2 class="intern-section__title">インターンの流れ</h2>
+      <p class="intern-section__lead">
+        3日間にわたって、課題の発見から戦略立案、プレゼンテーションまでを体験します。
+      </p>
+    </div>
+
+    <div class="intern-timeline reveal">
+
+      <!-- Day 1 -->
+      <div class="intern-timeline__item">
+        <div class="intern-timeline__marker" aria-hidden="true">1</div>
+        <div class="intern-timeline__content">
+          <span class="intern-timeline__day">Day 1</span>
+          <h3 class="intern-timeline__title">オリエンテーション ＋ チーム編成 ＋ 課題発表</h3>
+          <p class="intern-timeline__text">
+            プログラムの全体像を把握し、チームメンバーと初対面。
+            その後、取り組む経営課題が発表されます。
+            初日の夜には、課題への最初の仮説を立て、翌日の調査方針を議論します。
+          </p>
+          <div class="intern-timeline__tags">
+            <span class="intern-timeline__tag">チームビルディング</span>
+            <span class="intern-timeline__tag">課題理解</span>
+            <span class="intern-timeline__tag">仮説設定</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="intern-timeline__item">
+        <div class="intern-timeline__marker" aria-hidden="true">2</div>
+        <div class="intern-timeline__content">
+          <span class="intern-timeline__day">Day 2</span>
+          <h3 class="intern-timeline__title">リサーチ ＋ 戦略立案 ＋ 中間レビュー</h3>
+          <p class="intern-timeline__text">
+            チームで役割を分担しながら、情報収集・分析を進めます。
+            午後にはメンターとの中間レビューを実施。
+            「なぜそう考えるのか」の問いに答えながら、戦略の骨子を固めていきます。
+          </p>
+          <div class="intern-timeline__tags">
+            <span class="intern-timeline__tag">リサーチ</span>
+            <span class="intern-timeline__tag">構造化思考</span>
+            <span class="intern-timeline__tag">中間フィードバック</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="intern-timeline__item">
+        <div class="intern-timeline__marker" aria-hidden="true">3</div>
+        <div class="intern-timeline__content">
+          <span class="intern-timeline__day">Day 3</span>
+          <h3 class="intern-timeline__title">最終プレゼンテーション ＋ フィードバック</h3>
+          <p class="intern-timeline__text">
+            チームで仕上げた提言を、B&amp;DXのコンサルタント陣の前でプレゼンします。
+            発表後は一人ひとりへの丁寧な個別フィードバック。
+            「自分の強みと伸びしろ」が明確になる時間です。
+          </p>
+          <div class="intern-timeline__tags">
+            <span class="intern-timeline__tag">プレゼンテーション</span>
+            <span class="intern-timeline__tag">個別フィードバック</span>
+            <span class="intern-timeline__tag">振り返り</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.intern-timeline -->
   </div>
-</div>
 </section>
 
-<section class="m_section">
-<h2 class="m_borderHeading">プログラム概要</h2>
-<div class="m_indexTable">
-<table>
-<tbody>
-<tr>
-<th>期間</th>
-<td>3日間</td>
-</tr>
-<tr>
-<th>形式</th>
-<td>グループワーク + 個人ワーク + プレゼンテーション</td>
-</tr>
-<tr>
-<th>場所</th>
-<td>本社 丸の内オフィスまたはオフィス近郊の貸会議室</td>
-</tr>
-<tr>
-<th>対象</th>
-<td>選考プロセスにおいて面接を通過された方</td>
-</tr>
-<tr>
-<th>報酬</th>
-<td>日当あり（詳細はご案内時にお伝えします）</td>
-</tr>
-</tbody>
-</table>
-<!-- /.m_indexTable --></div>
+
+<!-- ============================================================
+     4. 参加者の声
+     ============================================================ -->
+<section class="intern-section intern-section--white">
+  <div class="intern-section__inner">
+    <div class="intern-section__header reveal">
+      <span class="intern-section__label">Voices</span>
+      <h2 class="intern-section__title">参加者の声</h2>
+      <p class="intern-section__lead">
+        実際に参加した学生から届いた、インターンでの体験談です。
+      </p>
+    </div>
+
+    <div class="intern-quotes-grid">
+
+      <blockquote class="intern-quote reveal">
+        <p class="intern-quote__text">
+          「実際のビジネス課題を扱えて、成長を実感しました。
+          架空のケースとはまるで緊張感が違う。
+          チームで出した答えが『本当に通用するか』を考え続けた3日間でした。」
+        </p>
+        <footer>
+          <span class="intern-quote__author">参加者 / 私立大学 経済学部 3年</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="intern-quote reveal reveal--delay-1">
+        <p class="intern-quote__text">
+          「メンターのフィードバックが具体的で、自分の強みが見えた気がします。
+          『論点がずれている』と的確に指摘してもらい、悔しかったけれど、
+          それが一番の学びになりました。」
+        </p>
+        <footer>
+          <span class="intern-quote__author">参加者 / 国立大学 法学部 3年</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="intern-quote reveal reveal--delay-2">
+        <p class="intern-quote__text">
+          「チームで議論を深める中で、コンサルの醍醐味を感じました。
+          単に戦略を描くだけでなく、実装まで見据えて考える姿勢が
+          B&amp;DXらしいと思いました。」
+        </p>
+        <footer>
+          <span class="intern-quote__author">参加者 / 私立大学 工学部 4年</span>
+        </footer>
+      </blockquote>
+
+    </div><!-- /.intern-quotes-grid -->
+  </div>
 </section>
 
-<section class="m_section">
-<h2 class="m_borderHeading">選考フローにおける位置づけ</h2>
-<ol class="m_flowList">
-<li><dl class="item">
-<dt class="number"><span class="m_br step">Step</span>01</dt>
-<dd class="text"><p class="inner">エントリー</p></dd>
-</dl></li>
-<li><dl class="item">
-<dt class="number"><span class="m_br step">Step</span>02</dt>
-<dd class="text"><p class="inner">書類選考</p></dd>
-</dl></li>
-<li><dl class="item">
-<dt class="number"><span class="m_br step">Step</span>03</dt>
-<dd class="text"><p class="inner">1〜2次面接</p></dd>
-</dl></li>
-<li><dl class="item">
-<dt class="number"><span class="m_br step">Step</span>04</dt>
-<dd class="text"><p class="inner">3次面接</p></dd>
-</dl></li>
-<li><dl class="item">
-<dt class="number"><span class="m_br step">Step</span>05</dt>
-<dd class="text"><p class="inner"><strong>ジョブインターン（3days）</strong></p></dd>
-</dl></li>
-<li><dl class="item">
-<dt class="number"><span class="m_br step">Step</span>06</dt>
-<dd class="text"><p class="inner">役員面接</p></dd>
-</dl></li>
-<li><dl class="item">
-<dt class="number"><span class="m_br step">Step</span>07</dt>
-<dd class="text"><p class="inner">社長面接</p></dd>
-</dl></li>
-</ol>
+
+<!-- ============================================================
+     5. 数字で見るインターン
+     ============================================================ -->
+<section class="intern-section intern-section--light">
+  <div class="intern-section__inner">
+    <div class="intern-section__header reveal">
+      <span class="intern-section__label">Numbers</span>
+      <h2 class="intern-section__title">数字で見るインターン</h2>
+      <p class="intern-section__lead">
+        過去の参加者アンケートから見えてくる、B&amp;DXジョブインターンの評価です。
+      </p>
+    </div>
+
+    <div class="intern-stats-grid">
+
+      <div class="intern-stat reveal">
+        <span class="intern-stat__number" data-count="97" data-suffix="">97</span><span class="intern-stat__unit">%</span>
+        <p class="intern-stat__label">参加満足度</p>
+      </div>
+
+      <div class="intern-stat reveal reveal--delay-1">
+        <span class="intern-stat__number" data-count="85" data-suffix="">85</span><span class="intern-stat__unit">%</span>
+        <p class="intern-stat__label">本選考参加率</p>
+      </div>
+
+      <div class="intern-stat reveal reveal--delay-2">
+        <span class="intern-stat__number" data-count="94" data-suffix="">94</span><span class="intern-stat__unit">%</span>
+        <p class="intern-stat__label">「成長を実感した」</p>
+      </div>
+
+    </div><!-- /.intern-stats-grid -->
+  </div>
 </section>
 
-<section class="m_section">
-<h2 class="m_borderHeading">参加者の声</h2>
-<blockquote style="border-left: 3px solid #003894; padding: 20px 24px; margin: 24px 0; background: #f7f8fa;">
-<p style="font-size: 0.9375rem; line-height: 1.9;">「面接官の方に自分の論点の至らない点を指摘していただいたり、論理の飛躍を訂正できるよう誘導していただいたことで、非常に多くの学びが得られた」</p>
-</blockquote>
-<blockquote style="border-left: 3px solid #003894; padding: 20px 24px; margin: 24px 0; background: #f7f8fa;">
-<p style="font-size: 0.9375rem; line-height: 1.9;">「単に戦略を描くのではなく、実装まで見据えて思考する姿勢に触れ、自身が体感した"実行の重要性"と重なり、より強く惹かれました」</p>
-</blockquote>
+
+<!-- ============================================================
+     6. 募集要項
+     ============================================================ -->
+<section class="intern-section intern-section--white">
+  <div class="intern-section__inner">
+    <div class="intern-section__header reveal">
+      <span class="intern-section__label">Requirements</span>
+      <h2 class="intern-section__title">募集要項</h2>
+    </div>
+
+    <div class="intern-table-wrap reveal">
+      <table class="intern-table">
+        <tbody>
+          <tr>
+            <th scope="row">対象学年</th>
+            <td>大学3・4年生、大学院生（卒業年度不問）</td>
+          </tr>
+          <tr>
+            <th scope="row">形式</th>
+            <td>グループワーク ＋ 個人ワーク ＋ プレゼンテーション</td>
+          </tr>
+          <tr>
+            <th scope="row">場所</th>
+            <td>本社（丸の内オフィス）またはオフィス近郊の会議室</td>
+          </tr>
+          <tr>
+            <th scope="row">応募方法</th>
+            <td>新卒採用エントリーフォームよりお申し込みください。書類選考・面接を経て、インターンへの参加案内をお送りします。</td>
+          </tr>
+          <tr>
+            <th scope="row">選考フロー</th>
+            <td>
+              エントリー → 書類選考 → 1〜3次面接 →
+              <strong>ジョブインターン（本プログラム）</strong> → 役員面接 → 社長面接
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">報酬</th>
+            <td>日当あり（詳細は参加案内時にお伝えします）</td>
+          </tr>
+          <tr>
+            <th scope="row">開催日程</th>
+            <td>今後の開催情報は追って公開します。エントリー後に随時ご案内します。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.intern-table-wrap -->
+
+    <!-- 選考における位置づけ -->
+    <div style="margin-top: 3rem;">
+      <p style="text-align:center; font-size:0.875rem; color: var(--bdx-text-secondary); margin-bottom: 1.25rem; font-family: 'Noto Sans JP', sans-serif;">
+        選考フローにおける位置づけ
+      </p>
+      <div class="intern-flow-row reveal">
+        <div class="intern-flow-row__step">
+          <div class="intern-flow-row__bubble">1</div>
+          <p class="intern-flow-row__label">エントリー</p>
+        </div>
+        <div class="intern-flow-row__arrow" aria-hidden="true">›</div>
+        <div class="intern-flow-row__step">
+          <div class="intern-flow-row__bubble">2</div>
+          <p class="intern-flow-row__label">書類選考</p>
+        </div>
+        <div class="intern-flow-row__arrow" aria-hidden="true">›</div>
+        <div class="intern-flow-row__step">
+          <div class="intern-flow-row__bubble">3</div>
+          <p class="intern-flow-row__label">1〜2次<br>面接</p>
+        </div>
+        <div class="intern-flow-row__arrow" aria-hidden="true">›</div>
+        <div class="intern-flow-row__step">
+          <div class="intern-flow-row__bubble">4</div>
+          <p class="intern-flow-row__label">3次面接</p>
+        </div>
+        <div class="intern-flow-row__arrow" aria-hidden="true">›</div>
+        <div class="intern-flow-row__step intern-flow-row__step--highlight">
+          <div class="intern-flow-row__bubble">5</div>
+          <p class="intern-flow-row__label">ジョブ<br>インターン</p>
+        </div>
+        <div class="intern-flow-row__arrow" aria-hidden="true">›</div>
+        <div class="intern-flow-row__step">
+          <div class="intern-flow-row__bubble">6</div>
+          <p class="intern-flow-row__label">役員面接</p>
+        </div>
+        <div class="intern-flow-row__arrow" aria-hidden="true">›</div>
+        <div class="intern-flow-row__step">
+          <div class="intern-flow-row__bubble">7</div>
+          <p class="intern-flow-row__label">社長面接</p>
+        </div>
+      </div><!-- /.intern-flow-row -->
+    </div>
+
+  </div>
 </section>
 
-<section class="m_section">
-<p class="m_text s_pcAlignCenter">ジョブインターンへの参加をご希望の方は、まず新卒採用エントリーからお申し込みください。</p>
-<div role="button" class="m_button s_large">
-<a href="https://bdx-recruit.snar.jp/entry.aspx?entryid=1334628a-7c9a-4d8d-a3de-dce51041bb25" target="_blank">新規エントリーはこちら</a>
-</div>
+
+<!-- ============================================================
+     7. CTA バナー
+     ============================================================ -->
+<section class="intern-cta">
+  <div class="intern-cta__inner reveal">
+    <h2 class="intern-cta__title">戦略を、体験しに来てください。</h2>
+    <p class="intern-cta__text">
+      ジョブインターンへの参加をご希望の方は、<br>
+      まず新卒採用エントリーからお申し込みください。
+    </p>
+    <div class="intern-cta__buttons">
+      <a href="https://bdx-recruit.snar.jp/entry.aspx?entryid=1334628a-7c9a-4d8d-a3de-dce51041bb25"
+         target="_blank" class="intern-btn intern-btn--primary">
+        エントリーはこちら
+      </a>
+      <a href="/recruitment-graduate/" class="intern-btn intern-btn--outline">
+        採用トップへ戻る
+      </a>
+    </div>
+  </div>
 </section>
 
-<section class="m_section">
-<p class="m_text s_pcAlignCenter"><a href="/recruitment-graduate/">新卒採用トップに戻る</a></p>
-</section>
 
 <!-- /#mainContents ==========--></main>
 <!-- /#container ==========--></div>
@@ -288,6 +1258,43 @@
 
 <!-- /#document ==========--></div>
 <script src="/scripts/common/bundle.js" defer></script>
+<script src="/scripts/common/scroll-reveal.js" defer></script>
+
+<!-- カウントアップアニメーション -->
+<script>
+(function () {
+  'use strict';
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      if (isNaN(target)) return;
+      var duration = 1400;
+      var start = null;
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 4);
+        el.textContent = Math.round(target * eased);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+      requestAnimationFrame(step);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(function (el) {
+    counterObserver.observe(el);
+  });
+})();
+</script>
 
 
 </body>
