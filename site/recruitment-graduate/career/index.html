@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZ6D0P3FTH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZ6D0P3FTH');
+</script>
+<meta charset="utf-8">
+<meta name="description" content="B&amp;DXのキャリアパスをご紹介します。アナリストからパートナーまで、一人ひとりの成長を支える育成環境と仕組みをお伝えします。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="B&amp;DX株式会社｜キャリアパス｜新卒採用">
+<meta property="og:description" content="B&amp;DXのキャリアパスをご紹介します。アナリストからパートナーまで、一人ひとりの成長を支える育成環境と仕組みをお伝えします。">
+<meta property="og:image" content="https://www.bdx.co.jp/images/common/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="">
+<meta name="twitter:creator" content="">
+<meta name="twitter:title" content="B&amp;DX株式会社｜キャリアパス｜新卒採用">
+<meta name="twitter:description" content="B&amp;DXのキャリアパスをご紹介します。アナリストからパートナーまで、一人ひとりの成長を支える育成環境と仕組みをお伝えします。">
+<meta name="twitter:image:src" content="https://www.bdx.co.jp/images/common/ogp.jpg">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B&amp;DX株式会社｜キャリアパス｜新卒採用</title>
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="preload" href="/css/common/styles.css" as="style">
+<link rel="stylesheet" type="text/css" href="/css/common/styles.css">
+<link rel="stylesheet" type="text/css" href="/css/common/animations.css">
+
+<style>
+/* ================================================================
+   BDX キャリアパス - ページ固有スタイル
+   ================================================================ */
+:root {
+  --bdx-navy:          #003894;
+  --bdx-navy-dark:     #002266;
+  --bdx-navy-light:    #1a5cc8;
+  --bdx-gold:          #C8A864;
+  --bdx-gold-light:    #D4BC82;
+  --bdx-bg-light:      #F5F7FA;
+  --bdx-text-primary:  #1A1A2E;
+  --bdx-text-secondary:#4A5568;
+  --bdx-text-on-dark:  #FFFFFF;
+  --bdx-text-on-dark-sub: #B0C4DE;
+  --bdx-border:        #E2E8F0;
+}
+
+/* ----------------------------------------------------------------
+   ヒーローセクション
+   ---------------------------------------------------------------- */
+.rg-hero {
+  position: relative;
+  width: 100%;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bdx-navy-dark);
+  overflow: hidden;
+}
+.rg-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(0,22,66,.92) 0%, rgba(0,56,148,.80) 60%, rgba(26,92,200,.65) 100%);
+}
+/* 背景に幾何学的な装飾 */
+.rg-hero__deco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.rg-hero__deco::before {
+  content: '';
+  position: absolute;
+  right: -8%;
+  top: -20%;
+  width: 55vw;
+  height: 55vw;
+  max-width: 700px;
+  max-height: 700px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,168,100,.12);
+}
+.rg-hero__deco::after {
+  content: '';
+  position: absolute;
+  right: 2%;
+  top: -10%;
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.06);
+}
+.rg-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 820px;
+  width: 100%;
+}
+.rg-hero__label {
+  font-family: 'EB Garamond', serif;
+  font-size: .8125rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--bdx-gold);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: rgFadeUp .8s ease .2s forwards;
+}
+.rg-hero__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: .04em;
+  color: var(--bdx-text-on-dark);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: rgFadeUp .8s ease .4s forwards;
+}
+.rg-hero__subtitle {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(.875rem, 1.8vw, 1rem);
+  line-height: 1.9;
+  color: var(--bdx-text-on-dark-sub);
+  opacity: 0;
+  animation: rgFadeUp .8s ease .6s forwards;
+}
+@keyframes rgFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rgFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-hero__label, .rg-hero__title, .rg-hero__subtitle {
+    opacity: 1; animation: none; transform: none;
+  }
+}
+
+/* ----------------------------------------------------------------
+   セクション共通
+   ---------------------------------------------------------------- */
+.rg-section { padding: 5rem 1.5rem; }
+.rg-section--white { background-color: #fff; }
+.rg-section--light { background-color: var(--bdx-bg-light); }
+.rg-section--navy  { background-color: var(--bdx-navy); color: var(--bdx-text-on-dark); }
+.rg-section__inner { max-width: 1100px; margin: 0 auto; }
+.rg-section__header { text-align: center; margin-bottom: 3.5rem; }
+.rg-section__label {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-size: .8125rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--bdx-navy);
+  margin-bottom: .6rem;
+}
+.rg-section--navy .rg-section__label { color: var(--bdx-gold); }
+.rg-section__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .02em;
+  color: var(--bdx-text-primary);
+  margin-bottom: 1rem;
+}
+.rg-section--navy .rg-section__title { color: #fff; }
+.rg-section__lead {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--bdx-text-secondary);
+  max-width: 680px;
+  margin: 0 auto;
+}
+.rg-section--navy .rg-section__lead { color: var(--bdx-text-on-dark-sub); }
+.rg-section__title-accent { position: relative; display: inline-block; padding-bottom: .6rem; }
+.rg-section__title-accent::after {
+  content: '';
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translateX(-50%);
+  width: 48px; height: 3px;
+  background: var(--bdx-gold);
+  border-radius: 2px;
+}
+
+/* ----------------------------------------------------------------
+   ボタン
+   ---------------------------------------------------------------- */
+.rg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .875rem 2.25rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .9375rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color .25s, transform .2s, border-color .25s, color .25s, box-shadow .25s;
+}
+.rg-btn--primary { background-color: var(--bdx-gold); color: #fff; border-color: var(--bdx-gold); }
+.rg-btn--primary:hover { background-color: var(--bdx-gold-light); border-color: var(--bdx-gold-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(200,168,100,.35); }
+.rg-btn--outline { background-color: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.rg-btn--outline:hover { background-color: rgba(255,255,255,.12); border-color: #fff; transform: translateY(-2px); }
+.rg-btn--navy { background-color: var(--bdx-navy); color: #fff; border-color: var(--bdx-navy); }
+.rg-btn--navy:hover { background-color: var(--bdx-navy-light); border-color: var(--bdx-navy-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,56,148,.25); }
+.rg-text-center { text-align: center; }
+.rg-mt-3 { margin-top: 3rem; }
+
+/* ----------------------------------------------------------------
+   キャリアステップ（タイムライン形式・5段階）
+   ---------------------------------------------------------------- */
+.cp-timeline {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+}
+/* 縦の連続ライン */
+.cp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 2.5rem;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--bdx-gold) 0%, rgba(200,168,100,.2) 100%);
+}
+.cp-timeline__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.cp-timeline__item:last-child { margin-bottom: 0; }
+
+/* マーカー（番号バッジ） */
+.cp-timeline__marker {
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--bdx-navy);
+  border: 3px solid var(--bdx-gold);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(0,56,148,.25);
+  transition: transform .3s, box-shadow .3s;
+}
+.cp-timeline__item:hover .cp-timeline__marker {
+  transform: scale(1.06);
+  box-shadow: 0 8px 24px rgba(0,56,148,.35);
+}
+.cp-timeline__marker-num {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1;
+}
+.cp-timeline__marker-year {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .55rem;
+  color: var(--bdx-gold);
+  letter-spacing: .03em;
+  margin-top: .1rem;
+}
+/* 最後のステップ（パートナー）は星型に */
+.cp-timeline__marker--partner {
+  background: linear-gradient(135deg, var(--bdx-gold) 0%, var(--bdx-gold-light) 100%);
+  border-color: #fff;
+}
+.cp-timeline__marker--partner .cp-timeline__marker-num { color: #fff; }
+
+/* コンテンツ */
+.cp-timeline__content {
+  flex: 1;
+  padding-top: .75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--bdx-border);
+}
+.cp-timeline__item:last-child .cp-timeline__content { border-bottom: none; }
+.cp-timeline__rank {
+  font-family: 'EB Garamond', serif;
+  font-size: .8125rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--bdx-gold);
+  margin-bottom: .4rem;
+}
+.cp-timeline__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: .75rem;
+  line-height: 1.4;
+}
+.cp-timeline__text {
+  font-size: .9375rem;
+  line-height: 1.85;
+  color: var(--bdx-text-secondary);
+}
+.cp-timeline__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+.cp-timeline__tag {
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--bdx-navy);
+  background: rgba(0,56,148,.08);
+  padding: .25rem .75rem;
+  border-radius: 100px;
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+  .cp-timeline::before { left: 1.75rem; }
+  .cp-timeline__item { gap: 1.25rem; }
+  .cp-timeline__marker {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .cp-timeline__marker-num { font-size: 1.1rem; }
+  .cp-timeline__marker-year { display: none; }
+}
+
+/* ----------------------------------------------------------------
+   1年目の働き方（3枚カード）
+   ---------------------------------------------------------------- */
+.cp-day-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 960px) { .cp-day-grid { grid-template-columns: 1fr; gap: 1.25rem; } }
+
+.cp-day-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  transition: transform .3s, box-shadow .3s;
+}
+.cp-day-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,56,148,.12);
+}
+.cp-day-card__head {
+  padding: 1.5rem 1.75rem 1rem;
+  background: linear-gradient(135deg, rgba(0,56,148,.05) 0%, rgba(0,56,148,.02) 100%);
+  border-bottom: 2px solid var(--bdx-gold);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cp-day-card__time {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--bdx-navy);
+  line-height: 1;
+}
+.cp-day-card__time-label {
+  font-size: .75rem;
+  color: var(--bdx-text-secondary);
+  margin-top: .15rem;
+}
+.cp-day-card__icon-wrap {
+  margin-left: auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(0,56,148,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bdx-navy);
+  flex-shrink: 0;
+}
+.cp-day-card__icon-wrap svg { width: 18px; height: 18px; }
+.cp-day-card__body { padding: 1.25rem 1.75rem 1.75rem; }
+.cp-day-card__label {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--bdx-navy);
+  background: rgba(0,56,148,.08);
+  padding: .2rem .75rem;
+  border-radius: 100px;
+  margin-bottom: .75rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.cp-day-card__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: .6rem;
+  line-height: 1.4;
+}
+.cp-day-card__text {
+  font-size: .9rem;
+  line-height: 1.8;
+  color: var(--bdx-text-secondary);
+}
+
+/* ----------------------------------------------------------------
+   成長を支える仕組み（3カード）
+   ---------------------------------------------------------------- */
+.cp-support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 960px) { .cp-support-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+.cp-support-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  text-align: center;
+  transition: transform .3s, box-shadow .3s;
+  position: relative;
+  overflow: hidden;
+}
+.cp-support-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--bdx-navy) 0%, var(--bdx-gold) 100%);
+}
+.cp-support-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,56,148,.12);
+}
+.cp-support-card__icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,56,148,.08) 0%, rgba(0,56,148,.04) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--bdx-navy);
+}
+.cp-support-card__icon svg { width: 28px; height: 28px; }
+.cp-support-card__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: .75rem;
+  line-height: 1.4;
+}
+.cp-support-card__text {
+  font-size: .9rem;
+  line-height: 1.8;
+  color: var(--bdx-text-secondary);
+}
+
+/* ----------------------------------------------------------------
+   社員インタビュー引用（bdx-quote スタイル統一）
+   ---------------------------------------------------------------- */
+.cp-quotes {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.cp-quote {
+  position: relative;
+  padding: 2rem 2rem 2rem 3rem;
+  background: var(--bdx-bg-light);
+  border-left: 4px solid var(--bdx-gold);
+  border-radius: 0 10px 10px 0;
+}
+.cp-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -.1em;
+  left: .3rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 4.5rem;
+  color: rgba(200,168,100,.2);
+  line-height: 1;
+  pointer-events: none;
+}
+.cp-quote__text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--bdx-text-primary);
+}
+.cp-quote__footer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.cp-quote__badge {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--bdx-navy);
+  background: rgba(0,56,148,.08);
+  padding: .2rem .75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.cp-quote__author {
+  font-size: .8125rem;
+  color: var(--bdx-text-secondary);
+  line-height: 1.4;
+}
+
+/* ----------------------------------------------------------------
+   CTA バナー
+   ---------------------------------------------------------------- */
+.rg-cta-banner {
+  background: linear-gradient(135deg, #002266 0%, var(--bdx-navy) 60%, #1a5cc8 100%);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+.rg-cta-banner__inner { max-width: 720px; margin: 0 auto; }
+.rg-cta-banner__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.rg-cta-banner__text {
+  color: var(--bdx-text-on-dark-sub);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.rg-cta-banner__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ----------------------------------------------------------------
+   レスポンシブ
+   ---------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .rg-section { padding: 4rem 1.25rem; }
+  .rg-hero { min-height: 60vh; }
+}
+@media (max-width: 600px) {
+  .rg-section { padding: 3rem 1rem; }
+  .rg-hero { min-height: 56vh; }
+  .rg-cta-banner__buttons { flex-direction: column; align-items: center; }
+  .cp-quote { padding: 1.5rem 1.5rem 1.5rem 2.25rem; }
+  .cp-quote::before { font-size: 3.5rem; }
+}
+</style>
+
+<script type="application/ld+json">
+  [
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "B&amp;DX株式会社",
+      "url": "https://www.bdx.co.jp/",
+      "image": "https://www.bdx.co.jp/images/common/ogp.jpg"
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"item":{"@id":"https://www.bdx.co.jp/","name":"B&amp;DX株式会社"}},
+        {"@type":"ListItem","position":2,"item":{"@id":"https://www.bdx.co.jp/recruitment/","name":"採用情報"}},
+        {"@type":"ListItem","position":3,"item":{"@id":"https://www.bdx.co.jp/recruitment-graduate/","name":"新卒採用"}},
+        {"@type":"ListItem","position":4,"item":{"@id":"https://www.bdx.co.jp/recruitment-graduate/career/","name":"キャリアパス"}}
+      ]
+    }
+  ]
+</script>
+</head>
+<body>
+
+
+<div id="document">
+<header id="gheader">
+<div class="gheaderInner">
+<p class="logo"><a href="/">B&DX株式会社</a></p>
+<nav id="gnav">
+<div class="menu"><button><span>メニュー</span></button></div>
+<div class="gnavInner">
+<ul class="primary">
+<li><a href="/about/" aria-label="B＆DXについて">About</a></li>
+<li><a href="/news/" aria-label="最新情報">News</a></li>
+<li><a href="/service/" aria-label="サービス">Service</a></li>
+<li><a href="/corporate/" aria-label="企業情報">Company</a></li>
+<li><a href="/recruitment/" aria-label="採用情報">Recruit</a></li>
+<li class="contact"><a href="/contact/" aria-label="お問い合わせ">Contact</a></li>
+</ul>
+<!-- /.gnavInner --></div>
+<!-- /#gnav ==========--></nav>
+<!-- /.gheaderInner --></div>
+<!-- /#gheader ==========--></header>
+
+
+<div id="container" class="plain">
+<nav id="breadcrumb">
+<ol>
+<li><a href="/"><span>HOME</span></a></li>
+<li><a href="/recruitment/"><span>採用情報</span></a></li>
+<li><a href="/recruitment-graduate/"><span>新卒採用</span></a></li>
+<li><em>キャリアパス</em></li>
+</ol>
+<!-- /#breadcrumb --></nav>
+<main id="mainContents">
+
+
+<!-- ================================================================
+  1. ヒーローセクション
+  ================================================================ -->
+<section class="rg-hero" aria-label="キャリアパスメインビジュアル">
+  <div class="rg-hero__deco" aria-hidden="true"></div>
+  <div class="rg-hero__overlay" aria-hidden="true"></div>
+  <div class="rg-hero__content">
+    <p class="rg-hero__label">Career Path</p>
+    <h1 class="rg-hero__title">あなたのキャリアを、<br>戦略的に。</h1>
+    <p class="rg-hero__subtitle">
+      一人ひとりのキャリアを、共に描く。<br>
+      B&amp;DX では、入社初日から成長の道筋が見えています。
+    </p>
+  </div>
+</section>
+
+
+<!-- ================================================================
+  2. キャリアステップ（タイムライン形式・5段階）
+  ================================================================ -->
+<section class="rg-section rg-section--white" id="career-steps">
+  <div class="rg-section__inner">
+    <div class="rg-section__header reveal">
+      <span class="rg-section__label">Career Steps</span>
+      <h2 class="rg-section__title"><span class="rg-section__title-accent">キャリアステップ</span></h2>
+      <p class="rg-section__lead">
+        アナリストからパートナーまで、各ステージで身につけるスキルと役割が明確です。
+        少数精鋭だからこそ、早いスピードで成長できます。
+      </p>
+    </div>
+
+    <div class="cp-timeline">
+
+      <!-- ステップ 1: アナリスト -->
+      <div class="cp-timeline__item reveal">
+        <div class="cp-timeline__marker" aria-hidden="true">
+          <span class="cp-timeline__marker-num">1</span>
+          <span class="cp-timeline__marker-year">1-2年目</span>
+        </div>
+        <div class="cp-timeline__content">
+          <p class="cp-timeline__rank">Analyst</p>
+          <h3 class="cp-timeline__title">アナリスト（1〜2年目）</h3>
+          <p class="cp-timeline__text">
+            コンサルタントとしての基礎を徹底的に磨く時期です。リサーチ・データ分析・資料作成を担当しながら、先輩コンサルタントの思考プロセスを間近で学びます。「なぜ？」を繰り返す論理思考と、根拠に基づいた仮説検証の習慣がここで身につきます。
+          </p>
+          <div class="cp-timeline__tags">
+            <span class="cp-timeline__tag">リサーチ力</span>
+            <span class="cp-timeline__tag">論理思考</span>
+            <span class="cp-timeline__tag">資料作成</span>
+            <span class="cp-timeline__tag">仮説検証</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ 2: コンサルタント -->
+      <div class="cp-timeline__item reveal">
+        <div class="cp-timeline__marker" aria-hidden="true">
+          <span class="cp-timeline__marker-num">2</span>
+          <span class="cp-timeline__marker-year">3-4年目</span>
+        </div>
+        <div class="cp-timeline__content">
+          <p class="cp-timeline__rank">Consultant</p>
+          <h3 class="cp-timeline__title">コンサルタント（3〜4年目）</h3>
+          <p class="cp-timeline__text">
+            プロジェクトの中核メンバーとして、戦略立案と実行を主導します。クライアントとの直接折衝が増え、「提案する」から「動かす」への転換を経験します。問題解決を独立して推進できる力を磨き、チームメンバーへの指導も始まります。
+          </p>
+          <div class="cp-timeline__tags">
+            <span class="cp-timeline__tag">戦略立案</span>
+            <span class="cp-timeline__tag">クライアント折衝</span>
+            <span class="cp-timeline__tag">プロジェクト推進</span>
+            <span class="cp-timeline__tag">後輩指導</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ 3: シニアコンサルタント -->
+      <div class="cp-timeline__item reveal">
+        <div class="cp-timeline__marker" aria-hidden="true">
+          <span class="cp-timeline__marker-num">3</span>
+          <span class="cp-timeline__marker-year">5-6年目</span>
+        </div>
+        <div class="cp-timeline__content">
+          <p class="cp-timeline__rank">Senior Consultant</p>
+          <h3 class="cp-timeline__title">シニアコンサルタント（5〜6年目）</h3>
+          <p class="cp-timeline__text">
+            チームをリードしながら、クライアントとの長期的な信頼関係を構築します。複数のワークストリームを横断し、プロジェクト全体の品質を担保する役割を担います。後輩の成長を後押しするメンターとしての側面も強まる時期です。
+          </p>
+          <div class="cp-timeline__tags">
+            <span class="cp-timeline__tag">チームリード</span>
+            <span class="cp-timeline__tag">品質管理</span>
+            <span class="cp-timeline__tag">信頼関係構築</span>
+            <span class="cp-timeline__tag">メンタリング</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ 4: マネージャー -->
+      <div class="cp-timeline__item reveal">
+        <div class="cp-timeline__marker" aria-hidden="true">
+          <span class="cp-timeline__marker-num">4</span>
+          <span class="cp-timeline__marker-year">7年目〜</span>
+        </div>
+        <div class="cp-timeline__content">
+          <p class="cp-timeline__rank">Manager</p>
+          <h3 class="cp-timeline__title">マネージャー（7年目〜）</h3>
+          <p class="cp-timeline__text">
+            プロジェクト全体を統括し、クライアント経営層との対話を担います。デリバリーの責任を持ちながら、チームの成長と組織全体のケイパビリティ強化にも貢献します。複数プロジェクトを並走させるマルチタスク力が求められます。
+          </p>
+          <div class="cp-timeline__tags">
+            <span class="cp-timeline__tag">プロジェクト統括</span>
+            <span class="cp-timeline__tag">経営層対話</span>
+            <span class="cp-timeline__tag">組織マネジメント</span>
+            <span class="cp-timeline__tag">育成</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ 5: パートナー -->
+      <div class="cp-timeline__item reveal">
+        <div class="cp-timeline__marker cp-timeline__marker--partner" aria-hidden="true">
+          <span class="cp-timeline__marker-num">★</span>
+          <span class="cp-timeline__marker-year">Partner</span>
+        </div>
+        <div class="cp-timeline__content">
+          <p class="cp-timeline__rank">Partner</p>
+          <h3 class="cp-timeline__title">パートナー</h3>
+          <p class="cp-timeline__text">
+            BDX の事業の方向性を決め、新たな価値を創造します。クライアントの経営課題に最上流から向き合い、長年の信頼関係を礎に社会的インパクトのある変革を主導します。次世代のパートナーを育てることもこのステージの重要な使命です。
+          </p>
+          <div class="cp-timeline__tags">
+            <span class="cp-timeline__tag">事業戦略</span>
+            <span class="cp-timeline__tag">価値創造</span>
+            <span class="cp-timeline__tag">社会的インパクト</span>
+            <span class="cp-timeline__tag">次世代育成</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.cp-timeline -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  3. 1年目の働き方（3カード）
+  ================================================================ -->
+<section class="rg-section rg-section--light" id="first-year">
+  <div class="rg-section__inner">
+    <div class="rg-section__header reveal">
+      <span class="rg-section__label">A Day in the Life</span>
+      <h2 class="rg-section__title"><span class="rg-section__title-accent">1年目の働き方</span></h2>
+      <p class="rg-section__lead">
+        入社直後から、リアルな経営課題の現場に立ちます。1日の流れをご紹介します。
+      </p>
+    </div>
+
+    <div class="cp-day-grid">
+
+      <!-- 朝 -->
+      <div class="cp-day-card reveal reveal--delay-1">
+        <div class="cp-day-card__head">
+          <div>
+            <p class="cp-day-card__time">09:00</p>
+            <p class="cp-day-card__time-label">Morning</p>
+          </div>
+          <div class="cp-day-card__icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </div>
+        </div>
+        <div class="cp-day-card__body">
+          <span class="cp-day-card__label">Team Meeting</span>
+          <h3 class="cp-day-card__title">チームミーティング</h3>
+          <p class="cp-day-card__text">
+            プロジェクトチーム全員で朝会。前日の進捗共有、今日のタスクの確認、論点のすり合わせを行います。先輩の思考プロセスを間近で学べる貴重な時間です。
+          </p>
+        </div>
+      </div>
+
+      <!-- 昼 -->
+      <div class="cp-day-card reveal reveal--delay-2">
+        <div class="cp-day-card__head">
+          <div>
+            <p class="cp-day-card__time">13:00</p>
+            <p class="cp-day-card__time-label">Afternoon</p>
+          </div>
+          <div class="cp-day-card__icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+        </div>
+        <div class="cp-day-card__body">
+          <span class="cp-day-card__label">Client Work</span>
+          <h3 class="cp-day-card__title">クライアント先でのリサーチ</h3>
+          <p class="cp-day-card__text">
+            先輩コンサルタントと同行し、クライアント先でのヒアリング・現場調査・データ分析を担当。実際の経営課題に向き合う緊張感と手応えを体感します。
+          </p>
+        </div>
+      </div>
+
+      <!-- 夕 -->
+      <div class="cp-day-card reveal reveal--delay-3">
+        <div class="cp-day-card__head">
+          <div>
+            <p class="cp-day-card__time">18:00</p>
+            <p class="cp-day-card__time-label">Evening</p>
+          </div>
+          <div class="cp-day-card__icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+        </div>
+        <div class="cp-day-card__body">
+          <span class="cp-day-card__label">Review &amp; Feedback</span>
+          <h3 class="cp-day-card__title">社内レビュー・振り返り</h3>
+          <p class="cp-day-card__text">
+            チームに戻り、今日の成果をレビュー。メンターから具体的なフィードバックを受け、翌日の改善点を整理します。成長の実感が積み重なる時間です。
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /.cp-day-grid -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  4. 成長を支える仕組み（3カード）
+  ================================================================ -->
+<section class="rg-section rg-section--white" id="support">
+  <div class="rg-section__inner">
+    <div class="rg-section__header reveal">
+      <span class="rg-section__label">Support Systems</span>
+      <h2 class="rg-section__title"><span class="rg-section__title-accent">成長を支える仕組み</span></h2>
+      <p class="rg-section__lead">
+        「育てる」ではなく「共に成長する」文化。3つの仕組みがあなたの成長を加速させます。
+      </p>
+    </div>
+
+    <div class="cp-support-grid">
+
+      <!-- メンター制度 -->
+      <div class="cp-support-card reveal reveal--delay-1">
+        <div class="cp-support-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3 class="cp-support-card__title">メンター制度</h3>
+        <p class="cp-support-card__text">
+          入社時から専任メンターがつきます。プロジェクト外でも定期的な1on1を実施し、キャリアの悩みや成長課題を一緒に整理します。「孤独に悩む」環境ではありません。
+        </p>
+      </div>
+
+      <!-- 研修プログラム -->
+      <div class="cp-support-card reveal reveal--delay-2">
+        <div class="cp-support-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <h3 class="cp-support-card__title">研修プログラム</h3>
+        <p class="cp-support-card__text">
+          ビジネス基礎から始まり、戦略フレームワーク・業界知識・プロジェクトマネジメントまで体系的に学べます。OJT と組み合わせることで、学んだ知識をすぐに実践で試せます。
+        </p>
+      </div>
+
+      <!-- 評価・フィードバック -->
+      <div class="cp-support-card reveal reveal--delay-3">
+        <div class="cp-support-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3 class="cp-support-card__title">評価・フィードバック</h3>
+        <p class="cp-support-card__text">
+          プロジェクトごとの 360 度評価を実施します。上司だけでなくチームメンバー・クライアントからの多面的なフィードバックが、成長の盲点を照らし出します。
+        </p>
+      </div>
+
+    </div><!-- /.cp-support-grid -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  5. 社員インタビュー（引用）
+  ================================================================ -->
+<section class="rg-section rg-section--light" id="voices">
+  <div class="rg-section__inner">
+    <div class="rg-section__header reveal">
+      <span class="rg-section__label">Employee Voices</span>
+      <h2 class="rg-section__title"><span class="rg-section__title-accent">社員インタビュー（抜粋）</span></h2>
+      <p class="rg-section__lead">
+        実際に BDX でキャリアを積んだメンバーの声をお届けします。
+      </p>
+    </div>
+
+    <div class="cp-quotes">
+
+      <blockquote class="cp-quote reveal">
+        <p class="cp-quote__text">
+          アナリスト時代に徹底的に鍛えられた「論点を立てる力」と「根拠を積み上げる習慣」が、今のマネージャー業務の基盤になっています。当時は苦しかったですが、あの密度の濃いフィードバックがなければ今の自分はいなかったと断言できます。
+        </p>
+        <footer class="cp-quote__footer">
+          <span class="cp-quote__badge">マネージャー</span>
+          <span class="cp-quote__author">入社8年目 / 製造業・小売業担当</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="cp-quote reveal">
+        <p class="cp-quote__text">
+          少数精鋭だからこそ、入社2年目で単独のワークストリームを任せてもらえました。大手ファームなら5年はかかるような経験を、BDX では早いスピードで積めます。「責任が重い」というプレッシャーより、「自分が動かしている」という充実感の方がずっと大きかったです。
+        </p>
+        <footer class="cp-quote__footer">
+          <span class="cp-quote__badge">シニアコンサルタント</span>
+          <span class="cp-quote__author">入社5年目 / 金融・IT担当</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="cp-quote reveal">
+        <p class="cp-quote__text">
+          BDX での成長は、戦略を考えて終わりではありません。実行まで見届ける覚悟が自然と身につきました。クライアントの現場が変わっていく様子を最前線で目撃できる—それが、この仕事を続ける一番の理由です。
+        </p>
+        <footer class="cp-quote__footer">
+          <span class="cp-quote__badge">コンサルタント</span>
+          <span class="cp-quote__author">入社3年目 / 流通・物流担当</span>
+        </footer>
+      </blockquote>
+
+    </div><!-- /.cp-quotes -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  6. CTA バナー
+  ================================================================ -->
+<section class="rg-cta-banner" aria-label="エントリー案内">
+  <div class="rg-cta-banner__inner reveal">
+    <h2 class="rg-cta-banner__title">一人ひとりのキャリアを、共に描く。</h2>
+    <p class="rg-cta-banner__text">
+      B&amp;DX では、2028年度の新卒採用エントリーを受け付けています。<br>
+      あなたの可能性を、ここで試してみませんか。
+    </p>
+    <div class="rg-cta-banner__buttons">
+      <a href="https://bdx-recruit.snar.jp/entry.aspx?entryid=1334628a-7c9a-4d8d-a3de-dce51041bb25"
+         target="_blank" rel="noopener" class="rg-btn rg-btn--primary">エントリーはこちら</a>
+      <a href="/recruitment-graduate/" class="rg-btn rg-btn--outline">採用トップへ戻る</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- /#mainContents ==========--></main>
+<!-- /#container ==========--></div>
+
+<p class="m_pagetop"><a href="#document">TOP</a></p>
+
+<footer id="gfooter">
+<div class="gfooterInner">
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="165" height="57.49" viewbox="0 0 165 57.49" role="img"><defs><radialgradient id="a" cx="0.263" cy="1.386" r="4.105" gradientTransform="translate(0.355) scale(0.289 1)" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fff"/><stop offset="0.374" stop-color="#00b9ef"/><stop offset="1" stop-color="#003894"/></radialgradient><radialgradient id="b" cx="-0.116" cy="0.411" r="2.967" gradientTransform="translate(0.204) scale(0.593 1)" xlink:href="#a"/><radialgradient id="c" cx="0.678" cy="0.059" r="0.722" gradientTransform="translate(-0.19) scale(1.38 1)" xlink:href="#a"/><radialgradient id="d" cx="0.184" cy="-0.37" r="1.022" gradientTransform="translate(0.108) scale(0.785 1)" xlink:href="#a"/><radialgradient id="e" cx="-1.127" cy="-0.045" r="1.216" gradientTransform="translate(-0.378) scale(1.756 1)" xlink:href="#a"/><radialgradient id="f" cx="0.499" cy="0.492" r="0.39" gradientTransform="translate(-0.574) scale(2.148 1)" xlink:href="#a"/><radialgradient id="g" cx="0.5" cy="0.5" r="0.638" gradientTransform="translate(0.167) scale(0.666 1)" gradientUnits="objectBoundingBox"><stop offset="0.217" stop-color="#f7f7f8"/><stop offset="1" stop-color="#98a1b4"/></radialgradient></defs><g transform="translate(-226.223 -230.101)"><g transform="translate(226.223 230.101)"><path d="M292.091,234.88a28.728,28.728,0,0,0-28.868-1.668,47.826,47.826,0,0,1,9.721,5.238C280.129,236.139,286.932,234.879,292.091,234.88Z" transform="translate(-247.476 -230.101)" fill="url(#a)"/><path d="M305.8,249.34c-.549-3.63-8.926-4.2-19.46-1.6a88.085,88.085,0,0,1,11.965,9.949C303.2,254.757,306.15,251.671,305.8,249.34Z" transform="translate(-260.753 -239.309)" fill="url(#b)"/><path d="M235.961,271.455a56.8,56.8,0,0,1-6.677-13.694,28.721,28.721,0,0,0,6.083,33.917l-5.106,6.479c1.225-.325,2.474-.693,3.732-1.085l4.772-6.055.043-.013c12.351-3.812,21.864-10.211,21.247-14.294-.576-3.815-9.795-4.255-21.079-1.186,1.651-.56,3.286-1.066,4.892-1.516l6.11-7.752.043-.013a69.127,69.127,0,0,0,10.607-4.224c-7.763-6.474-15.742-10.841-21.6-11.305C229.922,249.992,228.94,258.919,235.961,271.455Z" transform="translate(-226.223 -241.917)" fill="url(#c)"/><path d="M303.9,310.717l0,0a60.566,60.566,0,0,0-5.774-10.092,92.751,92.751,0,0,0-12.283-14.217q-2.509,1.375-5.355,2.7a100.1,100.1,0,0,1-10.23,4.074c8.153-1.692,14.915-1.659,17.929.495,5.349,3.822-3.117,12.863-18.912,20.192-2.22,1.03-4.465,1.965-6.7,2.81a28.737,28.737,0,0,0,37.659-10.273,40.006,40.006,0,0,1,5.071,8.064,35.392,35.392,0,0,0-1.4-3.747Z" transform="translate(-247.104 -262.446)" fill="url(#d)"/><path d="M336.871,288.448a28.68,28.68,0,0,0-2.038-28.2c-1.855,2.911-5.774,6.286-11.248,9.585a98.625,98.625,0,0,1,9.1,11.57A75.124,75.124,0,0,1,336.871,288.448Z" transform="translate(-282.148 -247.419)" fill="url(#e)"/><path d="M361.047,340.467l-.009-.014.006.018Z" transform="translate(-303.661 -293.488)" fill="url(#f)"/></g><g transform="translate(230.796 235.562)"><path d="M244.906,243.019c-6.967-.824-9.358,4.233-7.132,12.425-.872-5.968,1.614-9.538,7.5-9.072,9.593.76,24.854,11.974,35.559,25.769C270.671,257.066,254.907,244.2,244.906,243.019Z" transform="translate(-236.968 -242.931)" fill="url(#g)"/></g><path d="M410.5,276.435a6.589,6.589,0,0,0-3.128-1.286,6.828,6.828,0,0,0,3.036-1.286,5.967,5.967,0,0,0,1.821-2.305,7.064,7.064,0,0,0,.6-2.891,9.062,9.062,0,0,0-.967-4.322,6.569,6.569,0,0,0-2.923-2.8,10.709,10.709,0,0,0-4.857-.988H392.287V290.48h12.142a10.187,10.187,0,0,0,4.651-1.008,7.2,7.2,0,0,0,3.066-2.86,8.408,8.408,0,0,0,1.07-4.281v-.062a7.8,7.8,0,0,0-.7-3.293A6.712,6.712,0,0,0,410.5,276.435Zm-7.182-11.988a6.006,6.006,0,0,1,3.952,1.112,4.967,4.967,0,0,1,.134,6.585,5.016,5.016,0,0,1-3.509,1.091h-7.429v-8.788Zm5.659,17.514a4.2,4.2,0,0,1-1.461,3.416,7.233,7.233,0,0,1-4.651,1.214h-6.4v-9.57h7.429a6.29,6.29,0,0,1,2.9.587,3.632,3.632,0,0,1,1.656,1.677,5.977,5.977,0,0,1,.525,2.614Z" transform="translate(-95.388 -17.494)"/></g></svg></div>
+<div class="sitemap">
+<ul class="column">
+<li><a href="/about/">B＆DXについて</a></li>
+<li><a href="/news/">最新情報</a></li>
+<li><a href="/service/">サービス</a></li>
+</ul>
+<ul class="column">
+<li><a href="/corporate/">企業情報</a>
+<ul>
+<li><a href="/corporate/#anc_outline">会社概要</a></li>
+<li><a href="/corporate/#anc_consultant">コンサルタント紹介</a></li>
+</ul>
+</li>
+</ul>
+<ul class="column">
+<li><a href="/recruitment/">採用情報</a>
+<ul>
+<li><a href="/recruitment-graduate/">新卒採用</a></li>
+<li><a href="/recruitment-experienced/">経験者採用</a></li>
+</ul>
+</li>
+<li><a href="/contact/">お問い合わせ</a></li>
+</ul>
+<!-- /.sitemap --></div>
+<ul class="unav">
+<li><a href="/privacy/">個&#xFF24;情報保護の取り組み</a></li>
+<li><a href="/online/">オンライン・プライバシーポリシー</a></li>
+<li><a href="/security/">情報セキュリティ基本&#xFF24;針</a></li>
+<!-- /.unav --></ul>
+<div class="info">
+<ul class="social">
+<li class="facebook"><a href="https://www.facebook.com/bdxjp/" target="_blank"><span>Facebookのリンクを開く</span></a></li>
+<li class="youtube"><a href="https://www.youtube.com/channel/UCLN0YwCQZn7YZxi40EKXNKQ" target="_blank"><span>Youtubeのリンクを開く</span></a></li>
+<li class="twitter"><a href="https://twitter.com/bdx_jp" target="_blank"><span>Twitterのリンクを開く</span></a></li>
+<!-- /.social --></ul>
+<p class="copyright"><small>&copy; <script>myDate = new Date();myYear = myDate.getFullYear();document.write(myYear);document.write("&nbsp;");</script> B&DX Ltd. All Rights Reserved.</small></p>
+<!-- /.info --></div>
+<!-- /.gfooterInner --></div>
+<!-- /#gfooter ==========--></footer>
+
+<!-- /#document ==========--></div>
+<script src="/scripts/common/bundle.js" defer></script>
+<script src="/scripts/common/scroll-reveal.js"></script>
+</body>
+</html>

@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZ6D0P3FTH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZ6D0P3FTH');
+</script>
+<meta charset="utf-8">
+<meta name="description" content="B&amp;DXの新卒採用 選考フロー・面接対策についてご紹介します。ES・ケース面接・パーソナリティ面接の各ステップと対策アドバイスを掲載しています。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="B&amp;DX株式会社｜選考フロー・面接対策">
+<meta property="og:description" content="B&amp;DXの新卒採用 選考フロー・面接対策についてご紹介します。ES・ケース面接・パーソナリティ面接の各ステップと対策アドバイスを掲載しています。">
+<meta property="og:image" content="https://www.bdx.co.jp/images/common/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="">
+<meta name="twitter:creator" content="">
+<meta name="twitter:title" content="B&amp;DX株式会社｜選考フロー・面接対策">
+<meta name="twitter:description" content="B&amp;DXの新卒採用 選考フロー・面接対策についてご紹介します。ES・ケース面接・パーソナリティ面接の各ステップと対策アドバイスを掲載しています。">
+<meta name="twitter:image:src" content="https://www.bdx.co.jp/images/common/ogp.jpg">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B&amp;DX株式会社｜選考フロー・面接対策</title>
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="preload" href="/css/common/styles.css" as="style">
+<link rel="stylesheet" type="text/css" href="/css/common/styles.css">
+<link rel="stylesheet" type="text/css" href="/css/common/animations.css">
+
+<style>
+/* ================================================================
+   BDX 新卒採用 選考フロー・面接対策 - ページ固有スタイル
+   ================================================================ */
+:root {
+  --bdx-navy:          #003894;
+  --bdx-navy-light:    #1a5cc8;
+  --bdx-gold:          #C8A864;
+  --bdx-gold-light:    #D4BC82;
+  --bdx-bg-light:      #F5F7FA;
+  --bdx-text-primary:  #1A1A2E;
+  --bdx-text-secondary:#4A5568;
+  --bdx-text-on-dark:  #FFFFFF;
+  --bdx-text-on-dark-sub: #B0C4DE;
+  --bdx-border:        #E2E8F0;
+}
+
+/* ----------------------------------------------------------------
+   ヒーローセクション
+   ---------------------------------------------------------------- */
+.sel-hero {
+  position: relative;
+  width: 100%;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bdx-navy);
+  overflow: hidden;
+}
+.sel-hero__pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(225deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: .6;
+}
+.sel-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(0,22,68,.7) 0%, rgba(0,56,148,.4) 100%);
+}
+.sel-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  max-width: 820px;
+  width: 100%;
+}
+.sel-hero__label {
+  font-family: 'EB Garamond', serif;
+  font-size: .8125rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--bdx-gold);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: selFadeUp .8s ease .2s forwards;
+}
+.sel-hero__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: .04em;
+  color: var(--bdx-text-on-dark);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: selFadeUp .8s ease .4s forwards;
+}
+.sel-hero__subtitle {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(.875rem, 1.8vw, 1rem);
+  line-height: 1.9;
+  color: var(--bdx-text-on-dark-sub);
+  margin-bottom: 0;
+  opacity: 0;
+  animation: selFadeUp .8s ease .6s forwards;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@keyframes selFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sel-hero__label,
+  .sel-hero__title,
+  .sel-hero__subtitle { opacity: 1; animation: none; }
+}
+
+/* ----------------------------------------------------------------
+   ボタン
+   ---------------------------------------------------------------- */
+.rg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .875rem 2.25rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .9375rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color .25s, transform .2s, border-color .25s, color .25s, box-shadow .25s;
+}
+.rg-btn--primary { background-color: var(--bdx-gold); color: #fff; border-color: var(--bdx-gold); }
+.rg-btn--primary:hover { background-color: var(--bdx-gold-light); border-color: var(--bdx-gold-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(200,168,100,.35); }
+.rg-btn--outline { background-color: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.rg-btn--outline:hover { background-color: rgba(255,255,255,.12); border-color: #fff; transform: translateY(-2px); }
+.rg-btn--navy { background-color: var(--bdx-navy); color: #fff; border-color: var(--bdx-navy); }
+.rg-btn--navy:hover { background-color: var(--bdx-navy-light); border-color: var(--bdx-navy-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,56,148,.25); }
+.rg-btn--ghost { background-color: transparent; color: var(--bdx-navy); border-color: var(--bdx-navy); }
+.rg-btn--ghost:hover { background-color: rgba(0,56,148,.06); transform: translateY(-2px); }
+
+/* ----------------------------------------------------------------
+   セクション共通
+   ---------------------------------------------------------------- */
+.sel-section { padding: 5rem 1.5rem; }
+.sel-section--white { background-color: #fff; }
+.sel-section--light { background-color: var(--bdx-bg-light); }
+.sel-section--navy  { background-color: var(--bdx-navy); color: var(--bdx-text-on-dark); }
+.sel-section__inner { max-width: 1100px; margin: 0 auto; }
+.sel-section__inner--narrow { max-width: 860px; margin: 0 auto; }
+.sel-section__header { text-align: center; margin-bottom: 3.5rem; }
+.sel-section__label {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-size: .8125rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--bdx-navy);
+  margin-bottom: .6rem;
+}
+.sel-section--navy .sel-section__label { color: var(--bdx-gold); }
+.sel-section__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .02em;
+  color: var(--bdx-text-primary);
+  margin-bottom: 1rem;
+}
+.sel-section--navy .sel-section__title { color: #fff; }
+.sel-section__lead { font-size: 1rem; line-height: 1.9; color: var(--bdx-text-secondary); max-width: 680px; margin: 0 auto; }
+.sel-section__title-accent { position: relative; display: inline-block; padding-bottom: .6rem; }
+.sel-section__title-accent::after {
+  content: '';
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translateX(-50%);
+  width: 48px; height: 3px;
+  background: var(--bdx-gold);
+  border-radius: 2px;
+}
+@media (max-width: 960px) { .sel-section { padding: 4rem 1.25rem; } }
+@media (max-width: 600px) { .sel-section { padding: 3rem 1rem; } }
+
+/* ----------------------------------------------------------------
+   選考フロー タイムライン
+   ---------------------------------------------------------------- */
+.sel-timeline {
+  position: relative;
+  padding-left: 0;
+}
+.sel-timeline__line {
+  position: absolute;
+  left: 2.5rem;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--bdx-navy) 0%, rgba(0,56,148,.2) 100%);
+}
+.sel-timeline__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.sel-timeline__item:last-child { margin-bottom: 0; }
+.sel-timeline__marker {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--bdx-navy);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0,56,148,.25);
+}
+.sel-timeline__marker--highlight {
+  background: linear-gradient(135deg, var(--bdx-gold) 0%, var(--bdx-gold-light) 100%);
+  box-shadow: 0 4px 14px rgba(200,168,100,.35);
+}
+.sel-timeline__step {
+  font-family: 'EB Garamond', serif;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.7);
+  line-height: 1;
+  margin-bottom: .15rem;
+}
+.sel-timeline__num {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+}
+.sel-timeline__content {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  border-left: 3px solid var(--bdx-navy);
+  margin-top: .75rem;
+}
+.sel-timeline__content--gold { border-left-color: var(--bdx-gold); }
+.sel-timeline__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: .5rem;
+}
+.sel-timeline__tag {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--bdx-navy);
+  background: rgba(0,56,148,.08);
+  padding: .2rem .65rem;
+  border-radius: 100px;
+  margin-bottom: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.sel-timeline__tag--gold {
+  color: #8a6a1a;
+  background: rgba(200,168,100,.15);
+}
+.sel-timeline__text {
+  font-size: .9375rem;
+  line-height: 1.8;
+  color: var(--bdx-text-secondary);
+}
+.sel-timeline__detail {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bdx-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.sel-timeline__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .8125rem;
+  color: var(--bdx-text-secondary);
+  background: var(--bdx-bg-light);
+  padding: .3rem .75rem;
+  border-radius: 100px;
+}
+.sel-timeline__chip svg { flex-shrink: 0; }
+@media (max-width: 600px) {
+  .sel-timeline__line { left: 1.75rem; top: 2rem; bottom: 2rem; }
+  .sel-timeline__marker { width: 3.5rem; height: 3.5rem; }
+  .sel-timeline__num { font-size: 1.2rem; }
+  .sel-timeline__content { padding: 1.25rem 1.25rem; margin-top: .5rem; }
+  .sel-timeline__item { gap: 1.25rem; }
+}
+
+/* ----------------------------------------------------------------
+   面接ポイント カード（3列）
+   ---------------------------------------------------------------- */
+.sel-point-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+@media (max-width: 960px) { .sel-point-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .sel-point-grid { grid-template-columns: 1fr; } }
+.sel-point-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07);
+  transition: transform .3s, box-shadow .3s;
+  border-top: 3px solid var(--bdx-navy);
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.sel-point-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,56,148,.12); }
+.sel-point-card__icon {
+  width: 3rem;
+  height: 3rem;
+  background: rgba(0,56,148,.07);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bdx-navy);
+}
+.sel-point-card__icon svg { width: 22px; height: 22px; }
+.sel-point-card__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  line-height: 1.4;
+}
+.sel-point-card__text {
+  font-size: .9rem;
+  line-height: 1.8;
+  color: var(--bdx-text-secondary);
+  flex: 1;
+}
+
+/* ----------------------------------------------------------------
+   面接対策アドバイス（タブなし、縦積み）
+   ---------------------------------------------------------------- */
+.sel-advice-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.sel-advice-item:last-child { margin-bottom: 0; }
+.sel-advice-item__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(0,56,148,.05) 0%, rgba(0,56,148,.02) 100%);
+  border-left: 4px solid var(--bdx-navy);
+}
+.sel-advice-item__num {
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--bdx-navy);
+  opacity: .35;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2.5rem;
+}
+.sel-advice-item__title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+}
+.sel-advice-item__body {
+  padding: 1.5rem 2rem;
+}
+.sel-advice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+.sel-advice-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  font-size: .9375rem;
+  line-height: 1.75;
+  color: var(--bdx-text-secondary);
+}
+.sel-advice-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bdx-gold);
+  flex-shrink: 0;
+  margin-top: .6em;
+}
+@media (max-width: 600px) {
+  .sel-advice-item__header { padding: 1.25rem 1.25rem; }
+  .sel-advice-item__body   { padding: 1.25rem 1.25rem; }
+}
+
+/* ----------------------------------------------------------------
+   FAQ アコーディオン
+   ---------------------------------------------------------------- */
+.sel-faq { display: flex; flex-direction: column; gap: .75rem; }
+.sel-faq-item {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--bdx-border);
+  overflow: hidden;
+}
+.sel-faq-item summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.75rem;
+  cursor: pointer;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: .9375rem;
+  color: var(--bdx-text-primary);
+  line-height: 1.5;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.sel-faq-item summary::-webkit-details-marker { display: none; }
+.sel-faq-item summary::before {
+  content: 'Q';
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--bdx-navy);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sel-faq-item summary::after {
+  content: '';
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23003894' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+  transition: transform .25s ease;
+}
+.sel-faq-item[open] > summary::after { transform: rotate(180deg); }
+.sel-faq-item[open] { border-color: rgba(0,56,148,.2); }
+.sel-faq-item[open] > summary { color: var(--bdx-navy); }
+.sel-faq-item__answer {
+  padding: 0 1.75rem 1.5rem calc(1.75rem + 2rem + 1rem);
+  font-size: .9375rem;
+  line-height: 1.85;
+  color: var(--bdx-text-secondary);
+}
+@media (max-width: 600px) {
+  .sel-faq-item summary { padding: 1.1rem 1.25rem; }
+  .sel-faq-item__answer { padding: 0 1.25rem 1.25rem calc(1.25rem + 2rem + 1rem); }
+}
+
+/* ----------------------------------------------------------------
+   引用ブロック（先輩メッセージ）
+   ---------------------------------------------------------------- */
+.sel-quotes { display: flex; flex-direction: column; gap: 1.5rem; }
+.sel-quote {
+  position: relative;
+  padding: 2rem 2.25rem 2rem 3.5rem;
+  background: #fff;
+  border-left: 4px solid var(--bdx-gold);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+.sel-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -.15em;
+  left: .4rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 4.5rem;
+  color: rgba(200,168,100,.2);
+  line-height: 1;
+  pointer-events: none;
+}
+.sel-quote__text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--bdx-text-primary);
+}
+.sel-quote__author {
+  margin-top: 1rem;
+  font-size: .8125rem;
+  color: var(--bdx-text-secondary);
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.sel-quote__author::before {
+  content: '—';
+  color: var(--bdx-gold);
+}
+
+/* ----------------------------------------------------------------
+   CTA バナー
+   ---------------------------------------------------------------- */
+.sel-cta-banner {
+  background: linear-gradient(135deg, #002266 0%, var(--bdx-navy) 60%, #1a5cc8 100%);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+.sel-cta-banner__inner { max-width: 720px; margin: 0 auto; }
+.sel-cta-banner__title {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.sel-cta-banner__text {
+  color: var(--bdx-text-on-dark-sub);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.sel-cta-banner__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sel-cta-banner__note {
+  margin-top: 1.5rem;
+  font-size: .8125rem;
+  color: rgba(255,255,255,.5);
+}
+</style>
+
+<script type="application/ld+json">
+  [
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "B&amp;DX株式会社",
+      "url": "https://www.bdx.co.jp/",
+      "image": "https://www.bdx.co.jp/images/common/ogp.jpg"
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"item":{"@id":"https://www.bdx.co.jp/","name":"B&amp;DX株式会社"}},
+        {"@type":"ListItem","position":2,"item":{"@id":"https://www.bdx.co.jp/recruitment/","name":"採用情報"}},
+        {"@type":"ListItem","position":3,"item":{"@id":"https://www.bdx.co.jp/recruitment-graduate/","name":"新卒採用"}},
+        {"@type":"ListItem","position":4,"item":{"@id":"https://www.bdx.co.jp/recruitment-graduate/selection/","name":"選考フロー・面接対策"}}
+      ]
+    }
+  ]
+</script>
+</head>
+<body>
+
+
+<div id="document">
+<header id="gheader">
+<div class="gheaderInner">
+<p class="logo"><a href="/">B&DX株式会社</a></p>
+<nav id="gnav">
+<div class="menu"><button><span>メニュー</span></button></div>
+<div class="gnavInner">
+<ul class="primary">
+<li><a href="/about/" aria-label="B＆DXについて">About</a></li>
+<li><a href="/news/" aria-label="最新情報">News</a></li>
+<li><a href="/service/" aria-label="サービス">Service</a></li>
+<li><a href="/corporate/" aria-label="企業情報">Company</a></li>
+<li><a href="/recruitment/" aria-label="採用情報">Recruit</a></li>
+<li class="contact"><a href="/contact/" aria-label="お問い合わせ">Contact</a></li>
+</ul>
+<!-- /.gnavInner --></div>
+<!-- /#gnav ==========--></nav>
+<!-- /.gheaderInner --></div>
+<!-- /#gheader ==========--></header>
+
+
+<div id="container" class="plain">
+<nav id="breadcrumb">
+<ol>
+<li><a href="/"><span>HOME</span></a></li>
+<li><a href="/recruitment/"><span>採用情報</span></a></li>
+<li><a href="/recruitment-graduate/"><span>新卒採用</span></a></li>
+<li><em>選考フロー・面接対策</em></li>
+</ol>
+<!-- /#breadcrumb --></nav>
+<main id="mainContents">
+
+
+<!-- ================================================================
+  1. ヒーローセクション
+  ================================================================ -->
+<section class="sel-hero" aria-label="選考フロー・面接対策 メインビジュアル">
+  <div class="sel-hero__pattern" aria-hidden="true"></div>
+  <div class="sel-hero__overlay" aria-hidden="true"></div>
+  <div class="sel-hero__content">
+    <p class="sel-hero__label">Selection Process &amp; Interview Guide</p>
+    <h1 class="sel-hero__title">選考は、対話の場。</h1>
+    <p class="sel-hero__subtitle">
+      B&amp;DXの面接は、一方的な評価ではありません。<br>
+      お互いを知り、共に未来を描けるかを確かめる対話の時間です。<br>
+      あなたの考えを、ありのままに聞かせてください。
+    </p>
+  </div>
+</section>
+
+
+<!-- ================================================================
+  2. 選考フロー全体図
+  ================================================================ -->
+<section class="sel-section sel-section--light" id="flow">
+  <div class="sel-section__inner sel-section__inner--narrow">
+    <div class="sel-section__header reveal">
+      <span class="sel-section__label">Selection Flow</span>
+      <h2 class="sel-section__title"><span class="sel-section__title-accent">選考フロー全体図</span></h2>
+      <p class="sel-section__lead">エントリーから内定まで、全ステップをご確認ください。</p>
+    </div>
+
+    <div class="sel-timeline" role="list">
+      <div class="sel-timeline__line" aria-hidden="true"></div>
+
+      <!-- Step 1: エントリー -->
+      <div class="sel-timeline__item reveal" role="listitem">
+        <div class="sel-timeline__marker" aria-hidden="true">
+          <span class="sel-timeline__step">Step</span>
+          <span class="sel-timeline__num">1</span>
+        </div>
+        <div class="sel-timeline__content">
+          <span class="sel-timeline__tag">エントリー</span>
+          <h3 class="sel-timeline__title">Web エントリー</h3>
+          <p class="sel-timeline__text">
+            Sonar（採用管理システム）からエントリーフォームに必要事項を入力してください。
+            マイページを作成すると、選考状況をリアルタイムで確認できます。
+          </p>
+          <div class="sel-timeline__detail">
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              所要時間：約10分
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              オンライン
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: ES -->
+      <div class="sel-timeline__item reveal" role="listitem">
+        <div class="sel-timeline__marker" aria-hidden="true">
+          <span class="sel-timeline__step">Step</span>
+          <span class="sel-timeline__num">2</span>
+        </div>
+        <div class="sel-timeline__content">
+          <span class="sel-timeline__tag">ES</span>
+          <h3 class="sel-timeline__title">エントリーシート（ES）</h3>
+          <p class="sel-timeline__text">
+            志望動機・自己PR・ケース設問の3パートで構成されています。
+            「なぜコンサルか」「なぜB&amp;DXか」を自分の言葉で伝えてください。
+            ケース設問では構造的に考える力を見ています。
+          </p>
+          <div class="sel-timeline__detail">
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              3設問
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              〆切：エントリー後1週間以内
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: 1次面接 -->
+      <div class="sel-timeline__item reveal" role="listitem">
+        <div class="sel-timeline__marker" aria-hidden="true">
+          <span class="sel-timeline__step">Step</span>
+          <span class="sel-timeline__num">3</span>
+        </div>
+        <div class="sel-timeline__content">
+          <span class="sel-timeline__tag">1次面接</span>
+          <h3 class="sel-timeline__title">1次面接：ケースインタビュー</h3>
+          <p class="sel-timeline__text">
+            コンサルタント1名との面接です。ケース問題を通じて、
+            論理的に問題を分解し、仮説を立てて議論を進められるかを確認します。
+            「正解」を求めているわけではありません。考えるプロセスを大切にしています。
+          </p>
+          <div class="sel-timeline__detail">
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              約60分
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2H3v16h5l3 3 3-3h7z"/></svg>
+              ケース面接
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              オンライン / 対面
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: 2次面接 -->
+      <div class="sel-timeline__item reveal" role="listitem">
+        <div class="sel-timeline__marker" aria-hidden="true">
+          <span class="sel-timeline__step">Step</span>
+          <span class="sel-timeline__num">4</span>
+        </div>
+        <div class="sel-timeline__content">
+          <span class="sel-timeline__tag">2次面接</span>
+          <h3 class="sel-timeline__title">2次面接：ケース ＋ パーソナリティ</h3>
+          <p class="sel-timeline__text">
+            シニアコンサルタントまたはマネージャー1名との面接です。
+            ケース問題に加え、これまでの経験や価値観を深掘りします。
+            「なぜそう考えるか」を自分の言葉で説明できるよう準備してください。
+          </p>
+          <div class="sel-timeline__detail">
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              約90分
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2H3v16h5l3 3 3-3h7z"/></svg>
+              ケース ＋ 深掘り
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              オンライン / 対面
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: 3次面接（最終） -->
+      <div class="sel-timeline__item reveal" role="listitem">
+        <div class="sel-timeline__marker sel-timeline__marker--highlight" aria-hidden="true">
+          <span class="sel-timeline__step" style="color:rgba(255,255,255,.85);">Step</span>
+          <span class="sel-timeline__num">5</span>
+        </div>
+        <div class="sel-timeline__content sel-timeline__content--gold">
+          <span class="sel-timeline__tag sel-timeline__tag--gold">3次面接（最終）</span>
+          <h3 class="sel-timeline__title">3次面接：パートナー面接</h3>
+          <p class="sel-timeline__text">
+            パートナー（代表・執行役員）との面接です。
+            BDXのビジョンや文化への共感、長期的なキャリア観を中心に対話します。
+            「B&amp;DXで何を実現したいか」を具体的に語れるよう準備してください。
+          </p>
+          <div class="sel-timeline__detail">
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              約60〜90分
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              パートナー面接
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              対面推奨
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6: 内定 -->
+      <div class="sel-timeline__item reveal" role="listitem">
+        <div class="sel-timeline__marker sel-timeline__marker--highlight" aria-hidden="true">
+          <span class="sel-timeline__step" style="color:rgba(255,255,255,.85);">Offer</span>
+          <span class="sel-timeline__num">★</span>
+        </div>
+        <div class="sel-timeline__content sel-timeline__content--gold">
+          <span class="sel-timeline__tag sel-timeline__tag--gold">内定</span>
+          <h3 class="sel-timeline__title">内定 ＋ オファー面談</h3>
+          <p class="sel-timeline__text">
+            内定後は、担当者との個別オファー面談を実施します。
+            処遇・入社後の配属・不安なことなど、何でもお気軽にお聞きください。
+            B&amp;DXへの入社を心よりお待ちしています。
+          </p>
+          <div class="sel-timeline__detail">
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              処遇説明あり
+            </span>
+            <span class="sel-timeline__chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2H3v16h5l3 3 3-3h7z"/></svg>
+              質問・相談 自由
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.sel-timeline -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  3. 面接で見ているポイント
+  ================================================================ -->
+<section class="sel-section sel-section--white" id="criteria">
+  <div class="sel-section__inner">
+    <div class="sel-section__header reveal">
+      <span class="sel-section__label">What We Look For</span>
+      <h2 class="sel-section__title"><span class="sel-section__title-accent">面接で見ているポイント</span></h2>
+      <p class="sel-section__lead">
+        採用担当者の視点をオープンにお伝えします。
+        準備のためではなく、B&amp;DXとあなたの相互理解のために。
+      </p>
+    </div>
+
+    <div class="sel-point-grid">
+      <!-- ポイント1 -->
+      <div class="sel-point-card reveal reveal--delay-1">
+        <div class="sel-point-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3 class="sel-point-card__title">論理的思考力</h3>
+        <p class="sel-point-card__text">
+          フレームワークを知っているかではなく、目の前の問題を自分で構造化できるかを見ています。
+          「なぜそう思うか」を丁寧に説明できることが重要です。
+          暗記した解法ではなく、その場で考え抜く力を評価します。
+        </p>
+      </div>
+      <!-- ポイント2 -->
+      <div class="sel-point-card reveal reveal--delay-2">
+        <div class="sel-point-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3 class="sel-point-card__title">コミュニケーション力</h3>
+        <p class="sel-point-card__text">
+          流暢に話すことよりも、相手に伝わるよう考えを整理して話せるかを大切にしています。
+          不明点は遠慮なく聞き返し、双方向の議論を楽しんでください。
+          沈黙を恐れず、考えてから話す姿勢を歓迎します。
+        </p>
+      </div>
+      <!-- ポイント3 -->
+      <div class="sel-point-card reveal reveal--delay-3">
+        <div class="sel-point-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+        </div>
+        <h3 class="sel-point-card__title">成長意欲</h3>
+        <p class="sel-point-card__text">
+          「なぜコンサルか」「なぜB&amp;DXか」に対する、自分なりの答えを持っているかを確認します。
+          完璧な答えは不要です。自分の経験と志望をつなげて語れること、
+          入社後に何を実現したいかのビジョンが大切です。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+  4. 面接対策アドバイス
+  ================================================================ -->
+<section class="sel-section sel-section--light" id="advice">
+  <div class="sel-section__inner sel-section__inner--narrow">
+    <div class="sel-section__header reveal">
+      <span class="sel-section__label">Interview Advice</span>
+      <h2 class="sel-section__title"><span class="sel-section__title-accent">面接対策アドバイス</span></h2>
+      <p class="sel-section__lead">
+        各選考ステップに合わせた具体的なアドバイスをお伝えします。
+      </p>
+    </div>
+
+    <!-- ES対策 -->
+    <div class="sel-advice-item reveal">
+      <div class="sel-advice-item__header">
+        <span class="sel-advice-item__num">01</span>
+        <h3 class="sel-advice-item__title">ES（エントリーシート）のコツ</h3>
+      </div>
+      <div class="sel-advice-item__body">
+        <ul class="sel-advice-list">
+          <li>結論を最初に書く。「私が〇〇を選んだ理由は△△です」のように、冒頭で主張を明示してから根拠を展開する。</li>
+          <li>「〇〇をしました」ではなく「〇〇という課題に対して、△△というアプローチで□□の成果を出した」と、具体的なエピソードで語る。</li>
+          <li>数字で成果を語れる場合は積極的に活用する。「売上20%増加」「参加者30名」など、読む側がイメージしやすくなる。</li>
+          <li>ケース設問では「答え」ではなく「考え方のプロセス」を丁寧に書く。どのように問題を分解し、仮説を立てたかを説明する。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ケース面接対策 -->
+    <div class="sel-advice-item reveal">
+      <div class="sel-advice-item__header">
+        <span class="sel-advice-item__num">02</span>
+        <h3 class="sel-advice-item__title">ケース面接の準備方法</h3>
+      </div>
+      <div class="sel-advice-item__body">
+        <ul class="sel-advice-list">
+          <li>ビジネスニュース（日経・東洋経済など）を日頃から読む習慣をつける。「この会社の課題は何か」「自分ならどう解決するか」を考えながら読むと効果的。</li>
+          <li>フェルミ推定の基本パターンを練習しておく。「日本のコンビニの数は？」「都内の美容院の売上総額は？」などを自分で計算してみる。答えより過程が重要。</li>
+          <li>「仮説を立てる → 構造化する → 根拠で説明する」のサイクルを体に染み込ませる。友人相手に声に出して練習するのが最も効果的。</li>
+          <li>面接官は「一緒に考えたい相手かどうか」を見ている。詰まったときは「少し考える時間をください」と言っても構わない。整理してから話す姿勢が評価される。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- パーソナリティ面接対策 -->
+    <div class="sel-advice-item reveal">
+      <div class="sel-advice-item__header">
+        <span class="sel-advice-item__num">03</span>
+        <h3 class="sel-advice-item__title">パーソナリティ・最終面接の準備</h3>
+      </div>
+      <div class="sel-advice-item__body">
+        <ul class="sel-advice-list">
+          <li>B&amp;DXのウェブサイト・採用ページを再読し、「戦略を描き、実行まで伴走する」というミッションと自分の志望をつなげて語れるよう整理する。</li>
+          <li>自分のこれまでの経験を「何を学んだか」「どう変わったか」という観点で整理し直す。困難を乗り越えたエピソードは特に深掘りされる。</li>
+          <li>「5年後に何をしていたいか」「B&amp;DXで実現したいことは何か」に対する自分なりの答えを用意する。完璧な答えより、自分の言葉で語ることが大切。</li>
+          <li>最終面接では逆質問の時間も十分に設けられる。B&amp;DXへの本気度や知的好奇心を示す質問を3つ以上準備しておくとよい。</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+  5. よくある質問 FAQ
+  ================================================================ -->
+<section class="sel-section sel-section--white" id="faq">
+  <div class="sel-section__inner sel-section__inner--narrow">
+    <div class="sel-section__header reveal">
+      <span class="sel-section__label">FAQ</span>
+      <h2 class="sel-section__title"><span class="sel-section__title-accent">よくある質問</span></h2>
+      <p class="sel-section__lead">
+        就活生からよく寄せられる質問をまとめました。
+      </p>
+    </div>
+
+    <div class="sel-faq reveal">
+
+      <details class="sel-faq-item">
+        <summary>面接はオンライン・対面、どちらですか？</summary>
+        <div class="sel-faq-item__answer">
+          <p>1次・2次面接はオンライン（Zoom）と対面の両方に対応しています。希望をお知らせください。3次面接（最終）は原則対面を推奨していますが、遠方の方はご相談ください。オフィスは東京・渋谷にあります。</p>
+        </div>
+      </details>
+
+      <details class="sel-faq-item">
+        <summary>服装の指定はありますか？</summary>
+        <div class="sel-faq-item__answer">
+          <p>スーツ・私服どちらでも構いません。B&amp;DXはオフィスもカジュアルな雰囲気です。ただし、清潔感があり相手に失礼のない服装であれば、どちらでも選考に影響しません。ご自身が落ち着いて話せる服装でお越しください。</p>
+        </div>
+      </details>
+
+      <details class="sel-faq-item">
+        <summary>ケース面接は初めてで、まったく経験がありません。大丈夫ですか？</summary>
+        <div class="sel-faq-item__answer">
+          <p>問題ありません。B&amp;DXのケース面接では、完璧な答えよりも「考えるプロセス」を重視しています。詰まったときに「少し整理させてください」と言える素直さ、仮説を立てて論理的に説明しようとする姿勢を大切にしています。事前にフェルミ推定の基本を練習しておくと自信がつくでしょう。</p>
+        </div>
+      </details>
+
+      <details class="sel-faq-item">
+        <summary>選考結果はいつ、どのように通知されますか？</summary>
+        <div class="sel-faq-item__answer">
+          <p>各選考終了後、通常5営業日以内にメールまたはSonarのマイページを通じてご連絡します。時期によっては前後する場合がありますが、合否に関わらず全員に結果をお伝えします。</p>
+        </div>
+      </details>
+
+      <details class="sel-faq-item">
+        <summary>複数のポジション・時期にエントリーできますか？</summary>
+        <div class="sel-faq-item__answer">
+          <p>同一採用年度での複数エントリーはお断りしています。一度選考を受け、残念ながら合格に至らなかった場合も、同年度内の再エントリーはできません。次年度以降のエントリーについては個別にご相談ください。</p>
+        </div>
+      </details>
+
+      <details class="sel-faq-item">
+        <summary>コンサルタントの実務経験がなくても大丈夫ですか？</summary>
+        <div class="sel-faq-item__answer">
+          <p>もちろんです。B&amp;DXでは、コンサル経験のない方が大多数を占めています。大切なのは「考える力」「伝える力」「成長への意欲」です。学生時代の研究・アルバイト・課外活動など、どんな経験からでも、論理的に考え行動した体験を持っている方を求めています。</p>
+        </div>
+      </details>
+
+    </div><!-- /.sel-faq -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  6. 先輩からのメッセージ
+  ================================================================ -->
+<section class="sel-section sel-section--light" id="message">
+  <div class="sel-section__inner sel-section__inner--narrow">
+    <div class="sel-section__header reveal">
+      <span class="sel-section__label">A Message from Interviewers</span>
+      <h2 class="sel-section__title"><span class="sel-section__title-accent">先輩からのメッセージ</span></h2>
+      <p class="sel-section__lead">
+        面接官を務めるコンサルタントから、就活生の皆さんへ。
+      </p>
+    </div>
+
+    <div class="sel-quotes reveal">
+
+      <blockquote class="sel-quote">
+        <p class="sel-quote__text">
+          「面接官も、最初は緊張しています。あなたのことを落とすために座っているわけではありません。一緒に話してみて、この人と仕事をしたいと感じられるかを確かめる場です。リラックスして、あなたが普段どんなことを考えているかを聞かせてください。」
+        </p>
+        <footer>
+          <cite class="sel-quote__author">コンサルタント / 入社3年目</cite>
+        </footer>
+      </blockquote>
+
+      <blockquote class="sel-quote">
+        <p class="sel-quote__text">
+          「ケース面接で正解を求めないでください。私たちが見ているのは、あなたが問題をどう捉え、どの順番で考えるかというプロセスです。答えが出なくても、考え続けている姿を見せてください。一緒に考えるプロセスを楽しんでほしいと思っています。」
+        </p>
+        <footer>
+          <cite class="sel-quote__author">シニアコンサルタント / 入社5年目</cite>
+        </footer>
+      </blockquote>
+
+    </div><!-- /.sel-quotes -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  7. CTA バナー
+  ================================================================ -->
+<section class="sel-cta-banner" id="entry" aria-label="エントリー誘導">
+  <div class="sel-cta-banner__inner reveal">
+    <h2 class="sel-cta-banner__title">あなたの可能性を、一緒に確かめる。</h2>
+    <p class="sel-cta-banner__text">
+      選考は怖くない。B&amp;DXはあなたの言葉を待っています。<br>
+      まずはエントリーから、あなたの想いを聞かせてください。
+    </p>
+    <div class="sel-cta-banner__buttons">
+      <a href="https://bdx-recruit.snar.jp/entry.aspx?entryid=1334628a-7c9a-4d8d-a3de-dce51041bb25"
+         target="_blank" rel="noopener" class="rg-btn rg-btn--primary">エントリーはこちら</a>
+      <a href="/recruitment-graduate/"
+         class="rg-btn rg-btn--outline">採用トップへ戻る</a>
+    </div>
+    <p class="sel-cta-banner__note">※ エントリーには Sonar アカウントの登録が必要です</p>
+  </div>
+</section>
+
+
+<!-- /#mainContents ==========--></main>
+<!-- /#container ==========--></div>
+
+<p class="m_pagetop"><a href="#document">TOP</a></p>
+
+<footer id="gfooter">
+<div class="gfooterInner">
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="165" height="57.49" viewbox="0 0 165 57.49" role="img"><defs><radialgradient id="a" cx="0.263" cy="1.386" r="4.105" gradientTransform="translate(0.355) scale(0.289 1)" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fff"/><stop offset="0.374" stop-color="#00b9ef"/><stop offset="1" stop-color="#003894"/></radialgradient><radialgradient id="b" cx="-0.116" cy="0.411" r="2.967" gradientTransform="translate(0.204) scale(0.593 1)" xlink:href="#a"/><radialgradient id="c" cx="0.678" cy="0.059" r="0.722" gradientTransform="translate(-0.19) scale(1.38 1)" xlink:href="#a"/><radialgradient id="d" cx="0.184" cy="-0.37" r="1.022" gradientTransform="translate(0.108) scale(0.785 1)" xlink:href="#a"/><radialgradient id="e" cx="-1.127" cy="-0.045" r="1.216" gradientTransform="translate(-0.378) scale(1.756 1)" xlink:href="#a"/><radialgradient id="f" cx="0.499" cy="0.492" r="0.39" gradientTransform="translate(-0.574) scale(2.148 1)" xlink:href="#a"/><radialgradient id="g" cx="0.5" cy="0.5" r="0.638" gradientTransform="translate(0.167) scale(0.666 1)" gradientUnits="objectBoundingBox"><stop offset="0.217" stop-color="#f7f7f8"/><stop offset="1" stop-color="#98a1b4"/></radialgradient></defs><g transform="translate(-226.223 -230.101)"><g transform="translate(226.223 230.101)"><path d="M292.091,234.88a28.728,28.728,0,0,0-28.868-1.668,47.826,47.826,0,0,1,9.721,5.238C280.129,236.139,286.932,234.879,292.091,234.88Z" transform="translate(-247.476 -230.101)" fill="url(#a)"/><path d="M305.8,249.34c-.549-3.63-8.926-4.2-19.46-1.6a88.085,88.085,0,0,1,11.965,9.949C303.2,254.757,306.15,251.671,305.8,249.34Z" transform="translate(-260.753 -239.309)" fill="url(#b)"/><path d="M235.961,271.455a56.8,56.8,0,0,1-6.677-13.694,28.721,28.721,0,0,0,6.083,33.917l-5.106,6.479c1.225-.325,2.474-.693,3.732-1.085l4.772-6.055.043-.013c12.351-3.812,21.864-10.211,21.247-14.294-.576-3.815-9.795-4.255-21.079-1.186,1.651-.56,3.286-1.066,4.892-1.516l6.11-7.752.043-.013a69.127,69.127,0,0,0,10.607-4.224c-7.763-6.474-15.742-10.841-21.6-11.305C229.922,249.992,228.94,258.919,235.961,271.455Z" transform="translate(-226.223 -241.917)" fill="url(#c)"/><path d="M303.9,310.717l0,0a60.566,60.566,0,0,0-5.774-10.092,92.751,92.751,0,0,0-12.283-14.217q-2.509,1.375-5.355,2.7a100.1,100.1,0,0,1-10.23,4.074c8.153-1.692,14.915-1.659,17.929.495,5.349,3.822-3.117,12.863-18.912,20.192-2.221,1.03-4.465,1.965-6.7,2.81a28.737,28.737,0,0,0,37.659-10.273,40.006,40.006,0,0,1,5.071,8.064,35.392,35.392,0,0,0-1.4-3.747Z" transform="translate(-247.104 -262.446)" fill="url(#d)"/><path d="M336.871,288.448a28.68,28.68,0,0,0-2.038-28.2c-1.855,2.911-5.774,6.286-11.248,9.585a98.625,98.625,0,0,1,9.1,11.57A75.124,75.124,0,0,1,336.871,288.448Z" transform="translate(-282.148 -247.419)" fill="url(#e)"/><path d="M361.047,340.467l-.009-.014.006.018Z" transform="translate(-303.661 -293.488)" fill="url(#f)"/></g><g transform="translate(230.796 235.562)"><path d="M244.906,243.019c-6.967-.824-9.358,4.233-7.132,12.425-.872-5.968,1.614-9.538,7.5-9.072,9.593.76,24.854,11.974,35.559,25.769C270.671,257.066,254.907,244.2,244.906,243.019Z" transform="translate(-236.968 -242.931)" fill="url(#g)"/></g><path d="M410.5,276.435a6.589,6.589,0,0,0-3.128-1.286,6.828,6.828,0,0,0,3.036-1.286,5.967,5.967,0,0,0,1.821-2.305,7.064,7.064,0,0,0,.6-2.891,9.062,9.062,0,0,0-.967-4.322,6.569,6.569,0,0,0-2.923-2.8,10.709,10.709,0,0,0-4.857-.988H392.287V290.48h12.142a10.187,10.187,0,0,0,4.651-1.008,7.2,7.2,0,0,0,3.066-2.86,8.408,8.408,0,0,0,1.07-4.281v-.062a7.8,7.8,0,0,0-.7-3.293A6.712,6.712,0,0,0,410.5,276.435Zm-7.182-11.988a6.006,6.006,0,0,1,3.952,1.112,4.967,4.967,0,0,1,.134,6.585,5.016,5.016,0,0,1-3.509,1.091h-7.429v-8.788Zm5.659,17.514a4.2,4.2,0,0,1-1.461,3.416,7.233,7.233,0,0,1-4.651,1.214h-6.4v-9.57h7.429a6.29,6.29,0,0,1,2.9.587,3.632,3.632,0,0,1,1.656,1.677,5.977,5.977,0,0,1,.525,2.614Z" transform="translate(-95.388 -17.494)"/></g></svg></div>
+<div class="sitemap">
+<ul class="column">
+<li><a href="/about/">B＆DXについて</a></li>
+<li><a href="/news/">最新情報</a></li>
+<li><a href="/service/">サービス</a></li>
+</ul>
+<ul class="column">
+<li><a href="/corporate/">企業情報</a>
+<ul>
+<li><a href="/corporate/#anc_outline">会社概要</a></li>
+<li><a href="/corporate/#anc_consultant">コンサルタント紹介</a></li>
+</ul>
+</li>
+</ul>
+<ul class="column">
+<li><a href="/recruitment/">採用情報</a>
+<ul>
+<li><a href="/recruitment-graduate/">新卒採用</a></li>
+<li><a href="/recruitment-experienced/">経験者採用</a></li>
+</ul>
+</li>
+<li><a href="/contact/">お問い合わせ</a></li>
+</ul>
+<!-- /.sitemap --></div>
+<ul class="unav">
+<li><a href="/privacy/">個&#xFF24;情報保護の取り組み</a></li>
+<li><a href="/online/">オンライン・プライバシーポリシー</a></li>
+<li><a href="/security/">情報セキュリティ基本&#xFF24;針</a></li>
+<!-- /.unav --></ul>
+<div class="info">
+<ul class="social">
+<li class="facebook"><a href="https://www.facebook.com/bdxjp/" target="_blank"><span>Facebookのリンクを開く</span></a></li>
+<li class="youtube"><a href="https://www.youtube.com/channel/UCLN0YwCQZn7YZxi40EKXNKQ" target="_blank"><span>Youtubeのリンクを開く</span></a></li>
+<li class="twitter"><a href="https://twitter.com/bdx_jp" target="_blank"><span>Twitterのリンクを開く</span></a></li>
+<!-- /.social --></ul>
+<p class="copyright"><small>&copy; <script>myDate = new Date();myYear = myDate.getFullYear();document.write(myYear);document.write("&nbsp;");</script> B&DX Ltd. All Rights Reserved.</small></p>
+<!-- /.info --></div>
+<!-- /.gfooterInner --></div>
+<!-- /#gfooter ==========--></footer>
+
+<!-- /#document ==========--></div>
+<script src="/scripts/common/bundle.js" defer></script>
+<script src="/scripts/common/scroll-reveal.js"></script>
+
+</body>
+</html>
