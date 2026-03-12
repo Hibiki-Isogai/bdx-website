@@ -27,11 +27,15 @@ jobs:
 
       - name: Rewrite absolute paths for GitHub Pages
         run: |
+          # HTML: href, src, content の絶対パスを書き換え
           find site -name '*.html' -print0 | xargs -0 sed -i \
             -e 's|href="/\([^"]\)|href="/bdx-website/\1|g' \
             -e 's|src="/\([^"]\)|src="/bdx-website/\1|g' \
             -e 's|content="/\([^"]\)|content="/bdx-website/\1|g' \
             -e 's|href="/"|href="/bdx-website/"|g'
+          # CSS: url(/images/...) などの絶対パスを書き換え
+          find site -name '*.css' -print0 | xargs -0 sed -i \
+            -e 's|url(/\([^)]\)|url(/bdx-website/\1|g'
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
