@@ -575,6 +575,92 @@
 }
 
 /* ----------------------------------------------------------------
+   FAQ アコーディオン
+   ---------------------------------------------------------------- */
+.cr-faq {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cr-faq__item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  overflow: hidden;
+  border: 1px solid var(--bdx-border);
+  transition: box-shadow .25s;
+}
+.cr-faq__item[open] {
+  box-shadow: 0 6px 20px rgba(0,56,148,.1);
+  border-color: rgba(0,56,148,.2);
+}
+.cr-faq__question {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.375rem 1.75rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  line-height: 1.5;
+}
+.cr-faq__question::-webkit-details-marker { display: none; }
+.cr-faq__question::marker { display: none; }
+.cr-faq__q-badge {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--bdx-navy);
+  color: #fff;
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cr-faq__item[open] .cr-faq__q-badge {
+  background: var(--bdx-gold);
+}
+.cr-faq__q-text {
+  flex: 1;
+}
+.cr-faq__icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--bdx-navy);
+  transition: transform .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cr-faq__item[open] .cr-faq__icon {
+  transform: rotate(180deg);
+  color: var(--bdx-gold);
+}
+.cr-faq__answer {
+  padding: 0 1.75rem 1.5rem 4.75rem;
+  font-size: .9375rem;
+  line-height: 1.9;
+  color: var(--bdx-text-secondary);
+  border-top: 1px solid var(--bdx-border);
+  padding-top: 1.25rem;
+}
+@media (max-width: 600px) {
+  .cr-faq__question { padding: 1.125rem 1.25rem; gap: .75rem; }
+  .cr-faq__answer { padding: 1rem 1.25rem 1.25rem 1.25rem; }
+  .cr-faq__q-badge { width: 1.75rem; height: 1.75rem; font-size: .875rem; }
+}
+
+/* ----------------------------------------------------------------
    レスポンシブ
    ---------------------------------------------------------------- */
 @media (max-width: 960px) {
@@ -1070,7 +1156,95 @@
 
 
 <!-- ================================================================
-  6. CTA バナー
+  6. FAQ
+  ================================================================ -->
+<section class="rg-section rg-section--white" id="faq">
+  <div class="rg-section__inner">
+    <div class="rg-section__header reveal">
+      <span class="rg-section__label">FAQ</span>
+      <h2 class="rg-section__title"><span class="rg-section__title-accent">よくある質問</span></h2>
+      <p class="rg-section__lead">B&amp;DXでのキャリアについて、よく寄せられる質問にお答えします。</p>
+    </div>
+
+    <div class="cr-faq reveal">
+
+      <!-- Q1 -->
+      <details class="cr-faq__item">
+        <summary class="cr-faq__question">
+          <span class="cr-faq__q-badge" aria-hidden="true">Q</span>
+          <span class="cr-faq__q-text">コンサルタントの具体的な1日のスケジュールを教えてください</span>
+          <span class="cr-faq__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </summary>
+        <div class="cr-faq__answer">
+          プロジェクトによって異なりますが、一般的な1日の流れは：9:00 出社・メール確認 → 9:30 チームミーティング → 10:00 クライアント資料の分析・仮説構築 → 12:00 ランチ（先輩と行くことも多い） → 13:00 クライアントとのミーティング → 15:00 分析作業・資料作成 → 18:00 マネージャーとレビュー → 19:00〜20:00 退社。プロジェクトの山場では遅くなることもありますが、メリハリをつけて働く文化があります。
+        </div>
+      </details>
+
+      <!-- Q2 -->
+      <details class="cr-faq__item">
+        <summary class="cr-faq__question">
+          <span class="cr-faq__q-badge" aria-hidden="true">Q</span>
+          <span class="cr-faq__q-text">入社1年目でも裁量を持って仕事ができますか？</span>
+          <span class="cr-faq__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </summary>
+        <div class="cr-faq__answer">
+          はい。B&amp;DXは少数精鋭のため、1年目からクライアントの前に立つ機会があります。もちろん先輩のサポートはありますが、「自分で考え、提案する」ことが求められます。社員アンケートでも「若手でも意見が通る風土」が入社の決め手として挙げられています。
+        </div>
+      </details>
+
+      <!-- Q3 -->
+      <details class="cr-faq__item">
+        <summary class="cr-faq__question">
+          <span class="cr-faq__q-badge" aria-hidden="true">Q</span>
+          <span class="cr-faq__q-text">研修制度はどのようなものがありますか？</span>
+          <span class="cr-faq__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </summary>
+        <div class="cr-faq__answer">
+          入社後約1ヶ月の集中研修（ビジネス基礎、ロジカルシンキング、Excel/PowerPoint、ケーススタディ）を実施します。その後もOJTを中心に、プロジェクトアサインを通じて実践的に学びます。先輩社員によるメンター制度もあり、業務以外の相談もしやすい環境です。
+        </div>
+      </details>
+
+      <!-- Q4 -->
+      <details class="cr-faq__item">
+        <summary class="cr-faq__question">
+          <span class="cr-faq__q-badge" aria-hidden="true">Q</span>
+          <span class="cr-faq__q-text">B&amp;DXの社風を一言で表すと？</span>
+          <span class="cr-faq__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </summary>
+        <div class="cr-faq__answer">
+          「熱くて、フラット」。社員アンケートでは「社員の熱意」「風通しの良さ」が特徴として多く挙げられています。年次に関係なく意見を言える環境で、役員との距離も近い。一方で、クライアントの成果にコミットする姿勢は全員に求められます。
+        </div>
+      </details>
+
+      <!-- Q5 -->
+      <details class="cr-faq__item">
+        <summary class="cr-faq__question">
+          <span class="cr-faq__q-badge" aria-hidden="true">Q</span>
+          <span class="cr-faq__q-text">戦略コンサルと総合コンサルの違いは何ですか？B&amp;DXはどちらですか？</span>
+          <span class="cr-faq__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </summary>
+        <div class="cr-faq__answer">
+          戦略コンサルは経営戦略の立案が中心、総合コンサルはシステム導入を含む幅広い支援が中心です。B&amp;DXは「戦略×実行」を掲げ、戦略を描くだけでなく、その実行まで伴走するのが特徴です。戦略ファームの思考力と、実行まで責任を持つ姿勢の両方を大切にしています。
+        </div>
+      </details>
+
+    </div><!-- /.cr-faq -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  7. CTA バナー
   ================================================================ -->
 <section class="rg-cta-banner" aria-label="エントリー案内">
   <div class="rg-cta-banner__inner reveal">

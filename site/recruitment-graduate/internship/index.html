@@ -720,6 +720,79 @@
   flex-wrap: wrap;
 }
 
+/* --- FAQ アコーディオン --- */
+.intern-faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.intern-faq-item {
+  background: #FFFFFF;
+  border: 1px solid var(--bdx-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.intern-faq-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 56, 148, 0.09);
+}
+
+.intern-faq-item[open] {
+  box-shadow: 0 4px 20px rgba(0, 56, 148, 0.12);
+  border-color: rgba(0, 56, 148, 0.2);
+}
+
+.intern-faq-item summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  line-height: 1.5;
+  user-select: none;
+}
+
+.intern-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.intern-faq-item summary::after {
+  content: '';
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--bdx-bg-light);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 24 24' stroke='%23003894' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.25s ease;
+}
+
+.intern-faq-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.intern-faq-answer {
+  padding: 0 1.5rem 1.375rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  color: var(--bdx-text-secondary);
+  border-top: 1px solid var(--bdx-border);
+  padding-top: 1.125rem;
+}
+
 /* --- アニメーション無効化対応 --- */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
@@ -1192,7 +1265,62 @@
 
 
 <!-- ============================================================
-     7. CTA バナー
+     7. FAQ
+     ============================================================ -->
+<section class="intern-section intern-section--light">
+  <div class="intern-section__inner">
+    <div class="intern-section__header reveal">
+      <span class="intern-section__label">FAQ</span>
+      <h2 class="intern-section__title">よくある質問</h2>
+      <p class="intern-section__lead">
+        ジョブインターンについて、よく寄せられる質問にお答えします。
+      </p>
+    </div>
+
+    <div class="intern-faq-list reveal">
+
+      <details class="intern-faq-item">
+        <summary>インターンの選考はありますか？</summary>
+        <div class="intern-faq-answer">
+          はい、エントリーシートによる書類選考があります。ES合格率は約96%と高めですので、興味のある方はぜひエントリーしてください。志望動機よりも、あなたの考え方や論理的思考力を見ています。
+        </div>
+      </details>
+
+      <details class="intern-faq-item">
+        <summary>コンサルティング経験がなくても参加できますか？</summary>
+        <div class="intern-faq-answer">
+          もちろんです。参加者のほとんどがコンサル未経験です。インターンでは、現役コンサルタントがチームに入り、考え方のフレームワークから丁寧にサポートします。必要なのは経験ではなく、「自分の頭で考えたい」という意欲です。
+        </div>
+      </details>
+
+      <details class="intern-faq-item">
+        <summary>インターンの内容を具体的に教えてください</summary>
+        <div class="intern-faq-answer">
+          実際のプロジェクトに近いテーマで、チーム単位のケースワークに取り組みます。課題分析 → 仮説構築 → 戦略提案の一連の流れを体験できます。最終日にはクライアント役へのプレゼンテーションを行い、現役コンサルタントから詳細なフィードバックをもらえます。
+        </div>
+      </details>
+
+      <details class="intern-faq-item">
+        <summary>インターンから本選考への優遇はありますか？</summary>
+        <div class="intern-faq-answer">
+          インターン参加者には本選考の一部免除等の優遇があります。詳細は参加時にご案内しますが、B&amp;DXをより深く知っていただく機会として、インターンへの参加を強くお勧めします。
+        </div>
+      </details>
+
+      <details class="intern-faq-item">
+        <summary>交通費や報酬は出ますか？</summary>
+        <div class="intern-faq-answer">
+          交通費は支給します。報酬については実施回ごとに異なりますので、募集要項をご確認ください。遠方からの参加者には宿泊費の補助もあります（条件あり）。
+        </div>
+      </details>
+
+    </div><!-- /.intern-faq-list -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     8. CTA バナー
      ============================================================ -->
 <section class="intern-cta">
   <div class="intern-cta__inner reveal">
