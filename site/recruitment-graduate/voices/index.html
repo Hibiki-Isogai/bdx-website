@@ -594,6 +594,67 @@ details[open] .vs-faq-icon::after {
     transition: none;
   }
 }
+
+/* ---------- Next page navigation ---------- */
+.vs-next-nav {
+  padding: 5rem 1.5rem;
+  background: var(--bdx-bg-light);
+}
+.vs-next-nav__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.vs-next-nav__label {
+  font-family: 'EB Garamond', serif;
+  font-size: .8125rem;
+  letter-spacing: .15em;
+  color: var(--bdx-navy);
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+.vs-next-nav__title {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: 2rem;
+}
+.vs-next-nav__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 600px) { .vs-next-nav__grid { grid-template-columns: 1fr; } }
+.vs-next-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  background: #fff;
+  border: 1px solid var(--bdx-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.vs-next-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,56,148,.1);
+  border-color: rgba(0,56,148,.25);
+}
+.vs-next-card__icon {
+  width: 3rem; height: 3rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,56,148,.07);
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: var(--bdx-navy);
+}
+.vs-next-card__icon svg { width: 22px; height: 22px; }
+.vs-next-card__body { flex: 1; }
+.vs-next-card__name { font-size: 1rem; font-weight: 700; color: var(--bdx-text-primary); margin-bottom: .35rem; }
+.vs-next-card__desc { font-size: .85rem; line-height: 1.6; color: var(--bdx-text-secondary); }
+.vs-next-card__arrow { color: var(--bdx-navy); flex-shrink: 0; transition: transform .2s; }
+.vs-next-card:hover .vs-next-card__arrow { transform: translateX(3px); }
 </style>
 
 <script type="application/ld+json">
@@ -679,8 +740,8 @@ details[open] .vs-faq-icon::after {
     <p class="vs-hero__label">Student Voices</p>
     <h1 class="vs-hero__title">私たちの声が、<br>あなたの一歩を後押しする。</h1>
     <p class="vs-hero__subtitle">
-      選考やインターンを経験した学生が、BDX との出会いを率直に語ります。<br>
-      統計の数字の背景にある、リアルな言葉をお届けします。
+      忖度しない本気のフィードバック。だから、成長できる。<br>
+      選考やインターンを経験した学生が、BDX との出会いを率直に語ります。
     </p>
     <div class="vs-hero__highlight reveal reveal--delay-2">
       <div class="vs-hero__hl-item">
@@ -1004,6 +1065,52 @@ details[open] .vs-faq-icon::after {
         </div>
       </details>
 
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5.5 次に見るべきページ
+     ============================================================ -->
+<section class="vs-next-nav" aria-label="次に見るべきページ">
+  <div class="vs-next-nav__inner">
+    <div class="reveal">
+      <span class="vs-next-nav__label">Next Step</span>
+      <h2 class="vs-next-nav__title">次に見るべきページ</h2>
+    </div>
+    <div class="vs-next-nav__grid">
+      <a href="/recruitment-graduate/internship/" class="vs-next-card reveal reveal--delay-1">
+        <div class="vs-next-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          </svg>
+        </div>
+        <div class="vs-next-card__body">
+          <p class="vs-next-card__name">ジョブインターン</p>
+          <p class="vs-next-card__desc">学生の声で興味を持ったら、実際のプログラムを体験してみよう</p>
+        </div>
+        <span class="vs-next-card__arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      </a>
+      <a href="/recruitment-graduate/career/" class="vs-next-card reveal reveal--delay-2">
+        <div class="vs-next-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20V10"/>
+            <path d="M18 20V4"/>
+            <path d="M6 20v-4"/>
+          </svg>
+        </div>
+        <div class="vs-next-card__body">
+          <p class="vs-next-card__name">キャリアパス</p>
+          <p class="vs-next-card__desc">入社後にどんなキャリアが描けるか、成長の全体像を知る</p>
+        </div>
+        <span class="vs-next-card__arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      </a>
     </div>
   </div>
 </section>

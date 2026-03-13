@@ -819,7 +819,68 @@
   .intern-section { padding: 3rem 1rem; }
   .intern-hero__cta { flex-direction: column; align-items: center; }
   .intern-cta__buttons { flex-direction: column; align-items: center; }
+  .intern-next-nav__grid { grid-template-columns: 1fr; }
 }
+
+/* --- 次に見るべきページ --- */
+.intern-next-nav {
+  padding: 5rem 1.5rem;
+  background: #fff;
+}
+.intern-next-nav__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.intern-next-nav__label {
+  font-family: 'EB Garamond', serif;
+  font-size: .8125rem;
+  letter-spacing: .15em;
+  color: var(--bdx-navy);
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+.intern-next-nav__title {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: 2rem;
+}
+.intern-next-nav__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.intern-next-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  background: var(--bdx-bg-light);
+  border: 1px solid var(--bdx-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.intern-next-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,56,148,.1);
+  border-color: rgba(0,56,148,.25);
+}
+.intern-next-card__icon {
+  width: 3rem; height: 3rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,56,148,.07);
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: var(--bdx-navy);
+}
+.intern-next-card__icon svg { width: 22px; height: 22px; }
+.intern-next-card__body { flex: 1; }
+.intern-next-card__name { font-size: 1rem; font-weight: 700; color: var(--bdx-text-primary); margin-bottom: .35rem; }
+.intern-next-card__desc { font-size: .85rem; line-height: 1.6; color: var(--bdx-text-secondary); }
+.intern-next-card__arrow { color: var(--bdx-navy); flex-shrink: 0; transition: transform .2s; }
+.intern-next-card:hover .intern-next-card__arrow { transform: translateX(3px); }
 </style>
 
 <script type="application/ld+json">
@@ -917,8 +978,8 @@
     <p class="intern-hero__label">Job Internship</p>
     <h1 class="intern-hero__title">戦略を、体験する。</h1>
     <p class="intern-hero__subtitle">
-      架空のケースではない。実際の経営課題に、チームで向き合う。<br>
-      現役コンサルタントとともに、考え抜く3日間。
+      提言書で終わらない。戦略を、自分の手で実行する3日間。<br>
+      架空のケースではなく、実際の経営課題に現役コンサルタントとともに挑む。
     </p>
     <div class="intern-hero__cta">
       <a href="https://bdx-recruit.snar.jp/entry.aspx?entryid=1334628a-7c9a-4d8d-a3de-dce51041bb25"
@@ -1320,6 +1381,52 @@
       </details>
 
     </div><!-- /.intern-faq-list -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     7.5 次に見るべきページ
+     ============================================================ -->
+<section class="intern-next-nav" aria-label="次に見るべきページ">
+  <div class="intern-next-nav__inner">
+    <div class="reveal">
+      <span class="intern-next-nav__label">Next Step</span>
+      <h2 class="intern-next-nav__title">次に見るべきページ</h2>
+    </div>
+    <div class="intern-next-nav__grid">
+      <a href="/recruitment-graduate/career/" class="intern-next-card reveal reveal--delay-1">
+        <div class="intern-next-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20V10"/>
+            <path d="M18 20V4"/>
+            <path d="M6 20v-4"/>
+          </svg>
+        </div>
+        <div class="intern-next-card__body">
+          <p class="intern-next-card__name">キャリアパス</p>
+          <p class="intern-next-card__desc">インターン後の入社イメージを具体化。成長ステップと支援制度を確認</p>
+        </div>
+        <span class="intern-next-card__arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      </a>
+      <a href="/recruitment-graduate/selection/" class="intern-next-card reveal reveal--delay-2">
+        <div class="intern-next-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div class="intern-next-card__body">
+          <p class="intern-next-card__name">選考フロー・面接対策</p>
+          <p class="intern-next-card__desc">選考の全体像と面接で見ているポイントを事前に把握しよう</p>
+        </div>
+        <span class="intern-next-card__arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 

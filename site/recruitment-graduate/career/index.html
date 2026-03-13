@@ -673,7 +673,68 @@
   .rg-cta-banner__buttons { flex-direction: column; align-items: center; }
   .cp-quote { padding: 1.5rem 1.5rem 1.5rem 2.25rem; }
   .cp-quote::before { font-size: 3.5rem; }
+  .cr-next-nav__grid { grid-template-columns: 1fr; }
 }
+
+/* --- 次に見るべきページ --- */
+.cr-next-nav {
+  padding: 5rem 1.5rem;
+  background: var(--bdx-bg-light);
+}
+.cr-next-nav__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cr-next-nav__label {
+  font-family: 'EB Garamond', serif;
+  font-size: .8125rem;
+  letter-spacing: .15em;
+  color: var(--bdx-navy);
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+.cr-next-nav__title {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 700;
+  color: var(--bdx-text-primary);
+  margin-bottom: 2rem;
+}
+.cr-next-nav__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.cr-next-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  background: #fff;
+  border: 1px solid var(--bdx-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.cr-next-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,56,148,.1);
+  border-color: rgba(0,56,148,.25);
+}
+.cr-next-card__icon {
+  width: 3rem; height: 3rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,56,148,.07);
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: var(--bdx-navy);
+}
+.cr-next-card__icon svg { width: 22px; height: 22px; }
+.cr-next-card__body { flex: 1; }
+.cr-next-card__name { font-size: 1rem; font-weight: 700; color: var(--bdx-text-primary); margin-bottom: .35rem; }
+.cr-next-card__desc { font-size: .85rem; line-height: 1.6; color: var(--bdx-text-secondary); }
+.cr-next-card__arrow { color: var(--bdx-navy); flex-shrink: 0; transition: transform .2s; }
+.cr-next-card:hover .cr-next-card__arrow { transform: translateX(3px); }
 </style>
 
 <script type="application/ld+json">
@@ -744,8 +805,8 @@
     <p class="rg-hero__label">Career Path</p>
     <h1 class="rg-hero__title">あなたのキャリアを、<br>戦略的に。</h1>
     <p class="rg-hero__subtitle">
-      一人ひとりのキャリアを、共に描く。<br>
-      B&amp;DX では、入社初日から成長の道筋が見えています。
+      入社初日から最前線。あなたのキャリアは、ここから加速する。<br>
+      B&amp;DX では、一人ひとりの成長の道筋を共に描きます。
     </p>
   </div>
 </section>
@@ -1239,6 +1300,50 @@
       </details>
 
     </div><!-- /.cr-faq -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+  6.5 次に見るべきページ
+  ================================================================ -->
+<section class="cr-next-nav" aria-label="次に見るべきページ">
+  <div class="cr-next-nav__inner">
+    <div class="reveal">
+      <span class="cr-next-nav__label">Next Step</span>
+      <h2 class="cr-next-nav__title">次に見るべきページ</h2>
+    </div>
+    <div class="cr-next-nav__grid">
+      <a href="/recruitment-graduate/selection/" class="cr-next-card reveal reveal--delay-1">
+        <div class="cr-next-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div class="cr-next-card__body">
+          <p class="cr-next-card__name">選考フロー・面接対策</p>
+          <p class="cr-next-card__desc">キャリアのイメージが見えたら、選考の準備をしよう</p>
+        </div>
+        <span class="cr-next-card__arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      </a>
+      <a href="/recruitment-graduate/voices/" class="cr-next-card reveal reveal--delay-2">
+        <div class="cr-next-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="cr-next-card__body">
+          <p class="cr-next-card__name">学生の声</p>
+          <p class="cr-next-card__desc">先輩たちのリアルな選考体験談・入社の決め手を読む</p>
+        </div>
+        <span class="cr-next-card__arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 
