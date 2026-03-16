@@ -42,21 +42,21 @@
 
 /* --- CSS カスタムプロパティ（BDX カラーシステム） --- */
 :root {
-  --bdx-navy:           #003894;
-  --bdx-navy-dark:      #002266;
-  --bdx-navy-light:     #1a5cc8;
-  --bdx-gold:           #C8A864;
-  --bdx-gold-light:     #D4BC82;
+  --bdx-navy:           #1A407B;
+  --bdx-navy-dark:      #0f2d50;
+  --bdx-navy-light:     #004B9F;
+  --bdx-gold:           #1A407B;
+  --bdx-gold-light:     #004B9F;
   --bdx-bg-white:       #FFFFFF;
-  --bdx-bg-light:       #F5F7FA;
-  --bdx-bg-navy:        #003894;
+  --bdx-bg-light:       #F5F6F7;
+  --bdx-bg-navy:        #1A407B;
   --bdx-bg-dark:        #0A1628;
-  --bdx-text-primary:   #1A1A2E;
-  --bdx-text-secondary: #4A5568;
+  --bdx-text-primary:   #1A2229;
+  --bdx-text-secondary: #4C5262;
   --bdx-text-on-dark:   #FFFFFF;
   --bdx-text-on-dark-sub: #B0C4DE;
-  --bdx-border:         #E2E8F0;
-  --bdx-border-gold:    #C8A864;
+  --bdx-border:         #DEE1E3;
+  --bdx-border-gold:    #1A407B;
 }
 
 /* --- ヒーロー --- */
@@ -74,7 +74,7 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(0,56,148,0.9) 0%, rgba(10,22,40,0.95) 100%);
+    linear-gradient(135deg, rgba(26,64,123,0.9) 0%, rgba(10,22,40,0.95) 100%);
   /* 幾何学的な装飾ライン */
 }
 
@@ -88,12 +88,12 @@
   height: 50vw;
   max-width: 600px;
   max-height: 600px;
-  border: 1px solid rgba(200,168,100,0.15);
+  border: 1px solid rgba(26,64,123,0.15);
   border-radius: 50%;
   box-shadow:
-    inset 0 0 0 40px rgba(200,168,100,0.04),
-    inset 0 0 0 80px rgba(200,168,100,0.03),
-    inset 0 0 0 140px rgba(200,168,100,0.02);
+    inset 0 0 0 40px rgba(26,64,123,0.04),
+    inset 0 0 0 80px rgba(26,64,123,0.03),
+    inset 0 0 0 140px rgba(26,64,123,0.02);
 }
 
 .intern-hero__content {
@@ -273,13 +273,13 @@
 
 .intern-overview-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0,56,148,0.12);
+  box-shadow: 0 10px 28px rgba(26,64,123,0.12);
 }
 
 .intern-overview-card__icon {
   width: 44px;
   height: 44px;
-  background: rgba(0,56,148,0.07);
+  background: rgba(26,64,123,0.07);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -327,7 +327,7 @@
   top: 0.5rem;
   bottom: 0.5rem;
   width: 2px;
-  background: linear-gradient(to bottom, var(--bdx-navy), rgba(0,56,148,0.2));
+  background: linear-gradient(to bottom, var(--bdx-navy), rgba(26,64,123,0.2));
 }
 
 .intern-timeline__item {
@@ -354,7 +354,7 @@
   font-size: 1rem;
   font-weight: 500;
   z-index: 2;
-  box-shadow: 0 2px 8px rgba(0,56,148,0.3);
+  box-shadow: 0 2px 8px rgba(26,64,123,0.3);
 }
 
 .intern-timeline__day {
@@ -393,7 +393,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--bdx-navy);
-  background: rgba(0,56,148,0.07);
+  background: rgba(26,64,123,0.07);
   padding: 0.2rem 0.7rem;
   border-radius: 100px;
 }
@@ -438,7 +438,7 @@
   left: 0.4rem;
   font-family: 'EB Garamond', serif;
   font-size: 4rem;
-  color: rgba(200,168,100,0.2);
+  color: rgba(26,64,123,0.2);
   line-height: 1;
 }
 
@@ -533,7 +533,7 @@
   color: var(--bdx-navy);
   font-family: 'Noto Sans JP', sans-serif;
   white-space: nowrap;
-  background: rgba(0,56,148,0.03);
+  background: rgba(26,64,123,0.03);
 }
 
 .intern-table td {
@@ -646,7 +646,7 @@
 
 .intern-flow-row__step--highlight .intern-flow-row__bubble {
   background: var(--bdx-gold);
-  box-shadow: 0 4px 12px rgba(200,168,100,0.4);
+  box-shadow: 0 4px 12px rgba(26,64,123,0.4);
 }
 
 .intern-flow-row__bubble {
@@ -738,12 +738,12 @@
 }
 
 .intern-faq-item:hover {
-  box-shadow: 0 4px 16px rgba(0, 56, 148, 0.09);
+  box-shadow: 0 4px 16px rgba(26, 64, 123, 0.09);
 }
 
 .intern-faq-item[open] {
-  box-shadow: 0 4px 20px rgba(0, 56, 148, 0.12);
-  border-color: rgba(0, 56, 148, 0.2);
+  box-shadow: 0 4px 20px rgba(26, 64, 123, 0.12);
+  border-color: rgba(26, 64, 123, 0.2);
 }
 
 .intern-faq-item summary {
@@ -773,7 +773,7 @@
   height: 1.5rem;
   background: var(--bdx-bg-light);
   border-radius: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 24 24' stroke='%23003894' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 24 24' stroke='%231A407B' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   transition: transform 0.25s ease;
@@ -864,13 +864,13 @@
 }
 .intern-next-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,56,148,.1);
-  border-color: rgba(0,56,148,.25);
+  box-shadow: 0 10px 24px rgba(26,64,123,.1);
+  border-color: rgba(26,64,123,.25);
 }
 .intern-next-card__icon {
   width: 3rem; height: 3rem;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(0,56,148,.07);
+  background: rgba(26,64,123,.07);
   border-radius: 50%;
   flex-shrink: 0;
   color: var(--bdx-navy);

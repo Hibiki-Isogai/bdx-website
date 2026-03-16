@@ -39,16 +39,16 @@
    BDX 新卒採用トップ - ページ固有スタイル
    ================================================================ */
 :root {
-  --bdx-navy:          #003894;
-  --bdx-navy-light:    #1a5cc8;
-  --bdx-gold:          #C8A864;
-  --bdx-gold-light:    #D4BC82;
-  --bdx-bg-light:      #F5F7FA;
-  --bdx-text-primary:  #1A1A2E;
-  --bdx-text-secondary:#4A5568;
+  --bdx-navy:          #1A407B;
+  --bdx-navy-light:    #004B9F;
+  --bdx-gold:          #1A407B;
+  --bdx-gold-light:    #004B9F;
+  --bdx-bg-light:      #F5F6F7;
+  --bdx-text-primary:  #1A2229;
+  --bdx-text-secondary:#4C5262;
   --bdx-text-on-dark:  #FFFFFF;
   --bdx-text-on-dark-sub: #B0C4DE;
-  --bdx-border:        #E2E8F0;
+  --bdx-border:        #DEE1E3;
 }
 
 /* --- ヒーロー --- */
@@ -68,7 +68,7 @@
 .rg-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(0,34,102,.85) 0%, rgba(0,56,148,.60) 60%, rgba(0,56,148,.45) 100%);
+  background: linear-gradient(160deg, rgba(15,45,80,.85) 0%, rgba(26,64,123,.60) 60%, rgba(26,64,123,.45) 100%);
 }
 .rg-hero__content {
   position: relative;
@@ -169,11 +169,11 @@
   transition: background-color .25s, transform .2s, border-color .25s, color .25s, box-shadow .25s;
 }
 .rg-btn--primary { background-color: var(--bdx-gold); color: #fff; border-color: var(--bdx-gold); }
-.rg-btn--primary:hover { background-color: var(--bdx-gold-light); border-color: var(--bdx-gold-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(200,168,100,.35); }
+.rg-btn--primary:hover { background-color: var(--bdx-gold-light); border-color: var(--bdx-gold-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(26,64,123,.35); }
 .rg-btn--outline { background-color: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
 .rg-btn--outline:hover { background-color: rgba(255,255,255,.12); border-color: #fff; transform: translateY(-2px); }
 .rg-btn--navy { background-color: var(--bdx-navy); color: #fff; border-color: var(--bdx-navy); }
-.rg-btn--navy:hover { background-color: var(--bdx-navy-light); border-color: var(--bdx-navy-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,56,148,.25); }
+.rg-btn--navy:hover { background-color: var(--bdx-navy-light); border-color: var(--bdx-navy-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(26,64,123,.25); }
 
 /* --- セクション --- */
 .rg-section { padding: 5rem 1.5rem; }
@@ -226,17 +226,17 @@
   box-shadow: 0 2px 10px rgba(0,0,0,.07);
   transition: transform .3s, box-shadow .3s;
 }
-.rg-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,56,148,.13); }
+.rg-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(26,64,123,.13); }
 .rg-card__icon {
   display: flex; align-items: center; justify-content: center;
   padding: 2.5rem 1rem 1rem;
-  background: linear-gradient(135deg, rgba(0,56,148,.06) 0%, rgba(0,56,148,.02) 100%);
+  background: linear-gradient(135deg, rgba(26,64,123,.06) 0%, rgba(26,64,123,.02) 100%);
 }
 .rg-card__icon svg { width: 52px; height: 52px; color: var(--bdx-navy); opacity: .85; }
 .rg-card__body { padding: 1.25rem 1.75rem 2rem; flex: 1; display: flex; flex-direction: column; }
 .rg-card__tag {
   display: inline-block; font-size: .75rem; font-weight: 700;
-  color: var(--bdx-navy); background: rgba(0,56,148,.08);
+  color: var(--bdx-navy); background: rgba(26,64,123,.08);
   padding: .2rem .75rem; border-radius: 100px; margin-bottom: .75rem;
   text-transform: uppercase; letter-spacing: .05em;
 }
@@ -254,12 +254,12 @@
 
 /* --- 声カード --- */
 .rg-voice-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,.07); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; transition: transform .3s, box-shadow .3s; }
-.rg-voice-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,56,148,.12); }
+.rg-voice-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(26,64,123,.12); }
 .rg-voice-card__quote { position: relative; padding-left: 1.5rem; border-left: 3px solid var(--bdx-gold); }
-.rg-voice-card__quote::before { content: '\201C'; position: absolute; top: -.4em; left: .2rem; font-family: 'EB Garamond', serif; font-size: 3rem; color: rgba(200,168,100,.25); line-height: 1; }
+.rg-voice-card__quote::before { content: '\201C'; position: absolute; top: -.4em; left: .2rem; font-family: 'EB Garamond', serif; font-size: 3rem; color: rgba(26,64,123,.25); line-height: 1; }
 .rg-voice-card__text { font-size: .9375rem; line-height: 1.85; color: var(--bdx-text-primary); }
 .rg-voice-card__footer { display: flex; align-items: center; gap: .75rem; padding-top: .75rem; border-top: 1px solid var(--bdx-border); }
-.rg-voice-card__badge { display: inline-block; font-size: .7rem; font-weight: 700; color: var(--bdx-navy); background: rgba(0,56,148,.08); padding: .2rem .6rem; border-radius: 100px; white-space: nowrap; }
+.rg-voice-card__badge { display: inline-block; font-size: .7rem; font-weight: 700; color: var(--bdx-navy); background: rgba(26,64,123,.08); padding: .2rem .6rem; border-radius: 100px; white-space: nowrap; }
 .rg-voice-card__author { font-size: .8125rem; color: var(--bdx-text-secondary); line-height: 1.4; }
 
 /* --- キャリアタイムライン --- */
@@ -268,7 +268,7 @@
 @media (max-width: 768px) { .rg-timeline-wrap { grid-template-columns: 1fr; } .rg-timeline-wrap::before { display: none; } }
 .rg-timeline-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.5rem 2rem; }
 @media (max-width: 768px) { .rg-timeline-step { flex-direction: row; text-align: left; padding: 0 0 2rem; align-items: flex-start; gap: 1.25rem; } }
-.rg-timeline-step__marker { width: 3rem; height: 3rem; border-radius: 50%; background: var(--bdx-gold); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 500; flex-shrink: 0; position: relative; z-index: 2; margin-bottom: 1.25rem; box-shadow: 0 4px 12px rgba(200,168,100,.4); }
+.rg-timeline-step__marker { width: 3rem; height: 3rem; border-radius: 50%; background: var(--bdx-gold); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 500; flex-shrink: 0; position: relative; z-index: 2; margin-bottom: 1.25rem; box-shadow: 0 4px 12px rgba(26,64,123,.4); }
 @media (max-width: 768px) { .rg-timeline-step__marker { margin-bottom: 0; } }
 .rg-timeline-step__year { font-family: 'EB Garamond', serif; font-size: .8125rem; letter-spacing: .1em; color: var(--bdx-gold); margin-bottom: .4rem; }
 .rg-timeline-step__title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
@@ -280,7 +280,7 @@
 .rg-flow__item { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 0 .25rem; }
 .rg-flow__item:not(:last-child)::after { content: ''; position: absolute; right: -.75rem; top: 2rem; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid var(--bdx-navy); z-index: 2; }
 @media (max-width: 768px) { .rg-flow__item:not(:last-child)::after { right: auto; top: auto; bottom: -.75rem; left: 50%; transform: translateX(-50%); border-top: 12px solid var(--bdx-navy); border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: none; } }
-.rg-flow__step { width: 4rem; height: 4rem; border-radius: 50%; background: var(--bdx-navy); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'EB Garamond', serif; font-size: 1.125rem; font-weight: 500; margin-bottom: .75rem; box-shadow: 0 4px 12px rgba(0,56,148,.2); flex-shrink: 0; }
+.rg-flow__step { width: 4rem; height: 4rem; border-radius: 50%; background: var(--bdx-navy); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'EB Garamond', serif; font-size: 1.125rem; font-weight: 500; margin-bottom: .75rem; box-shadow: 0 4px 12px rgba(26,64,123,.2); flex-shrink: 0; }
 .rg-flow__label { font-size: .875rem; font-weight: 700; color: var(--bdx-text-primary); line-height: 1.4; }
 .rg-flow__note  { font-size: .75rem; color: var(--bdx-text-secondary); line-height: 1.5; margin-top: .35rem; }
 
@@ -293,7 +293,7 @@
 .rg-tab-panel.is-active { display: block; }
 
 /* --- CTA バナー --- */
-.rg-cta-banner { background: linear-gradient(135deg, #002266 0%, var(--bdx-navy) 60%, #1a5cc8 100%); padding: 5rem 1.5rem; text-align: center; }
+.rg-cta-banner { background: linear-gradient(135deg, #0f2d50 0%, var(--bdx-navy) 60%, #004B9F 100%); padding: 5rem 1.5rem; text-align: center; }
 .rg-cta-banner__inner { max-width: 720px; margin: 0 auto; }
 .rg-cta-banner__title { font-family: 'EB Garamond', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 500; color: #fff; line-height: 1.4; margin-bottom: 1rem; }
 .rg-cta-banner__text { color: var(--bdx-text-on-dark-sub); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; }
@@ -304,8 +304,8 @@
 .rg-related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 @media (max-width: 600px) { .rg-related-grid { grid-template-columns: 1fr; } }
 .rg-related-card { display: flex; align-items: center; gap: 1.5rem; padding: 1.75rem 2rem; background: #fff; border: 1px solid var(--bdx-border); border-radius: 8px; text-decoration: none; color: inherit; transition: transform .3s, box-shadow .3s, border-color .3s; }
-.rg-related-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,56,148,.1); border-color: rgba(0,56,148,.25); }
-.rg-related-card__icon { width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; background: rgba(0,56,148,.07); border-radius: 50%; flex-shrink: 0; color: var(--bdx-navy); }
+.rg-related-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(26,64,123,.1); border-color: rgba(26,64,123,.25); }
+.rg-related-card__icon { width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; background: rgba(26,64,123,.07); border-radius: 50%; flex-shrink: 0; color: var(--bdx-navy); }
 .rg-related-card__icon svg { width: 22px; height: 22px; }
 .rg-related-card__body { flex: 1; }
 .rg-related-card__title { font-size: 1rem; font-weight: 700; color: var(--bdx-text-primary); margin-bottom: .35rem; }
@@ -431,10 +431,10 @@
       <div class="rg-card reveal reveal--delay-1">
         <div class="rg-card__icon">
           <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="26" cy="16" r="8" stroke="#003894" stroke-width="2.5"/>
-            <path d="M10 44c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#003894" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="42" cy="18" r="5" stroke="#003894" stroke-width="2" opacity="0.5"/>
-            <path d="M46 38c0-5.523-4.477-10-10-10" stroke="#003894" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="26" cy="16" r="8" stroke="#1A407B" stroke-width="2.5"/>
+            <path d="M10 44c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#1A407B" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="42" cy="18" r="5" stroke="#1A407B" stroke-width="2" opacity="0.5"/>
+            <path d="M46 38c0-5.523-4.477-10-10-10" stroke="#1A407B" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
           </svg>
         </div>
         <div class="rg-card__body">
@@ -446,9 +446,9 @@
       <div class="rg-card reveal reveal--delay-2">
         <div class="rg-card__icon">
           <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="6" y="22" width="28" height="8" rx="4" stroke="#003894" stroke-width="2.5"/>
-            <path d="M34 26l10-8M34 26l10 8" stroke="#003894" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 14h16M10 38h22" stroke="#003894" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+            <rect x="6" y="22" width="28" height="8" rx="4" stroke="#1A407B" stroke-width="2.5"/>
+            <path d="M34 26l10-8M34 26l10 8" stroke="#1A407B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 14h16M10 38h22" stroke="#1A407B" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
           </svg>
         </div>
         <div class="rg-card__body">
@@ -460,11 +460,11 @@
       <div class="rg-card reveal reveal--delay-3">
         <div class="rg-card__icon">
           <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M8 40L18 28l8 6 8-12 10-8" stroke="#003894" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="18" cy="28" r="3" fill="#003894"/>
-            <circle cx="26" cy="34" r="3" fill="#003894" opacity="0.5"/>
-            <circle cx="34" cy="22" r="3" fill="#003894"/>
-            <circle cx="44" cy="14" r="3" fill="#003894" opacity="0.5"/>
+            <path d="M8 40L18 28l8 6 8-12 10-8" stroke="#1A407B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18" cy="28" r="3" fill="#1A407B"/>
+            <circle cx="26" cy="34" r="3" fill="#1A407B" opacity="0.5"/>
+            <circle cx="34" cy="22" r="3" fill="#1A407B"/>
+            <circle cx="44" cy="14" r="3" fill="#1A407B" opacity="0.5"/>
           </svg>
         </div>
         <div class="rg-card__body">
@@ -789,7 +789,7 @@
 
 <footer id="gfooter">
 <div class="gfooterInner">
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="165" height="57.49" viewbox="0 0 165 57.49" role="img"><defs><radialgradient id="a" cx="0.263" cy="1.386" r="4.105" gradientTransform="translate(0.355) scale(0.289 1)" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fff"/><stop offset="0.374" stop-color="#00b9ef"/><stop offset="1" stop-color="#003894"/></radialgradient><radialgradient id="b" cx="-0.116" cy="0.411" r="2.967" gradientTransform="translate(0.204) scale(0.593 1)" xlink:href="#a"/><radialgradient id="c" cx="0.678" cy="0.059" r="0.722" gradientTransform="translate(-0.19) scale(1.38 1)" xlink:href="#a"/><radialgradient id="d" cx="0.184" cy="-0.37" r="1.022" gradientTransform="translate(0.108) scale(0.785 1)" xlink:href="#a"/><radialgradient id="e" cx="-1.127" cy="-0.045" r="1.216" gradientTransform="translate(-0.378) scale(1.756 1)" xlink:href="#a"/><radialgradient id="f" cx="0.499" cy="0.492" r="0.39" gradientTransform="translate(-0.574) scale(2.148 1)" xlink:href="#a"/><radialgradient id="g" cx="0.5" cy="0.5" r="0.638" gradientTransform="translate(0.167) scale(0.666 1)" gradientUnits="objectBoundingBox"><stop offset="0.217" stop-color="#f7f7f8"/><stop offset="1" stop-color="#98a1b4"/></radialgradient></defs><g transform="translate(-226.223 -230.101)"><g transform="translate(226.223 230.101)"><path d="M292.091,234.88a28.728,28.728,0,0,0-28.868-1.668,47.826,47.826,0,0,1,9.721,5.238C280.129,236.139,286.932,234.879,292.091,234.88Z" transform="translate(-247.476 -230.101)" fill="url(#a)"/><path d="M305.8,249.34c-.549-3.63-8.926-4.2-19.46-1.6a88.085,88.085,0,0,1,11.965,9.949C303.2,254.757,306.15,251.671,305.8,249.34Z" transform="translate(-260.753 -239.309)" fill="url(#b)"/><path d="M235.961,271.455a56.8,56.8,0,0,1-6.677-13.694,28.721,28.721,0,0,0,6.083,33.917l-5.106,6.479c1.225-.325,2.474-.693,3.732-1.085l4.772-6.055.043-.013c12.351-3.812,21.864-10.211,21.247-14.294-.576-3.815-9.795-4.255-21.079-1.186,1.651-.56,3.286-1.066,4.892-1.516l6.11-7.752.043-.013a69.127,69.127,0,0,0,10.607-4.224c-7.763-6.474-15.742-10.841-21.6-11.305C229.922,249.992,228.94,258.919,235.961,271.455Z" transform="translate(-226.223 -241.917)" fill="url(#c)"/><path d="M303.9,310.717l0,0a60.566,60.566,0,0,0-5.774-10.092,92.751,92.751,0,0,0-12.283-14.217q-2.509,1.375-5.355,2.7a100.1,100.1,0,0,1-10.23,4.074c8.153-1.692,14.915-1.659,17.929.495,5.349,3.822-3.117,12.863-18.912,20.192-2.22,1.03-4.465,1.965-6.7,2.81a28.737,28.737,0,0,0,37.659-10.273,40.006,40.006,0,0,1,5.071,8.064,35.392,35.392,0,0,0-1.4-3.747Z" transform="translate(-247.104 -262.446)" fill="url(#d)"/><path d="M336.871,288.448a28.68,28.68,0,0,0-2.038-28.2c-1.855,2.911-5.774,6.286-11.248,9.585a98.625,98.625,0,0,1,9.1,11.57A75.124,75.124,0,0,1,336.871,288.448Z" transform="translate(-282.148 -247.419)" fill="url(#e)"/><path d="M361.047,340.467l-.009-.014.006.018Z" transform="translate(-303.661 -293.488)" fill="url(#f)"/></g><g transform="translate(230.796 235.562)"><path d="M244.906,243.019c-6.967-.824-9.358,4.233-7.132,12.425-.872-5.968,1.614-9.538,7.5-9.072,9.593.76,24.854,11.974,35.559,25.769C270.671,257.066,254.907,244.2,244.906,243.019Z" transform="translate(-236.968 -242.931)" fill="url(#g)"/></g><path d="M410.5,276.435a6.589,6.589,0,0,0-3.128-1.286,6.828,6.828,0,0,0,3.036-1.286,5.967,5.967,0,0,0,1.821-2.305,7.064,7.064,0,0,0,.6-2.891,9.062,9.062,0,0,0-.967-4.322,6.569,6.569,0,0,0-2.923-2.8,10.709,10.709,0,0,0-4.857-.988H392.287V290.48h12.142a10.187,10.187,0,0,0,4.651-1.008,7.2,7.2,0,0,0,3.066-2.86,8.408,8.408,0,0,0,1.07-4.281v-.062a7.8,7.8,0,0,0-.7-3.293A6.712,6.712,0,0,0,410.5,276.435Zm-7.182-11.988a6.006,6.006,0,0,1,3.952,1.112,4.967,4.967,0,0,1,.134,6.585,5.016,5.016,0,0,1-3.509,1.091h-7.429v-8.788Zm5.659,17.514a4.2,4.2,0,0,1-1.461,3.416,7.233,7.233,0,0,1-4.651,1.214h-6.4v-9.57h7.429a6.29,6.29,0,0,1,2.9.587,3.632,3.632,0,0,1,1.656,1.677,5.977,5.977,0,0,1,.525,2.614Z" transform="translate(-95.388 -17.494)"/></g></svg></div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="165" height="57.49" viewbox="0 0 165 57.49" role="img"><defs><radialgradient id="a" cx="0.263" cy="1.386" r="4.105" gradientTransform="translate(0.355) scale(0.289 1)" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fff"/><stop offset="0.374" stop-color="#00b9ef"/><stop offset="1" stop-color="#1A407B"/></radialgradient><radialgradient id="b" cx="-0.116" cy="0.411" r="2.967" gradientTransform="translate(0.204) scale(0.593 1)" xlink:href="#a"/><radialgradient id="c" cx="0.678" cy="0.059" r="0.722" gradientTransform="translate(-0.19) scale(1.38 1)" xlink:href="#a"/><radialgradient id="d" cx="0.184" cy="-0.37" r="1.022" gradientTransform="translate(0.108) scale(0.785 1)" xlink:href="#a"/><radialgradient id="e" cx="-1.127" cy="-0.045" r="1.216" gradientTransform="translate(-0.378) scale(1.756 1)" xlink:href="#a"/><radialgradient id="f" cx="0.499" cy="0.492" r="0.39" gradientTransform="translate(-0.574) scale(2.148 1)" xlink:href="#a"/><radialgradient id="g" cx="0.5" cy="0.5" r="0.638" gradientTransform="translate(0.167) scale(0.666 1)" gradientUnits="objectBoundingBox"><stop offset="0.217" stop-color="#f7f7f8"/><stop offset="1" stop-color="#98a1b4"/></radialgradient></defs><g transform="translate(-226.223 -230.101)"><g transform="translate(226.223 230.101)"><path d="M292.091,234.88a28.728,28.728,0,0,0-28.868-1.668,47.826,47.826,0,0,1,9.721,5.238C280.129,236.139,286.932,234.879,292.091,234.88Z" transform="translate(-247.476 -230.101)" fill="url(#a)"/><path d="M305.8,249.34c-.549-3.63-8.926-4.2-19.46-1.6a88.085,88.085,0,0,1,11.965,9.949C303.2,254.757,306.15,251.671,305.8,249.34Z" transform="translate(-260.753 -239.309)" fill="url(#b)"/><path d="M235.961,271.455a56.8,56.8,0,0,1-6.677-13.694,28.721,28.721,0,0,0,6.083,33.917l-5.106,6.479c1.225-.325,2.474-.693,3.732-1.085l4.772-6.055.043-.013c12.351-3.812,21.864-10.211,21.247-14.294-.576-3.815-9.795-4.255-21.079-1.186,1.651-.56,3.286-1.066,4.892-1.516l6.11-7.752.043-.013a69.127,69.127,0,0,0,10.607-4.224c-7.763-6.474-15.742-10.841-21.6-11.305C229.922,249.992,228.94,258.919,235.961,271.455Z" transform="translate(-226.223 -241.917)" fill="url(#c)"/><path d="M303.9,310.717l0,0a60.566,60.566,0,0,0-5.774-10.092,92.751,92.751,0,0,0-12.283-14.217q-2.509,1.375-5.355,2.7a100.1,100.1,0,0,1-10.23,4.074c8.153-1.692,14.915-1.659,17.929.495,5.349,3.822-3.117,12.863-18.912,20.192-2.22,1.03-4.465,1.965-6.7,2.81a28.737,28.737,0,0,0,37.659-10.273,40.006,40.006,0,0,1,5.071,8.064,35.392,35.392,0,0,0-1.4-3.747Z" transform="translate(-247.104 -262.446)" fill="url(#d)"/><path d="M336.871,288.448a28.68,28.68,0,0,0-2.038-28.2c-1.855,2.911-5.774,6.286-11.248,9.585a98.625,98.625,0,0,1,9.1,11.57A75.124,75.124,0,0,1,336.871,288.448Z" transform="translate(-282.148 -247.419)" fill="url(#e)"/><path d="M361.047,340.467l-.009-.014.006.018Z" transform="translate(-303.661 -293.488)" fill="url(#f)"/></g><g transform="translate(230.796 235.562)"><path d="M244.906,243.019c-6.967-.824-9.358,4.233-7.132,12.425-.872-5.968,1.614-9.538,7.5-9.072,9.593.76,24.854,11.974,35.559,25.769C270.671,257.066,254.907,244.2,244.906,243.019Z" transform="translate(-236.968 -242.931)" fill="url(#g)"/></g><path d="M410.5,276.435a6.589,6.589,0,0,0-3.128-1.286,6.828,6.828,0,0,0,3.036-1.286,5.967,5.967,0,0,0,1.821-2.305,7.064,7.064,0,0,0,.6-2.891,9.062,9.062,0,0,0-.967-4.322,6.569,6.569,0,0,0-2.923-2.8,10.709,10.709,0,0,0-4.857-.988H392.287V290.48h12.142a10.187,10.187,0,0,0,4.651-1.008,7.2,7.2,0,0,0,3.066-2.86,8.408,8.408,0,0,0,1.07-4.281v-.062a7.8,7.8,0,0,0-.7-3.293A6.712,6.712,0,0,0,410.5,276.435Zm-7.182-11.988a6.006,6.006,0,0,1,3.952,1.112,4.967,4.967,0,0,1,.134,6.585,5.016,5.016,0,0,1-3.509,1.091h-7.429v-8.788Zm5.659,17.514a4.2,4.2,0,0,1-1.461,3.416,7.233,7.233,0,0,1-4.651,1.214h-6.4v-9.57h7.429a6.29,6.29,0,0,1,2.9.587,3.632,3.632,0,0,1,1.656,1.677,5.977,5.977,0,0,1,.525,2.614Z" transform="translate(-95.388 -17.494)"/></g></svg></div>
 <div class="sitemap">
 <ul class="column">
 <li><a href="/about/">B＆DXについて</a></li>
