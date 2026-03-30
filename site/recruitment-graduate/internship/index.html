@@ -881,6 +881,94 @@
 .intern-next-card__desc { font-size: .85rem; line-height: 1.6; color: var(--bdx-text-secondary); }
 .intern-next-card__arrow { color: var(--bdx-navy); flex-shrink: 0; transition: transform .2s; }
 .intern-next-card:hover .intern-next-card__arrow { transform: translateX(3px); }
+
+/* --- 体験記 --- */
+.intern-diary {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.intern-diary__item {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 2.5rem 2.25rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.intern-diary__item:last-child {
+  margin-bottom: 0;
+}
+
+.intern-diary__heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--bdx-navy);
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+
+.intern-diary__author {
+  font-size: 0.8125rem;
+  color: var(--bdx-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.intern-diary__day {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.intern-diary__day-label {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 1.75rem;
+  background: var(--bdx-navy);
+  color: #FFFFFF;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  margin-top: 0.1rem;
+}
+
+.intern-diary__day-text {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--bdx-text-primary);
+}
+
+.intern-diary__impression {
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(26,64,123,0.03);
+  border-left: 3px solid var(--bdx-navy);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--bdx-text-primary);
+  font-style: italic;
+}
+
+@media (max-width: 580px) {
+  .intern-diary__item {
+    padding: 1.75rem 1.25rem 1.5rem;
+  }
+  .intern-diary__day {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .intern-diary__day-label {
+    width: auto;
+    padding: 0 0.75rem;
+  }
+}
 </style>
 
 <script type="application/ld+json">
@@ -1183,7 +1271,79 @@
         </footer>
       </blockquote>
 
+      <blockquote class="intern-quote reveal">
+        <p class="intern-quote__text">
+          「JOBインターンのFBが非常に丁寧で、就活生目線で見て自身の成長に繋がるものでした。社員のレベルが高く、FBが的確で熱量を感じました。」
+        </p>
+        <footer>
+          <span class="intern-quote__author">早稲田大学 / 男性</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="intern-quote reveal reveal--delay-1">
+        <p class="intern-quote__text">
+          「3日間のJOBインターンでは、社長に会える時間がこんなにあるとは思っていませんでした。他社と比較して、こんなにも社長との距離が近い会社は見たことがありませんでした。」
+        </p>
+        <footer>
+          <span class="intern-quote__author">東京大学 / 男性</span>
+        </footer>
+      </blockquote>
+
     </div><!-- /.intern-quotes-grid -->
+
+    <!-- 体験記 -->
+    <div class="intern-section__header reveal" style="margin-top: 4rem;">
+      <span class="intern-section__label">Diary</span>
+      <h2 class="intern-section__title">インターン体験記</h2>
+      <p class="intern-section__lead">
+        参加者が過ごした3日間のリアルな記録をご紹介します。
+      </p>
+    </div>
+
+    <div class="intern-diary">
+
+      <div class="intern-diary__item reveal">
+        <p class="intern-diary__heading">戦略思考と実行力の両方を問われた3日間</p>
+        <p class="intern-diary__author">慶應義塾大学 / 男性</p>
+        <div class="intern-diary__day">
+          <span class="intern-diary__day-label">Day 1</span>
+          <p class="intern-diary__day-text">実在する企業の経営課題が提示される。チーム編成後、仮説立案を開始。サポーターの現役コンサルタントが伴走。</p>
+        </div>
+        <div class="intern-diary__day">
+          <span class="intern-diary__day-label">Day 2</span>
+          <p class="intern-diary__day-text">「なぜそう考えるのか」を深掘りされながら戦略の骨子を固める。サポーターのFBは的確で厳しいが成長につながる。</p>
+        </div>
+        <div class="intern-diary__day">
+          <span class="intern-diary__day-label">Day 3</span>
+          <p class="intern-diary__day-text">社長含む役員陣への発表。一人ひとりへの丁寧なFBで「自分の強みと伸びしろ」が明確に。</p>
+        </div>
+        <div class="intern-diary__impression">
+          架空のケースではなく実際のビジネス課題に取り組めたことが一番の学びでした。
+        </div>
+      </div>
+
+      <div class="intern-diary__item reveal">
+        <p class="intern-diary__heading">社員の本気度に圧倒された</p>
+        <p class="intern-diary__author">青山学院大学 / 女性</p>
+        <div class="intern-diary__day">
+          <span class="intern-diary__day-label">Day 1</span>
+          <p class="intern-diary__day-text">初対面のメンバーと即座に議論開始。B&amp;DXの「対話の密度」を肌で感じる。</p>
+        </div>
+        <div class="intern-diary__day">
+          <span class="intern-diary__day-label">Day 2</span>
+          <p class="intern-diary__day-text">戦略を描くだけでなく「誰が・いつ・どう実行するか」まで落とし込む。中間FBで論点のずれを指摘される。</p>
+        </div>
+        <div class="intern-diary__day">
+          <span class="intern-diary__day-label">Day 3</span>
+          <p class="intern-diary__day-text">最終発表後、社員一人ひとりとキャリアについて率直に話せる時間。社長も参加。</p>
+        </div>
+        <div class="intern-diary__impression">
+          社員が本気で向き合ってくれる環境に驚きました。
+        </div>
+      </div>
+
+    </div><!-- /.intern-diary -->
+
   </div>
 </section>
 

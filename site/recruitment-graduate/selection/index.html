@@ -581,6 +581,90 @@
   color: rgba(255,255,255,.5);
 }
 
+/* ----------------------------------------------------------------
+   学生の声カード
+   ---------------------------------------------------------------- */
+.sel-voice-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) { .sel-voice-cards { grid-template-columns: 1fr; } }
+.sel-voice-card {
+  position: relative;
+  padding: 2rem 2rem 1.5rem 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  border-top: 3px solid var(--bdx-navy);
+}
+.sel-voice-card__theme {
+  display: inline-block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--bdx-navy);
+  background: rgba(26,64,123,.08);
+  padding: .25rem .75rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  letter-spacing: .04em;
+}
+.sel-voice-card__text {
+  font-size: .9375rem;
+  line-height: 1.85;
+  color: var(--bdx-text-primary);
+  margin-bottom: 1rem;
+}
+.sel-voice-card__author {
+  font-size: .8125rem;
+  color: var(--bdx-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.sel-voice-card__author::before {
+  content: '\2014';
+  color: var(--bdx-navy);
+}
+
+/* ----------------------------------------------------------------
+   実績データ（数字カード）
+   ---------------------------------------------------------------- */
+.sel-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media (max-width: 600px) { .sel-stats { grid-template-columns: 1fr; gap: 1.5rem; } }
+.sel-stat {
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+.sel-stat__number {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 3.2rem);
+  font-weight: 500;
+  color: var(--bdx-navy);
+  line-height: 1.1;
+  margin-bottom: .5rem;
+}
+.sel-stat__unit {
+  font-size: .6em;
+}
+.sel-stat__label {
+  font-size: .8125rem;
+  line-height: 1.6;
+  color: var(--bdx-text-secondary);
+}
+
 /* --- まだ迷っている方へ --- */
 .sel-next-nav {
   padding: 5rem 1.5rem;
@@ -612,8 +696,10 @@
 }
 .sel-next-nav__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  max-width: 720px;
+  margin: 1.5rem auto 0;
 }
 @media (max-width: 768px) { .sel-next-nav__grid { grid-template-columns: 1fr; } }
 .sel-next-card {
@@ -1131,6 +1217,13 @@
       </details>
 
       <details class="sel-faq-item">
+        <summary>文系・理系の区別はありますか？</summary>
+        <div class="sel-faq-item__answer">
+          <p>ありません。B&amp;DXのプロジェクトは経営戦略・デジタル変革の両面をカバーしており、文系・理系どちらのバックグラウンドも活かせる環境です。実際に在籍するコンサルタントも、文学部・理工学部・経済学部など多様な出身です。</p>
+        </div>
+      </details>
+
+      <details class="sel-faq-item">
         <summary>B&amp;DXの選考は他社とどう違いますか？</summary>
         <div class="sel-faq-item__answer">
           <p>大きく3つの特徴があります。まず、1-2次のケース面接を同日に実施する点。短時間のケース面接を複数回行い、多角的に思考力を評価します。次に、3日間のJOBインターンが選考に含まれる点。実際の経営課題に取り組み、現役コンサルタントから本気のフィードバックを受けられます。そして、エントリーしてすぐに現役コンサルタントとの面接からスタートする点です。選考ステップは全7段階と多めですが、その分だけ企業の雰囲気を深く理解できると毎年好評です。</p>
@@ -1182,7 +1275,98 @@
 
 
 <!-- ================================================================
-  6.5 まだ迷っている方へ
+  6.5 選考を経験した学生の声
+  ================================================================ -->
+<section class="sel-section sel-section--white" id="student-voices" aria-labelledby="sel-voices-heading">
+  <div class="sel-section__inner">
+    <div class="sel-section__header reveal">
+      <span class="sel-section__label">Student Voices</span>
+      <h2 class="sel-section__title"><span class="sel-section__title-accent">選考を経験した学生の声</span></h2>
+      <p class="sel-section__lead">
+        B&amp;DXの選考を経験した学生のリアルな声をテーマ別にご紹介します。
+      </p>
+    </div>
+    <div class="sel-voice-cards" role="list">
+
+      <div class="sel-voice-card reveal reveal--delay-1" role="listitem">
+        <span class="sel-voice-card__theme">きっかけ</span>
+        <p class="sel-voice-card__text">
+          外資就活ドットコムでB&amp;DXを知りました。創業から間もない中で、少ない従業員数で業績をあげられていることに興味を持ち、エントリーしました。
+        </p>
+        <footer>
+          <span class="sel-voice-card__author">慶應義塾大学 / 男性</span>
+        </footer>
+      </div>
+
+      <div class="sel-voice-card reveal reveal--delay-2" role="listitem">
+        <span class="sel-voice-card__theme">選考の印象</span>
+        <p class="sel-voice-card__text">
+          面接ではマネージャーの方に女性が多く、会社説明にあった通り、女性の活躍が顕著であることを実感した。また、私の考えに対して親身にFBをくださり、"コンサル=ドライ"というイメージが自身の中で変わった。
+        </p>
+        <footer>
+          <span class="sel-voice-card__author">横浜国立大学 / 女性</span>
+        </footer>
+      </div>
+
+      <div class="sel-voice-card reveal reveal--delay-3" role="listitem">
+        <span class="sel-voice-card__theme">入社の決め手</span>
+        <p class="sel-voice-card__text">
+          新進気鋭のコンサルティング企業でありながら、戦略コンサルとしての実績があり急成長している点に惹かれました。少数精鋭のファームでありながら高待遇である点も決め手でした。
+        </p>
+        <footer>
+          <span class="sel-voice-card__author">北海道大学 / 男性</span>
+        </footer>
+      </div>
+
+      <div class="sel-voice-card reveal reveal--delay-1" role="listitem">
+        <span class="sel-voice-card__theme">カルチャー</span>
+        <p class="sel-voice-card__text">
+          会社説明では、創業者である社長本人の思いを直接聞くことができ、会社のより深い理解につながりました。初めて理念に共感し、一緒に働きたいと感じました。
+        </p>
+        <footer>
+          <span class="sel-voice-card__author">一橋大学 / 男性</span>
+        </footer>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+  6.7 実績データ
+  ================================================================ -->
+<section class="sel-section sel-section--light" aria-labelledby="sel-stats-heading">
+  <div class="sel-section__inner">
+    <div class="sel-section__header reveal">
+      <span class="sel-section__label">Numbers</span>
+      <h2 class="sel-section__title" id="sel-stats-heading"><span class="sel-section__title-accent">実績データ</span></h2>
+      <p class="sel-section__lead">B&amp;DXの採用にまつわる数字をご紹介します。</p>
+    </div>
+    <div class="sel-stats">
+
+      <div class="sel-stat reveal reveal--delay-1">
+        <div class="sel-stat__number">2,000<span class="sel-stat__unit">+</span></div>
+        <p class="sel-stat__label">年間エントリー数</p>
+      </div>
+
+      <div class="sel-stat reveal reveal--delay-2">
+        <div class="sel-stat__number">81<span class="sel-stat__unit">%</span></div>
+        <p class="sel-stat__label">「第一志望」または<br>「第一志望群」と回答<br><small>（社員アンケート）</small></p>
+      </div>
+
+      <div class="sel-stat reveal reveal--delay-3">
+        <div class="sel-stat__number">1<span class="sel-stat__unit">位</span></div>
+        <p class="sel-stat__label">外資就活 戦略部門<br>フォローランキング<br><small>（2026年2月）</small></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+  7. まだ迷っている方へ
   ================================================================ -->
 <section class="sel-next-nav" aria-label="まだ迷っている方へ">
   <div class="sel-next-nav__inner">
@@ -1192,21 +1376,7 @@
       <p class="sel-next-nav__lead">エントリーの前に、もう少し B&amp;DX を知りたい方はこちらもご覧ください。</p>
     </div>
     <div class="sel-next-nav__grid">
-      <a href="/recruitment-graduate/voices/" class="sel-next-card reveal reveal--delay-1">
-        <div class="sel-next-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        </div>
-        <div class="sel-next-card__body">
-          <p class="sel-next-card__name">学生の声</p>
-          <p class="sel-next-card__desc">先輩たちの率直な選考体験を読む</p>
-        </div>
-        <span class="sel-next-card__arrow" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </span>
-      </a>
-      <a href="/recruitment-graduate/internship/" class="sel-next-card reveal reveal--delay-2">
+      <a href="/recruitment-graduate/internship/" class="sel-next-card reveal reveal--delay-1">
         <div class="sel-next-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="7" width="20" height="14" rx="2"/>
@@ -1221,7 +1391,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
         </span>
       </a>
-      <a href="/recruitment-graduate/career/" class="sel-next-card reveal reveal--delay-3">
+      <a href="/recruitment-graduate/career/" class="sel-next-card reveal reveal--delay-2">
         <div class="sel-next-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 20V10"/>
