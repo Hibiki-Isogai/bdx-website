@@ -130,6 +130,8 @@
   color: var(--bdx-text-on-dark-sub);
   max-width: 580px;
   margin: 0 auto 2.5rem;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .intern-hero__cta {
@@ -459,14 +461,16 @@
 /* --- 統計セクション --- */
 .intern-stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 @media (max-width: 700px) {
   .intern-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1066,7 +1070,8 @@
     <p class="intern-hero__label">Job Internship</p>
     <h1 class="intern-hero__title">戦略を、体験する。</h1>
     <p class="intern-hero__subtitle">
-      絵空事だけでは終わらない。戦略を、自分の手で描き、本気の提案をする3日間。<br>
+      絵空事だけでは終わらない。<br>
+      戦略を、自分の手で描き、本気の提案をする3日間。<br>
       架空のケースではなく、実際の企業をベースにした経営課題に、現役コンサルタントとともに挑む。
     </p>
     <div class="intern-hero__cta">
@@ -1361,7 +1366,19 @@
       </p>
     </div>
 
-    <div class="intern-stats-grid">
+    <div class="intern-stats-grid reveal">
+
+      <div class="intern-stat">
+        <span class="intern-stat__number">2,000<span class="intern-stat__unit">+</span></span>
+        <p class="intern-stat__label">年間エントリー数</p>
+        <p class="intern-stat__desc">毎年2,000名を超える学生からエントリーをいただいています。</p>
+      </div>
+
+      <div class="intern-stat">
+        <span class="intern-stat__number">30<span class="intern-stat__unit">〜40名</span></span>
+        <p class="intern-stat__label">1回あたりの参加者数</p>
+        <p class="intern-stat__desc">多数のエントリーから厳選。少人数だからこそ密度の高い学びを実現します。</p>
+      </div>
 
     </div><!-- /.intern-stats-grid -->
   </div>
@@ -1480,6 +1497,13 @@
         <summary>交通費や宿泊費は出ますか？</summary>
         <div class="intern-faq-answer">
           関東近郊以外からお越しの方には、エリアに応じた交通費および一定額の宿泊費を支給します。
+        </div>
+      </details>
+
+      <details class="intern-faq-item">
+        <summary>一部の日程のみ参加することはできますか？</summary>
+        <div class="intern-faq-answer">
+          申し訳ございませんが、3日間全日程・全時間への参加が必要です。チームでの議論やプレゼンテーション準備など、プログラム全体を通じて学びが深まる設計となっているため、部分参加はお受けしておりません。
         </div>
       </details>
 
