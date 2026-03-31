@@ -57,6 +57,22 @@
   --bdx-text-on-dark-sub: #B0C4DE;
   --bdx-border:         #DEE1E3;
   --bdx-border-gold:    #1A407B;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+/* プログレスバー */
+.intern-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #1A407B, #004B9F);
+  z-index: 9999;
+  transition: width 0.1s ease;
+  pointer-events: none;
 }
 
 /* --- ヒーロー --- */
@@ -141,6 +157,19 @@
   flex-wrap: wrap;
 }
 
+/* ヒーロー下部フェードグラデーション */
+.intern-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #fff);
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* --- ボタン --- */
 .intern-btn {
   display: inline-flex;
@@ -150,12 +179,11 @@
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 0.9375rem;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: background-color 0.2s ease, transform 0.2s ease,
-              border-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.25s, transform 0.2s, border-color 0.25s, color 0.25s, box-shadow 0.25s;
 }
 
 .intern-btn--primary {
@@ -191,14 +219,46 @@
   transform: translateY(-2px);
 }
 
-/* --- セクション共通 --- */
-.intern-section {
-  padding: 5rem 2rem;
+/* --- ページ背景（カード間の隙間の色） --- */
+.intern-page-content {
+  background: #fff;
+  padding: 2rem 0;
 }
 
-.intern-section--white { background-color: var(--bdx-bg-white); }
-.intern-section--light { background-color: var(--bdx-bg-light); }
-.intern-section--navy  { background-color: var(--bdx-bg-navy); color: var(--bdx-text-on-dark); }
+/* --- セクション共通（カード化） --- */
+.intern-section {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 1px 2px hsl(220deg 40% 40% / 0.06),
+    0 3px 6px hsl(220deg 40% 40% / 0.05),
+    0 8px 16px hsl(220deg 40% 40% / 0.04);
+  max-width: 1140px;
+  margin: 0 auto 2.5rem;
+  padding: 5rem 3.5rem;
+}
+
+.intern-section--white { background-color: #fff; }
+.intern-section--light { background-color: #fff; }
+.intern-section--navy  {
+  background: linear-gradient(160deg, #0F1A2E 0%, #1A407B 40%, #1E4D8F 100%);
+  color: var(--bdx-text-on-dark);
+  position: relative;
+}
+/* navyセクション微細ノイズテクスチャ */
+.intern-section--navy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+.intern-section--navy > * {
+  position: relative;
+  z-index: 1;
+}
 
 .intern-section__inner {
   max-width: 1100px;
@@ -207,17 +267,17 @@
 
 .intern-section__header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4.5rem;
 }
 
 .intern-section__label {
   font-family: 'EB Garamond', serif;
-  font-size: 0.8125rem;
-  letter-spacing: 0.2em;
+  font-size: .875rem;
+  letter-spacing: .3em;
   text-transform: uppercase;
   color: var(--bdx-navy);
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .intern-section--navy .intern-section__label {
@@ -226,11 +286,12 @@
 
 .intern-section__title {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   line-height: 1.4;
+  letter-spacing: -0.01em;
   color: var(--bdx-text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .intern-section--navy .intern-section__title {
@@ -266,16 +327,22 @@
 
 .intern-overview-card {
   background: #FFFFFF;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 2rem 1.75rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow:
+    0 1px 2px hsl(220deg 40% 40% / 0.06),
+    0 3px 6px hsl(220deg 40% 40% / 0.05),
+    0 8px 16px hsl(220deg 40% 40% / 0.04);
   border-top: 3px solid var(--bdx-gold);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .intern-overview-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(26,64,123,0.12);
+  transform: translateY(-5px);
+  box-shadow:
+    0 4px 8px hsl(220deg 40% 40% / 0.08),
+    0 8px 16px hsl(220deg 40% 40% / 0.08),
+    0 16px 32px hsl(220deg 40% 40% / 0.06);
 }
 
 .intern-overview-card__icon {
@@ -429,8 +496,11 @@
   padding: 2rem 2rem 2rem 3rem;
   background: #FFFFFF;
   border-left: 4px solid var(--bdx-gold);
-  border-radius: 0 8px 8px 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  box-shadow:
+    0 1px 2px hsl(220deg 40% 40% / 0.06),
+    0 3px 6px hsl(220deg 40% 40% / 0.05),
+    0 8px 16px hsl(220deg 40% 40% / 0.04);
 }
 
 .intern-quote::before {
@@ -692,9 +762,26 @@
 
 /* --- CTA バナー --- */
 .intern-cta {
-  background: var(--bdx-bg-navy);
-  padding: 5rem 2rem;
+  background: linear-gradient(160deg, #0F1A2E 0%, #1A407B 40%, #1E4D8F 100%);
+  border-radius: var(--radius-lg);
+  max-width: 1140px;
+  margin: 0 auto 2.5rem;
+  padding: 5rem 3.5rem;
   text-align: center;
+  position: relative;
+}
+.intern-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+.intern-cta > * {
+  position: relative;
+  z-index: 1;
 }
 
 .intern-cta__inner {
@@ -736,17 +823,22 @@
 .intern-faq-item {
   background: #FFFFFF;
   border: 1px solid var(--bdx-border);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   transition: box-shadow 0.25s ease;
 }
 
 .intern-faq-item:hover {
-  box-shadow: 0 4px 16px rgba(26, 64, 123, 0.09);
+  box-shadow:
+    0 1px 2px hsl(220deg 40% 40% / 0.06),
+    0 3px 6px hsl(220deg 40% 40% / 0.05),
+    0 8px 16px hsl(220deg 40% 40% / 0.04);
 }
 
 .intern-faq-item[open] {
-  box-shadow: 0 4px 20px rgba(26, 64, 123, 0.12);
+  box-shadow:
+    0 4px 8px hsl(220deg 40% 40% / 0.08),
+    0 8px 16px hsl(220deg 40% 40% / 0.08);
   border-color: rgba(26, 64, 123, 0.2);
 }
 
@@ -797,6 +889,79 @@
   padding-top: 1.125rem;
 }
 
+/* --- サイドナビゲーション（縦型ドットナビ） --- */
+.intern-side-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: opacity 0.3s ease;
+}
+.intern-side-nav__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(26, 64, 123, 0.25);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+.intern-side-nav__dot:hover,
+.intern-side-nav__dot.active {
+  width: 14px;
+  height: 14px;
+  background: #1A407B;
+  border-color: rgba(26, 64, 123, 0.3);
+  box-shadow: 0 0 0 4px rgba(26, 64, 123, 0.1);
+}
+.intern-side-nav__tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1A407B;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.intern-side-nav__tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #1A407B;
+}
+.intern-side-nav__dot:hover .intern-side-nav__tooltip {
+  opacity: 1;
+}
+
+/* --- next-nav カード化 --- */
+.intern-next-nav {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 1px 2px hsl(220deg 40% 40% / 0.06),
+    0 3px 6px hsl(220deg 40% 40% / 0.05),
+    0 8px 16px hsl(220deg 40% 40% / 0.04);
+  max-width: 1140px;
+  margin: 0 auto 2.5rem;
+  padding: 5rem 3.5rem;
+}
+
 /* --- アニメーション無効化対応 --- */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
@@ -816,21 +981,52 @@
 
 /* --- レスポンシブ調整 --- */
 @media (max-width: 960px) {
-  .intern-section { padding: 4rem 1.5rem; }
+  .intern-section { padding: 4rem 2rem; }
   .intern-hero { min-height: 70vh; }
 }
-@media (max-width: 600px) {
-  .intern-section { padding: 3rem 1rem; }
+@media (max-width: 768px) {
+  :root { --radius-lg: 16px; }
+  .intern-section {
+    border-radius: var(--radius-lg);
+    margin: 0 0.75rem 1.5rem;
+    padding: 3.5rem 2rem;
+  }
+  .intern-cta {
+    border-radius: var(--radius-lg);
+    margin: 0 0.75rem 1.5rem;
+    padding: 4rem 1.5rem;
+  }
+  .intern-next-nav {
+    border-radius: var(--radius-lg);
+    margin: 0 0.75rem 1.5rem;
+    padding: 3.5rem 2rem;
+  }
+  .intern-side-nav { display: none; }
+}
+@media (max-width: 480px) {
+  :root { --radius-lg: 12px; }
+  .intern-section {
+    border-radius: var(--radius-lg);
+    margin: 0 0.5rem 1rem;
+    padding: 3rem 1.25rem;
+  }
+  .intern-cta {
+    border-radius: var(--radius-lg);
+    margin: 0 0.5rem 1rem;
+    padding: 3rem 1rem;
+  }
+  .intern-next-nav {
+    border-radius: var(--radius-lg);
+    margin: 0 0.5rem 1rem;
+    padding: 3rem 1.25rem;
+  }
+  .intern-hero { min-height: 75vh; }
   .intern-hero__cta { flex-direction: column; align-items: center; }
   .intern-cta__buttons { flex-direction: column; align-items: center; }
   .intern-next-nav__grid { grid-template-columns: 1fr; }
 }
 
-/* --- 次に見るべきページ --- */
-.intern-next-nav {
-  padding: 5rem 1.5rem;
-  background: #fff;
-}
+/* --- 次に見るべきページ（inner styles） --- */
 .intern-next-nav__inner {
   max-width: 900px;
   margin: 0 auto;
@@ -861,14 +1057,17 @@
   padding: 1.75rem 2rem;
   background: var(--bdx-bg-light);
   border: 1px solid var(--bdx-border);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   text-decoration: none;
   color: inherit;
   transition: transform .3s, box-shadow .3s, border-color .3s;
 }
 .intern-next-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(26,64,123,.1);
+  transform: translateY(-5px);
+  box-shadow:
+    0 4px 8px hsl(220deg 40% 40% / 0.08),
+    0 8px 16px hsl(220deg 40% 40% / 0.08),
+    0 16px 32px hsl(220deg 40% 40% / 0.06);
   border-color: rgba(26,64,123,.25);
 }
 .intern-next-card__icon {
@@ -894,8 +1093,11 @@
 
 .intern-diary__item {
   background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-radius: var(--radius-md);
+  box-shadow:
+    0 1px 2px hsl(220deg 40% 40% / 0.06),
+    0 3px 6px hsl(220deg 40% 40% / 0.05),
+    0 8px 16px hsl(220deg 40% 40% / 0.04);
   padding: 2.5rem 2.25rem 2rem;
   margin-bottom: 2rem;
 }
@@ -1026,7 +1228,7 @@
 </script>
 </head>
 <body>
-
+<div class="intern-progress" id="progress-bar"></div>
 
 <div id="document">
 <header id="gheader">
@@ -1086,11 +1288,22 @@
   </div>
 </section>
 
+<!-- サイドナビゲーション（縦型ドットナビ） -->
+<nav class="intern-side-nav" id="side-nav" aria-label="ページ内ナビゲーション">
+  <a href="#overview" class="intern-side-nav__dot" data-label="プログラム概要"><span class="intern-side-nav__tooltip">プログラム概要</span></a>
+  <a href="#schedule" class="intern-side-nav__dot" data-label="インターンの流れ"><span class="intern-side-nav__tooltip">インターンの流れ</span></a>
+  <a href="#voices" class="intern-side-nav__dot" data-label="参加者の声"><span class="intern-side-nav__tooltip">参加者の声</span></a>
+  <a href="#numbers" class="intern-side-nav__dot" data-label="数字で見る"><span class="intern-side-nav__tooltip">数字で見る</span></a>
+  <a href="#requirements" class="intern-side-nav__dot" data-label="募集要項"><span class="intern-side-nav__tooltip">募集要項</span></a>
+  <a href="#faq" class="intern-side-nav__dot" data-label="FAQ"><span class="intern-side-nav__tooltip">FAQ</span></a>
+</nav>
+
+<div class="intern-page-content">
 
 <!-- ============================================================
      2. プログラム概要
      ============================================================ -->
-<section class="intern-section intern-section--white">
+<section class="intern-section intern-section--white" id="overview">
   <div class="intern-section__inner">
     <div class="intern-section__header reveal">
       <span class="intern-section__label">Program Overview</span>
@@ -1161,7 +1374,7 @@
 <!-- ============================================================
      3. インターンの流れ（タイムライン）
      ============================================================ -->
-<section class="intern-section intern-section--light">
+<section class="intern-section intern-section--light" id="schedule">
   <div class="intern-section__inner">
     <div class="intern-section__header reveal">
       <span class="intern-section__label">Program Schedule</span>
@@ -1237,7 +1450,7 @@
 <!-- ============================================================
      4. 参加者の声
      ============================================================ -->
-<section class="intern-section intern-section--white">
+<section class="intern-section intern-section--white" id="voices">
   <div class="intern-section__inner">
     <div class="intern-section__header reveal">
       <span class="intern-section__label">Voices</span>
@@ -1356,7 +1569,7 @@
 <!-- ============================================================
      5. 数字で見るインターン
      ============================================================ -->
-<section class="intern-section intern-section--light">
+<section class="intern-section intern-section--light" id="numbers">
   <div class="intern-section__inner">
     <div class="intern-section__header reveal">
       <span class="intern-section__label">Numbers</span>
@@ -1388,7 +1601,7 @@
 <!-- ============================================================
      6. 募集要項
      ============================================================ -->
-<section class="intern-section intern-section--white">
+<section class="intern-section intern-section--white" id="requirements">
   <div class="intern-section__inner">
     <div class="intern-section__header reveal">
       <span class="intern-section__label">Requirements</span>
@@ -1467,7 +1680,7 @@
 <!-- ============================================================
      7. FAQ
      ============================================================ -->
-<section class="intern-section intern-section--light">
+<section class="intern-section intern-section--light" id="faq">
   <div class="intern-section__inner">
     <div class="intern-section__header reveal">
       <span class="intern-section__label">FAQ</span>
@@ -1581,6 +1794,7 @@
 </section>
 
 
+<!-- /.intern-page-content --></div>
 <!-- /#mainContents ==========--></main>
 <!-- /#container ==========--></div>
 
@@ -1676,6 +1890,72 @@
 })();
 </script>
 
+
+<!-- サイドナビゲーション + プログレスバー -->
+<script>
+/* 縦型サイドインジケーター: IntersectionObserver でアクティブ切替 */
+(function () {
+  'use strict';
+  var nav = document.getElementById('side-nav');
+  if (!nav || !('IntersectionObserver' in window)) return;
+
+  var dots = nav.querySelectorAll('.intern-side-nav__dot');
+  var sectionIds = [];
+  dots.forEach(function (d) {
+    sectionIds.push(d.getAttribute('href').slice(1));
+  });
+  var sections = sectionIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+
+  var currentActive = null;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.getAttribute('id');
+        if (currentActive !== id) {
+          currentActive = id;
+          dots.forEach(function (d) { d.classList.remove('active'); });
+          var active = nav.querySelector('[href="#' + id + '"]');
+          if (active) active.classList.add('active');
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(function (s) { observer.observe(s); });
+
+  /* スムーズスクロール */
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.querySelector(dot.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  /* ヒーロー表示中はサイドナビを非表示 */
+  var hero = document.querySelector('.intern-hero');
+  if (hero) {
+    var heroObserver = new IntersectionObserver(function (entries) {
+      var entry = entries[0];
+      nav.style.opacity = entry.isIntersecting ? '0' : '1';
+      nav.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+    }, { threshold: 0.3 });
+    heroObserver.observe(hero);
+  }
+})();
+
+/* プログレスバー */
+(function () {
+  'use strict';
+  window.addEventListener('scroll', function () {
+    var bar = document.getElementById('progress-bar');
+    if (!bar) return;
+    var scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    bar.style.width = Math.min(scrollPercent, 100) + '%';
+  });
+})();
+</script>
 
 </body>
 </html>
