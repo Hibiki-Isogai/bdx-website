@@ -177,10 +177,23 @@
 .rg-btn--outline-light { background-color: rgba(255,255,255,.12); color: #fff; border-color: #fff; }
 .rg-btn--outline-light:hover { background-color: #fff; color: var(--bdx-navy); border-color: #fff; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(255,255,255,.3); }
 
-/* --- セクション --- */
-.rg-section { padding: 5rem 1.5rem; }
+/* --- ページ背景（カード間の隙間の色） --- */
+.rg-page-content {
+  background: #F0F2F5;
+  padding: 2rem 0;
+}
+
+/* --- セクション（カード化） --- */
+.rg-section {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  margin: 0 auto 2rem;
+  max-width: 1140px;
+  padding: 4rem 3rem;
+}
 .rg-section--white { background-color: #fff; }
-.rg-section--light { background-color: var(--bdx-bg-light); }
+.rg-section--light { background-color: #fff; }
 .rg-section--navy  { background-color: var(--bdx-navy); color: var(--bdx-text-on-dark); }
 .rg-section__inner { max-width: 1100px; margin: 0 auto; }
 .rg-section__header { text-align: center; margin-bottom: 3.5rem; }
@@ -294,8 +307,7 @@
 .rg-tab-panel { display: none; }
 .rg-tab-panel.is-active { display: block; }
 
-/* --- CTA バナー --- */
-.rg-cta-banner { background: linear-gradient(135deg, #0f2d50 0%, var(--bdx-navy) 60%, #004B9F 100%); padding: 5rem 1.5rem; text-align: center; }
+/* --- CTA バナー（子要素スタイル。カード化は上部で定義） --- */
 .rg-cta-banner__inner { max-width: 720px; margin: 0 auto; }
 .rg-cta-banner__title { font-family: 'EB Garamond', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 500; color: #fff; line-height: 1.4; margin-bottom: 1rem; }
 .rg-cta-banner__text { color: var(--bdx-text-on-dark-sub); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; }
@@ -375,49 +387,55 @@
   opacity: 1;
 }
 
-/* --- セクションヘッダーの区切り強化 --- */
-.rg-section__header {
-  padding-left: 20px;
-  border-left: 4px solid #1A407B;
+/* --- CTAバナーのカード化 --- */
+.rg-cta-banner {
+  background: linear-gradient(135deg, #0f2d50 0%, var(--bdx-navy) 60%, #004B9F 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  margin: 0 auto 2rem;
+  max-width: 1140px;
+  padding: 5rem 3rem;
+  text-align: center;
 }
-.rg-section--navy .rg-section__header {
-  border-left-color: rgba(255, 255, 255, 0.5);
-}
-
-/* --- セクション間の区切り線 --- */
-.rg-section--white + .rg-section--white::before,
-.rg-section--light + .rg-section--light::before,
-.rg-section--white + .rg-section--light::before,
-.rg-section--light + .rg-section--white::before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #1A407B;
-  margin: 0 auto;
-}
-
-/* --- セクション間の区切り強化 --- */
-#flow.rg-section { padding-top: 6rem; }
 
 /* --- ユーティリティ --- */
 .rg-text-center { text-align: center; }
 .rg-mt-3 { margin-top: 3rem; }
 
 /* --- レスポンシブ --- */
-@media (max-width: 960px) { .rg-section { padding: 4rem 1.25rem; } .rg-hero { min-height: 80vh; } }
+@media (max-width: 960px) {
+  .rg-hero { min-height: 80vh; }
+}
 @media (max-width: 768px) {
+  .rg-section {
+    border-radius: 12px;
+    margin: 0 0.75rem 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+  .rg-cta-banner {
+    border-radius: 12px;
+    margin: 0 0.75rem 1.5rem;
+    padding: 4rem 1.5rem;
+  }
   .rg-side-nav { display: none; }
 }
-@media (max-width: 600px) {
-  .rg-section { padding: 3rem 1rem; }
+@media (max-width: 480px) {
+  .rg-section {
+    border-radius: 8px;
+    margin: 0 0.5rem 1rem;
+    padding: 2.5rem 1rem;
+  }
+  .rg-cta-banner {
+    border-radius: 8px;
+    margin: 0 0.5rem 1rem;
+    padding: 3rem 1rem;
+  }
   .rg-hero { min-height: 75vh; }
   .rg-hero__cta { flex-direction: column; align-items: center; }
   .rg-stat { padding: 1.25rem .5rem; }
   .rg-stat:not(:last-child)::after { display: none; }
   .rg-tab { padding: .7rem 1rem; font-size: .875rem; }
   .rg-flow__item { padding: 0 0 2.5rem; }
-  #flow.rg-section { padding-top: 4.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .rg-hero__label, .rg-hero__title, .rg-hero__subtitle, .rg-hero__cta, .rg-hero__scroll { opacity: 1; animation: none; transform: none; }
@@ -513,6 +531,9 @@
   <a href="#flow" class="rg-side-nav__dot" data-label="採用フロー"><span class="rg-side-nav__tooltip">採用フロー</span></a>
   <a href="#requirements" class="rg-side-nav__dot" data-label="募集要項"><span class="rg-side-nav__tooltip">募集要項</span></a>
 </nav>
+
+<!-- カード型レイアウトのラッパー -->
+<div class="rg-page-content">
 
 <!-- ================================================================
   2. About B&DX
@@ -671,7 +692,7 @@
 <!-- ================================================================
   6. 採用フロー
   ================================================================ -->
-<section class="rg-section rg-section--white" id="flow" style="border-top: 4px solid var(--bdx-navy); box-shadow: 0 -4px 16px rgba(26,64,123,.08);">
+<section class="rg-section rg-section--white" id="flow">
   <div class="rg-section__inner">
     <div class="rg-section__header reveal">
       <span class="rg-section__label">Selection Flow</span>
@@ -841,6 +862,7 @@
   </div>
 </section>
 
+<!-- /.rg-page-content --></div>
 
 <!-- /#mainContents ==========--></main>
 <!-- /#container ==========--></div>
