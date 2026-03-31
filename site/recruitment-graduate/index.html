@@ -315,12 +315,63 @@
 .rg-related-card__arrow { color: var(--bdx-navy); flex-shrink: 0; transition: transform .2s; }
 .rg-related-card:hover .rg-related-card__arrow { transform: translateX(3px); }
 
+/* --- セクションナビ（sticky） --- */
+.rg-section-nav {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.rg-section-nav__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.rg-section-nav__inner::-webkit-scrollbar { display: none; }
+.rg-section-nav__link {
+  display: inline-block;
+  padding: 12px 0;
+  margin-right: 24px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--bdx-text-secondary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+  flex-shrink: 0;
+}
+.rg-section-nav__link:last-child { margin-right: 0; }
+.rg-section-nav__link:hover {
+  color: var(--bdx-navy);
+  border-bottom-color: var(--bdx-navy);
+}
+.rg-section-nav__link.is-active {
+  color: var(--bdx-navy);
+  font-weight: 700;
+  border-bottom-color: var(--bdx-navy);
+}
+
+/* --- セクション間の区切り強化 --- */
+#flow.rg-section { padding-top: 6rem; }
+
 /* --- ユーティリティ --- */
 .rg-text-center { text-align: center; }
 .rg-mt-3 { margin-top: 3rem; }
 
 /* --- レスポンシブ --- */
 @media (max-width: 960px) { .rg-section { padding: 4rem 1.25rem; } .rg-hero { min-height: 80vh; } }
+@media (max-width: 768px) {
+  .rg-section-nav__link { font-size: .75rem; margin-right: 18px; padding: 10px 0; }
+}
 @media (max-width: 600px) {
   .rg-section { padding: 3rem 1rem; }
   .rg-hero { min-height: 75vh; }
@@ -329,6 +380,9 @@
   .rg-stat:not(:last-child)::after { display: none; }
   .rg-tab { padding: .7rem 1rem; font-size: .875rem; }
   .rg-flow__item { padding: 0 0 2.5rem; }
+  .rg-section-nav__inner { padding: 0 1rem; }
+  .rg-section-nav__link { margin-right: 16px; }
+  #flow.rg-section { padding-top: 4.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .rg-hero__label, .rg-hero__title, .rg-hero__subtitle, .rg-hero__cta, .rg-hero__scroll { opacity: 1; animation: none; transform: none; }
@@ -415,6 +469,17 @@
   </div>
 </section>
 
+<!-- セクションナビゲーション（sticky） -->
+<nav class="rg-section-nav" id="section-nav">
+  <div class="rg-section-nav__inner">
+    <a href="#about" class="rg-section-nav__link">B&amp;DXとは</a>
+    <a href="#numbers" class="rg-section-nav__link">数字で見る</a>
+    <a href="#voices" class="rg-section-nav__link">学生の声</a>
+    <a href="#career" class="rg-section-nav__link">成長のステージ</a>
+    <a href="#flow" class="rg-section-nav__link">採用フロー</a>
+    <a href="#requirements" class="rg-section-nav__link">募集要項</a>
+  </div>
+</nav>
 
 <!-- ================================================================
   2. About B&DX
@@ -835,6 +900,66 @@
       tab.setAttribute('aria-selected', 'true');
       var panel = document.getElementById(tab.getAttribute('aria-controls'));
       if (panel) { panel.classList.add('is-active'); }
+    });
+  });
+})();
+
+/* セクションナビ: IntersectionObserver でアクティブリンク切替 */
+(function () {
+  'use strict';
+  if (!('IntersectionObserver' in window)) return;
+  var navLinks = document.querySelectorAll('.rg-section-nav__link');
+  var sectionIds = [];
+  navLinks.forEach(function (link) {
+    var id = link.getAttribute('href').replace('#', '');
+    sectionIds.push(id);
+  });
+  var sections = sectionIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+
+  var currentActive = null;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.getAttribute('id');
+        if (currentActive !== id) {
+          currentActive = id;
+          navLinks.forEach(function (link) {
+            var linkId = link.getAttribute('href').replace('#', '');
+            if (linkId === id) {
+              link.classList.add('is-active');
+              /* スクロールしてアクティブリンクが見えるようにする（モバイル横スクロール対応） */
+              var nav = document.querySelector('.rg-section-nav__inner');
+              if (nav && link.offsetLeft < nav.scrollLeft) {
+                nav.scrollLeft = link.offsetLeft - 16;
+              } else if (nav && link.offsetLeft + link.offsetWidth > nav.scrollLeft + nav.clientWidth) {
+                nav.scrollLeft = link.offsetLeft + link.offsetWidth - nav.clientWidth + 16;
+              }
+            } else {
+              link.classList.remove('is-active');
+            }
+          });
+        }
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(function (section) { observer.observe(section); });
+
+  /* ナビリンクのスムーズスクロール */
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var id = this.getAttribute('href').replace('#', '');
+      var target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        var navHeight = document.querySelector('.rg-section-nav') ? document.querySelector('.rg-section-nav').offsetHeight : 0;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
     });
   });
 })();
