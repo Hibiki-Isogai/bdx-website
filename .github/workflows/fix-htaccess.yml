@@ -24,7 +24,7 @@ jobs:
           set ssl:verify-certificate no
           set ftp:ssl-allow yes
           set ftp:ssl-protect-data yes
-          get /home/tanbear66/www/.htaccess -o htaccess-original.txt
+          get www/.htaccess -o htaccess-original.txt
           quit
           DL
 
@@ -46,7 +46,7 @@ jobs:
           set ssl:verify-certificate no
           set ftp:ssl-allow yes
           set ftp:ssl-protect-data yes
-          put htaccess-fixed.txt -o /home/tanbear66/www/.htaccess
+          put htaccess-fixed.txt -o www/.htaccess
           quit
           UL
 
