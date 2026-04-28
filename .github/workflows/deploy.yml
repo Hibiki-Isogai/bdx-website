@@ -27,13 +27,13 @@ jobs:
           set net:max-retries 3
 
           # 1. recruitment-graduate pages (main deliverable) -- overwrite to force update
-          mirror --reverse --overwrite --verbose ./site/recruitment-graduate/ /home/tanbear66/www/recruitment-graduate/
+          mirror --reverse --overwrite --verbose ./site/recruitment-graduate/ www/recruitment-graduate/
 
           # 2. New CSS/JS added for recruitment pages
-          mkdir -p /home/tanbear66/www/css/common/
-          put ./site/css/common/animations.css -o /home/tanbear66/www/css/common/animations.css
-          mkdir -p /home/tanbear66/www/scripts/common/
-          put ./site/scripts/common/scroll-reveal.js -o /home/tanbear66/www/scripts/common/scroll-reveal.js
+          mkdir -p www/css/common/
+          put ./site/css/common/animations.css -o www/css/common/animations.css
+          mkdir -p www/scripts/common/
+          put ./site/scripts/common/scroll-reveal.js -o www/scripts/common/scroll-reveal.js
 
           quit
           SCRIPT
