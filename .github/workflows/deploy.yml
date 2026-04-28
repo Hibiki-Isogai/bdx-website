@@ -26,8 +26,8 @@ jobs:
           set net:timeout 30
           set net:max-retries 3
 
-          # 1. recruitment-graduate pages (main deliverable)
-          mirror --reverse --verbose ./site/recruitment-graduate/ /home/tanbear66/www/recruitment-graduate/
+          # 1. recruitment-graduate pages (main deliverable) -- overwrite to force update
+          mirror --reverse --overwrite --verbose ./site/recruitment-graduate/ /home/tanbear66/www/recruitment-graduate/
 
           # 2. New CSS/JS added for recruitment pages
           mkdir -p /home/tanbear66/www/css/common/
