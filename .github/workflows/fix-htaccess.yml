@@ -1,0 +1,58 @@
+name: Fix htaccess (remove recruitment-graduate redirect)
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "fix-htaccess" to confirm'
+        required: true
+
+jobs:
+  fix:
+    if: github.event.inputs.confirm == 'fix-htaccess'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Download, backup, fix and upload .htaccess
+        run: |
+          # Download current .htaccess
+          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_HOST" <<'DL'
+          set ssl:verify-certificate no
+          set ftp:ssl-allow yes
+          set ftp:ssl-protect-data yes
+          get /home/tanbear66/www/.htaccess -o htaccess-original.txt
+          quit
+          DL
+
+          echo "=== Original .htaccess ==="
+          cat htaccess-original.txt
+          echo ""
+          echo "=== Lines to remove ==="
+          grep -n "recruitment-graduate" htaccess-original.txt || echo "(none found)"
+
+          # Remove the recruitment-graduate redirect line
+          grep -v 'recruitment-graduate' htaccess-original.txt > htaccess-fixed.txt
+
+          echo ""
+          echo "=== Diff ==="
+          diff htaccess-original.txt htaccess-fixed.txt || true
+
+          # Upload fixed .htaccess
+          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_HOST" <<'UL'
+          set ssl:verify-certificate no
+          set ftp:ssl-allow yes
+          set ftp:ssl-protect-data yes
+          put htaccess-fixed.txt -o /home/tanbear66/www/.htaccess
+          quit
+          UL
+
+          echo ""
+          echo "=== Done: .htaccess updated ==="
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
