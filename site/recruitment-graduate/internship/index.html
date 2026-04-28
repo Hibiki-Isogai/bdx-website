@@ -1163,6 +1163,61 @@
     padding: 0 0.75rem;
   }
 }
+
+@media (max-width: 767px) {
+  /* 引用・声カード: 全幅表示 */
+  .intern-quote,
+  .rg-voice-card,
+  .rg-quote,
+  blockquote,
+  .rg-interview-card {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 1.5rem 1rem !important;
+    box-sizing: border-box;
+  }
+  .intern-quote__text,
+  .rg-voice-card blockquote,
+  .rg-quote blockquote {
+    max-width: 100% !important;
+    padding: 0 !important;
+    font-size: 0.95rem !important;
+    box-sizing: border-box;
+  }
+
+  /* 次に見るべきページ: 縦1列 */
+  .intern-next-nav__grid,
+  .rg-next-pages,
+  .rg-related-pages,
+  [class*="next"] [class*="grid"],
+  [class*="next"] [class*="cards"],
+  .rg-page-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .intern-next-card,
+  .rg-next-pages > *,
+  .rg-related-pages > *,
+  .rg-page-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .intern-next-card__name,
+  .rg-page-card h3,
+  .rg-page-card__title {
+    font-size: 1.1rem !important;
+    white-space: normal !important;
+  }
+  .intern-next-card__desc,
+  .rg-page-card p,
+  .rg-page-card__desc {
+    font-size: 0.9rem !important;
+    white-space: normal !important;
+  }
+}
 </style>
 
 <script type="application/ld+json">

@@ -936,6 +936,76 @@
   }
   .sel-hero { min-height: 60vh; }
 }
+@media (max-width: 767px) {
+  /* 引用・声カード: 全幅表示 */
+  .sel-voice-card,
+  .sel-quote,
+  .rg-voice-card,
+  .rg-quote,
+  blockquote,
+  .rg-interview-card {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 1.5rem 1rem !important;
+    box-sizing: border-box;
+  }
+  .sel-quote__text,
+  .sel-voice-card__text,
+  .rg-voice-card blockquote,
+  .rg-quote blockquote {
+    max-width: 100% !important;
+    padding: 0 !important;
+    font-size: 0.95rem !important;
+    box-sizing: border-box;
+  }
+
+  /* CTAバナー: テキスト折り返し */
+  .sel-cta h2,
+  .sel-cta__title,
+  .sel-cta .sel-section__title,
+  .sel-cta-banner__title,
+  [class*="cta"] h2,
+  [class*="cta"] h3 {
+    white-space: normal !important;
+    font-size: 1.3rem !important;
+    line-height: 1.5 !important;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* 次に見るべきページ: 縦1列 */
+  .sel-next-nav__grid,
+  .rg-next-pages,
+  .rg-related-pages,
+  [class*="next"] [class*="grid"],
+  [class*="next"] [class*="cards"],
+  .rg-page-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .sel-next-card,
+  .rg-next-pages > *,
+  .rg-related-pages > *,
+  .rg-page-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .sel-next-card__name,
+  .rg-page-card h3,
+  .rg-page-card__title {
+    font-size: 1.1rem !important;
+    white-space: normal !important;
+  }
+  .sel-next-card__desc,
+  .rg-page-card p,
+  .rg-page-card__desc {
+    font-size: 0.9rem !important;
+    white-space: normal !important;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .sel-hero__label, .sel-hero__title, .sel-hero__subtitle { opacity: 1; animation: none; transform: none; }
 }
