@@ -17,13 +17,22 @@ jobs:
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: FTP Deploy
+      - name: FTP Deploy (targeted)
         run: |
-          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_HOST" <<SCRIPT
+          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_HOST" <<'SCRIPT'
           set ssl:verify-certificate no
           set ftp:ssl-allow yes
           set ftp:ssl-protect-data yes
-          mirror --reverse --verbose ./site/ /home/tanbear66/www/
+          set net:timeout 30
+          set net:max-retries 3
+
+          # 1. recruitment-graduate pages (main deliverable)
+          mirror --reverse --verbose ./site/recruitment-graduate/ /home/tanbear66/www/recruitment-graduate/
+
+          # 2. New CSS/JS added for recruitment pages
+          put ./site/css/common/animations.css -o /home/tanbear66/www/css/common/animations.css
+          put ./site/scripts/common/scroll-reveal.js -o /home/tanbear66/www/scripts/common/scroll-reveal.js
+
           quit
           SCRIPT
         env:
