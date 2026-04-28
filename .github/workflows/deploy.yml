@@ -30,7 +30,9 @@ jobs:
           mirror --reverse --verbose ./site/recruitment-graduate/ /home/tanbear66/www/recruitment-graduate/
 
           # 2. New CSS/JS added for recruitment pages
+          mkdir -p /home/tanbear66/www/css/common/
           put ./site/css/common/animations.css -o /home/tanbear66/www/css/common/animations.css
+          mkdir -p /home/tanbear66/www/scripts/common/
           put ./site/scripts/common/scroll-reveal.js -o /home/tanbear66/www/scripts/common/scroll-reveal.js
 
           quit
