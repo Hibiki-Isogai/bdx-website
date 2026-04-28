@@ -541,22 +541,20 @@
     padding: 0.75rem 0 !important;
   }
   .rg-flow__item {
-    display: grid !important;
-    grid-template-columns: 48px minmax(0, 1fr) !important;
-    grid-template-rows: 24px 24px !important;
-    grid-template-areas:
-      "step label"
-      "step note" !important;
-    column-gap: 1rem !important;
-    row-gap: 0 !important;
-    align-items: center !important;
+    position: relative !important;
+    display: block !important;
+    padding: 0.75rem 0 0.75rem 4rem !important;
     text-align: left !important;
-    padding: 0.75rem 0 !important;
+    min-height: 64px !important;
   }
   .rg-flow__step,
   .rg-flow-step .rg-step__number,
   .rg-step__number,
   [class*="step"] [class*="number"] {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     width: 48px !important;
     height: 48px !important;
     min-width: 48px !important;
@@ -564,29 +562,26 @@
     max-width: 48px !important;
     max-height: 48px !important;
     border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     font-size: 1rem !important;
     margin: 0 !important;
-    grid-area: step !important;
-    align-self: center !important;
-    justify-self: start !important;
+    box-sizing: border-box !important;
   }
   .rg-flow__label,
   .rg-flow-step .rg-step__title,
   .rg-step__title {
-    grid-area: label !important;
-    align-self: end !important;
     font-size: 1rem !important;
     margin: 0 !important;
-    line-height: 1.2 !important;
+    line-height: 1.4 !important;
   }
   .rg-flow__note,
   .rg-flow-step .rg-step__meta,
   .rg-step__meta {
-    grid-area: note !important;
-    align-self: start !important;
     font-size: 0.85rem !important;
-    margin: 0 !important;
-    line-height: 1.2 !important;
+    margin: 0.15rem 0 0 0 !important;
+    line-height: 1.4 !important;
   }
   .rg-flow__item::after,
   .rg-flow-step::after,
