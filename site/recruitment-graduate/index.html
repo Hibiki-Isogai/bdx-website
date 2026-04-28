@@ -543,12 +543,13 @@
   .rg-flow__item {
     display: grid !important;
     grid-template-columns: 48px minmax(0, 1fr) !important;
+    grid-template-rows: 24px 24px !important;
     grid-template-areas:
       "step label"
       "step note" !important;
-    align-items: center !important;
     column-gap: 1rem !important;
-    row-gap: 0.15rem !important;
+    row-gap: 0 !important;
+    align-items: center !important;
     text-align: left !important;
     padding: 0.75rem 0 !important;
   }
@@ -556,35 +557,37 @@
   .rg-flow-step .rg-step__number,
   .rg-step__number,
   [class*="step"] [class*="number"] {
-    flex-shrink: 0 !important;
     width: 48px !important;
     height: 48px !important;
     min-width: 48px !important;
     min-height: 48px !important;
     max-width: 48px !important;
     max-height: 48px !important;
-    aspect-ratio: 1 / 1 !important;
     border-radius: 50% !important;
     font-size: 1rem !important;
     margin: 0 !important;
+    grid-area: step !important;
     align-self: center !important;
-    justify-self: center !important;
+    justify-self: start !important;
   }
-  .rg-flow__step { grid-area: step !important; }
   .rg-flow__label,
   .rg-flow-step .rg-step__title,
   .rg-step__title {
+    grid-area: label !important;
+    align-self: end !important;
     font-size: 1rem !important;
     margin: 0 !important;
+    line-height: 1.2 !important;
   }
-  .rg-flow__label { grid-area: label !important; }
   .rg-flow__note,
   .rg-flow-step .rg-step__meta,
   .rg-step__meta {
+    grid-area: note !important;
+    align-self: start !important;
     font-size: 0.85rem !important;
     margin: 0 !important;
+    line-height: 1.2 !important;
   }
-  .rg-flow__note { grid-area: note !important; }
   .rg-flow__item::after,
   .rg-flow-step::after,
   .rg-step::after,
