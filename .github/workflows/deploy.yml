@@ -14,19 +14,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
-      - name: FTP Deploy
+      - name: Test FTP connection
         run: |
-          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_HOST" <<SCRIPT
-          set ssl:verify-certificate no
-          set ftp:ssl-allow yes
-          set ftp:ssl-protect-data yes
-          mirror --reverse --delete=no --verbose ./site/ /home/tanbear66/www/
-          quit
-          SCRIPT
+          echo "Testing FTP connection to $FTP_HOST..."
+          echo "FTP_HOST length: ${#FTP_HOST}"
+          echo "FTP_USER length: ${#FTP_USER}"
+          echo "FTP_PASSWORD length: ${#FTP_PASSWORD}"
+          curl -v --connect-timeout 10 --ftp-ssl --insecure -u "$FTP_USER:$FTP_PASSWORD" "ftp://$FTP_HOST/" --list-only 2>&1 | head -30
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./site/
+          server-dir: /home/tanbear66/www/
+          dangerous-clean-slate: false
