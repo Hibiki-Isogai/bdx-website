@@ -6,6 +6,8 @@
 
 | フォルダ | 内容 |
 |----------|------|
+| `operations/` | 運用手順書（デプロイ等） |
+| `architecture/` | システム構成図（概要・詳細） |
 | `messaging/` | メッセージ戦略（フォワードキャスト・バックキャスト） |
 | `analysis/` | 競合分析・データ分析・コンテンツ分析 |
 | `design/` | デザイン改善設計書 |
@@ -13,6 +15,11 @@
 | `references/` | 参照データ（Excelファイル等） |
 
 ## 主要ドキュメント
+
+### 運用・アーキテクチャ
+- [本番デプロイ手順](operations/deploy-production.md) — GitHub Actions経由でさくらサーバへデプロイ
+- [アーキテクチャ概要図](architecture/overview.md) — リソース要素の概観
+- [アーキテクチャ詳細図](architecture/detailed.md) — NW経路・接続詳細・セキュリティ
 
 ### メッセージ戦略
 - [フォワードキャスト型](messaging/messaging-forwardcast.md) — 現在のサイトが実際に伝えているメッセージの分析
