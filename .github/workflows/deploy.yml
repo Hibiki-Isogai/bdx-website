@@ -23,7 +23,7 @@ jobs:
           set ssl:verify-certificate no
           set ftp:ssl-allow yes
           set ftp:ssl-protect-data yes
-          mirror --reverse --no-delete --verbose ./site/ /home/tanbear66/www/
+          mirror --reverse --verbose ./site/ /home/tanbear66/www/
           quit
           SCRIPT
         env:
