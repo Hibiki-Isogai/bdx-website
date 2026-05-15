@@ -29,6 +29,12 @@ jobs:
           # 1. recruitment-graduate pages (main deliverable) -- overwrite to force update
           mirror --reverse --overwrite --verbose ./site/recruitment-graduate/ www/recruitment-graduate/
 
+          # 1b. Corporate page (T-344)
+          mirror --reverse --overwrite --verbose ./site/corporate/ www/corporate/
+
+          # 1c. Experienced recruitment page (T-348)
+          mirror --reverse --overwrite --verbose ./site/recruitment-experienced/ www/recruitment-experienced/
+
           # 2. New CSS/JS added for recruitment pages
           mkdir -p www/css/common/
           put ./site/css/common/animations.css -o www/css/common/animations.css
