@@ -32,6 +32,9 @@ jobs:
           # 1b. Corporate page (T-344)
           mirror --reverse --overwrite --verbose ./site/corporate/ www/corporate/
 
+          # 1b-2. Corporate images (consultant/officer/adviser/president photos)
+          mirror --reverse --overwrite --verbose ./site/images/corporate/ www/images/corporate/
+
           # 1c. Experienced recruitment page (T-348)
           mirror --reverse --overwrite --verbose ./site/recruitment-experienced/ www/recruitment-experienced/
 
